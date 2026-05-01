@@ -80,6 +80,21 @@ nav {
   animation: pulse-dot 2s ease-in-out infinite;
 }
 
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: 1.5rem;
+  cursor: none;
+}
+
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+  }
+}
+
 @keyframes pulse-dot {
   0%, 100% {
     opacity: 1;
@@ -88,5 +103,91 @@ nav {
   50% {
     opacity: 0.4;
     transform: scale(0.7);
+  }
+}
+
+@media (max-width: 1024px) {
+  nav {
+    padding: 1rem 2rem;
+  }
+
+  .nav-links {
+    gap: 1.5rem;
+  }
+
+  .nav-status {
+    display: none; /* opcional: lo ocultamos para dar espacio */
+  }
+}
+
+@media (max-width: 768px) {
+
+  nav {
+    padding: 1rem 1.25rem;
+  }
+
+  /* ocultamos links horizontales */
+  .nav-links {
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+
+    flex-direction: column;
+    gap: 1.5rem;
+
+    background: rgba(8, 10, 15, 0.95);
+    backdrop-filter: blur(20px);
+
+    padding: 2rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+
+    transform: translateY(-120%);
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+
+  /* estado abierto (lo controlas con Angular) */
+  .nav-links.open {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a {
+    font-size: 0.85rem;
+  }
+
+  .nav-status {
+    display: none;
+  }
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: 1.5rem;
+  cursor: none;
+}
+
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links a {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-links a::after {
+    display: none;
   }
 }

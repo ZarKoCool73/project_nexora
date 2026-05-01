@@ -8,7 +8,7 @@
   display: flex;
   align-items: baseline;
   gap: 1.5rem;
-  flex-wrap: wrap;
+  margin-bottom: 4rem;
 }
 
 .section-num {
@@ -142,5 +142,100 @@
   .timeline-content {
     padding: 0.75rem 0 1.5rem;
   }
+}
 
+
+@media (max-width: 1024px) {
+
+  #experience {
+    padding: 5rem 2rem;
+  }
+
+  .timeline {
+    grid-template-columns: 160px 1fr;
+    gap: 0 1.5rem;
+  }
+
+  .timeline-period {
+    padding-right: 1.5rem;
+  }
+
+  .timeline-content {
+    padding-left: 1.5rem;
+  }
+}
+
+
+@media (max-width: 900px) {
+
+  #experience {
+    padding: 4rem 1.25rem;
+  }
+
+  .timeline {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline-item {
+    display: block;
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  /* reemplaza la línea vertical */
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    width: 2px;
+    height: 100%;
+    background: var(--border);
+  }
+
+  .timeline-period {
+    text-align: left;
+    border: none;
+    padding: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .timeline-period::after {
+    display: none;
+  }
+
+  .timeline-content {
+    padding: 0;
+    border-bottom: none;
+  }
+
+  .timeline-role {
+    font-size: 1rem;
+  }
+
+  .timeline-desc {
+    font-size: 0.7rem;
+    line-height: 1.6;
+  }
+}
+
+
+@media (max-width: 600px) {
+
+  .timeline-role {
+    font-size: 0.95rem;
+  }
+
+  .timeline-company {
+    font-size: 0.65rem;
+  }
+
+  .timeline-desc {
+    font-size: 0.65rem;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
 }

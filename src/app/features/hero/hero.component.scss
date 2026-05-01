@@ -5,6 +5,7 @@
   padding-top: 80px;
   position: relative;
   overflow: hidden;
+  gap: 2rem;
 }
 
 .hero::after {
@@ -209,3 +210,65 @@
 .c-comment { color: #3A4050; }
 .c-var     { color: #E8EAF0; }
 .c-num     { color: #FF6B6B; }
+
+
+@media (max-width: 1024px) {
+  .hero {
+    display: contents;
+    min-height: auto;
+  }
+
+  .hero-right {
+    border-left: none;
+    border-top: 1px solid var(--border);
+    padding: 3rem 2rem;
+  }
+
+  .hero-left {
+    padding: 4rem 2rem;
+    text-align: center;
+    align-items: center;
+  }
+
+  .hero-desc {
+    max-width: 100%;
+  }
+
+  .hero-ctas {
+    justify-content: center;
+  }
+
+  .hero::after {
+    display: none; /* opcional: elimina decorativo en móvil */
+  }
+}
+
+
+@media (max-width: 600px) {
+  .hero-name {
+    font-size: 2.8rem;
+  }
+
+  .hero-left {
+    padding: 3rem 1.5rem;
+  }
+
+  .hero-right {
+    padding: 2rem 1.5rem;
+  }
+
+  .code-window {
+    max-width: 100%;
+  }
+
+  .hero-ctas {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+}
