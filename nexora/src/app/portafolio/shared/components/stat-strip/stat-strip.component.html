@@ -1,0 +1,13 @@
+<div class="stat-strip">
+  @for (stat of data.stats(); track stat.label) {
+    <div class="stat-cell" appScrollReveal>
+      <div
+        class="stat-num"
+        appCountUp
+        [countTo]="stat.value"
+        [suffix]="stat.suffix"
+      >0{{ stat.suffix }}</div>
+      <div class="stat-lbl">{{ stat.label }}</div>
+    </div>
+  }
+</div>

@@ -1,0 +1,48 @@
+<!-- src/app/features/contact/contact.component.html -->
+<section id="contact" class="contact-section">
+
+  <!-- Izquierda -->
+  <div class="contact-left">
+
+    <h2 class="contact-heading" appScrollReveal>
+      ¿Tienes un<br>
+      <em class="grad-text">proyecto?</em>
+    </h2>
+
+    <p class="contact-sub" appScrollReveal [rvDelay]="100">
+      Disponible para freelance, proyectos de largo plazo y posiciones senior.
+      Hablemos sobre cómo puedo ayudar a llevar tu idea al siguiente nivel.
+    </p>
+
+    <a
+      href="mailto:diego@example.com"
+      class="btn-contact"
+      appScrollReveal
+      [rvDelay]="200"
+    >
+      Escribirme →
+    </a>
+
+  </div>
+
+  <!-- Derecha -->
+  <div class="contact-right">
+    @for (link of data.contactLinks(); track link.label; let i = $index) {
+      <a
+        [href]="link.href"
+        class="c-link"
+        [class.c-link--new]="link.isNew"
+        target="_blank"
+        appScrollReveal
+        [rvDelay]="i * 70"
+      >
+        <div class="c-link-info">
+          <span class="c-label">{{ link.label }}</span>
+          <span class="c-value">{{ link.value }}</span>
+        </div>
+        <span class="c-arrow">{{ link.arrow }}</span>
+      </a>
+    }
+  </div>
+
+</section>

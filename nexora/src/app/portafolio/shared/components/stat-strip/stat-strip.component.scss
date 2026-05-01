@@ -1,0 +1,69 @@
+// stat-strip.component.scss
+.stat-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top:    1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background:    var(--bg-2);
+  position: relative;
+  z-index: 1;
+
+  @media (max-width: 768px) { grid-template-columns: repeat(2, 1fr); }
+  @media (max-width: 360px) { grid-template-columns: 1fr; }
+}
+
+.stat-cell {
+  padding: 2.5rem;
+  border-right: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+  transition: background var(--duration-base) var(--ease);
+
+  &:last-child { border-right: none; }
+
+  // Línea accent top que aparece en hover
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--c-blue-400), var(--c-electric));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s var(--ease);
+  }
+
+  &:hover {
+    background: var(--c-blue-glow);
+
+    &::before { transform: scaleX(1); }
+  }
+
+  @media (max-width: 768px) {
+    padding: 2rem;
+    &:nth-child(2) { border-right: none; }
+    &:nth-child(3) { border-top: 1px solid var(--border); }
+  }
+}
+
+.stat-num {
+  font-size: 3rem;
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, var(--text-1) 50%, var(--c-blue-400));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  @media (max-width: 480px) { font-size: 2.4rem; }
+}
+
+.stat-lbl {
+  font-family: var(--font-mono);
+  font-size:   0.63rem;
+  color:       var(--text-3);
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+}
