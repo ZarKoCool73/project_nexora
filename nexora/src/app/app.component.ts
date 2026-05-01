@@ -8,6 +8,7 @@ import {ExperienceComponent} from './features/experience/experience.component';
 import {ContactComponent} from './features/contact/contact.component';
 import {FooterComponent} from './shared/components/footer/footer.component';
 import {CursorComponent} from './shared/components/cursor/cursor.component';
+import {CredentialsComponent} from './features/credentials/credentials.component';
 
 @Component({
   selector: 'app-root',
@@ -22,7 +23,8 @@ import {CursorComponent} from './shared/components/cursor/cursor.component';
     ExperienceComponent,
     ContactComponent,
     FooterComponent,
-    CursorComponent
+    CursorComponent,
+    CredentialsComponent
   ],
   styleUrls: ['./app.component.scss']
 })
