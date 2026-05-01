@@ -1,0 +1,31 @@
+<section id="experience" reveal>
+
+  <div class="section-header">
+    <span class="section-num">03</span>
+    <h2 class="section-title">Experiencia</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="timeline">
+
+    @for (exp of experiences; track exp.period) {
+
+      <div class="timeline-item">
+
+        <div class="timeline-period">
+          {{ exp.period }}
+        </div>
+
+        <div class="timeline-content">
+          <div class="timeline-role">{{ exp.role }}</div>
+          <div class="timeline-company">{{ exp.company }}</div>
+          <div class="timeline-desc">{{ exp.description }}</div>
+        </div>
+
+      </div>
+
+    }
+
+  </div>
+
+</section>

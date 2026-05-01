@@ -1,0 +1,84 @@
+<section class="hero" id="home" reveal>
+
+  <!-- IZQUIERDA -->
+  <div class="hero-left">
+
+    <div class="hero-tag">
+      {{ profile().role }}
+    </div>
+
+    <h1 class="hero-name">
+      {{ profile().name.split(' ')[0] }}<br>
+      <span class="accent-word">
+        {{ profile().name.split(' ')[1] }}
+      </span>
+    </h1>
+
+    <p class="hero-title">
+      {{ profile().title }}
+    </p>
+
+    <p class="hero-desc">
+      {{ profile().description }}
+    </p>
+
+    <div class="hero-ctas">
+      <a href="#projects" class="btn-primary">Ver Proyectos →</a>
+      <a href="#contact" class="btn-secondary">Hablemos</a>
+    </div>
+
+  </div>
+
+  <!-- DERECHA -->
+  <div class="hero-right">
+    <div class="code-window">
+
+      <div class="window-bar">
+        <div class="dot dot-r"></div>
+        <div class="dot dot-y"></div>
+        <div class="dot dot-g"></div>
+        <span class="window-title">developer.profile.ts</span>
+      </div>
+
+      <div class="code-body">
+        <span class="c-keyword">const </span> <span class="c-var">engineer</span> = &#123;<br>
+
+        &nbsp;&nbsp;<span class="c-fn">name</span>:
+        <span class="c-string">"{{ profile().name }}"</span>,<br>
+
+        &nbsp;&nbsp;<span class="c-fn">role</span>:
+        <span class="c-string">"{{ profile().role }}"</span>,<br>
+
+        &nbsp;&nbsp;<span class="c-fn">experience</span>:
+        <span class="c-num">{{ profile().experience }}</span>+
+        <span class="c-string">"años"</span>,<br>
+        &nbsp;&nbsp;<span class="c-fn">frontend</span>: [<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="c-string">"Angular"</span>,
+        <span class="c-string">"React"</span>,
+        <span class="c-string">"TypeScript"</span><br>
+        &nbsp;&nbsp;],<br>
+
+        &nbsp;&nbsp;<span class="c-fn">backend</span>: [<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="c-string">"Node.js"</span>,
+        <span class="c-string">"Spring Boot"</span>,
+        <span class="c-string">"Python"</span><br>
+        &nbsp;&nbsp;],<br>
+
+        &nbsp;&nbsp;<span class="c-fn">cloud</span>: [
+        <span class="c-string">"AWS"</span>,
+        <span class="c-string">"GCP"</span>,
+        <span class="c-string">"Docker"</span>
+        ],<br>
+
+        &nbsp;&nbsp;<span class="c-fn">available</span>:
+        <span class="c-keyword">{{ profile().available }}</span>,<br>
+
+        &nbsp;&nbsp;<span class="c-comment">// Siempre aprendiendo →</span><br>
+
+        &#125;
+      </div>
+
+    </div>
+  </div>
+
+</section>
