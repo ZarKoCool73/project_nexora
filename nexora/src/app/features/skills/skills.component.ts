@@ -1,5 +1,5 @@
 import {AfterViewInit, Component, ElementRef} from '@angular/core';
-import {Skill} from '../../core/models/skill.model';
+import {Skill, skills} from '../../core/models/skill.model';
 import {RevealDirective} from '../../shared/directives/reveal/reveal.directive';
 
 @Component({
@@ -13,46 +13,9 @@ import {RevealDirective} from '../../shared/directives/reveal/reveal.directive';
 })
 export class SkillsComponent implements AfterViewInit {
 
-  skills: Skill[] = [
-    {
-      icon: '⬡',
-      name: 'Frontend',
-      description: 'Angular · React · TypeScript · SCSS · RxJS · NgRx',
-      level: 95
-    },
-    {
-      icon: '◈',
-      name: 'Backend',
-      description: 'Node.js · Spring Boot · Python · REST · GraphQL · gRPC',
-      level: 90
-    },
-    {
-      icon: '▣',
-      name: 'Bases de datos',
-      description: 'PostgreSQL · MongoDB · Redis · MySQL · Elasticsearch',
-      level: 88
-    },
-    {
-      icon: '◎',
-      name: 'Cloud & DevOps',
-      description: 'AWS · GCP · Docker · Kubernetes · CI/CD · Terraform',
-      level: 82
-    },
-    {
-      icon: '⬟',
-      name: 'Arquitectura',
-      description: 'Microservicios · Event-driven · DDD · CQRS · Clean Architecture',
-      level: 85
-    },
-    {
-      icon: '◇',
-      name: 'Testing & QA',
-      description: 'Jest · Cypress · Jasmine · Testing Library · TDD',
-      level: 80
-    }
-  ];
+  skills: Skill[] = skills
 
-  constructor(private el: ElementRef) {
+  constructor(private readonly el: ElementRef) {
   }
 
   ngAfterViewInit() {

@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {RevealDirective} from '../../shared/directives/reveal/reveal.directive';
+import {CONTACT, Contact} from '../../core/models/contact.model';
 
 @Component({
   selector: 'app-contact',
@@ -12,10 +13,6 @@ import {RevealDirective} from '../../shared/directives/reveal/reveal.directive';
 })
 export class ContactComponent {
 
-  contact = {
-    email: 'diego.dev@gmail.com',
-    phone: '+51 999 999 999',
-    location: 'Lima, Perú'
-  };
+  contact: Contact = CONTACT
 
 }

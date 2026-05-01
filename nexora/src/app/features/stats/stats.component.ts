@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, ElementRef } from '@angular/core';
+import {Component, AfterViewInit, ElementRef} from '@angular/core';
 import {RevealDirective} from '../../shared/directives/reveal/reveal.directive';
 
 @Component({
@@ -13,13 +13,14 @@ import {RevealDirective} from '../../shared/directives/reveal/reveal.directive';
 export class StatsComponent implements AfterViewInit {
 
   stats = [
-    { value: 10, label: 'Años de experiencia' },
-    { value: 40, label: 'Proyectos entregados' },
-    { value: 15, label: 'Tecnologías dominadas' },
-    { value: 8,  label: 'Clientes internacionales' }
+    {value: 5, label: 'Años de experiencia'},
+    {value: 10, label: 'Proyectos entregados'},
+    {value: 36, label: 'Tecnologías dominadas'},
+    {value: 3, label: 'Empresas colaboradas'},
   ];
 
-  constructor(private el: ElementRef) {}
+  constructor(private readonly el: ElementRef) {
+  }
 
   ngAfterViewInit() {
     const counters = this.el.nativeElement.querySelectorAll('.stat-number');

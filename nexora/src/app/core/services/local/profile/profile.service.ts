@@ -6,14 +6,14 @@ import {Profile} from '../../../models/profile.model';
 export class ProfileService {
 
   profile = signal<Profile>({
-    name: 'Diego González',
+    name: 'Diego Gonzalez',
     role: 'Ingeniero de Sistemas · Fullstack',
     title: '// FULLSTACK ENGINEER · SYSTEMS ARCHITECT · PROBLEM SOLVER',
     description: `
-      Construyo productos digitales robustos desde la base de datos hasta la interfaz.
-      Arquitectura limpia, código que escala, experiencias que importan.
+      Soy un profesional en Ingeniería de Sistemas con experiencia en fullstack, integración de microservicios en frontend,
+       buenas prácticas y herramientas modernas para los proyectos.
     `,
-    experience: 10,
+    experience: 5,
     available: true
   });
 

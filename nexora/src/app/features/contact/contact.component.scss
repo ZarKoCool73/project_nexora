@@ -6,6 +6,9 @@
   min-height: 60vh;
 }
 
+/* ========================= */
+/* LEFT */
+/* ========================= */
 .contact-left {
   padding: 6rem 3rem;
   background: var(--surface);
@@ -22,7 +25,13 @@
   line-height: 0.9;
   margin-bottom: 2rem;
 }
-.contact-big .italic { font-family: var(--serif); font-style: italic; color: var(--accent); font-weight: 400; }
+
+.contact-big .italic {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--accent);
+  font-weight: 400;
+}
 
 .contact-sub {
   font-family: var(--mono);
@@ -34,6 +43,9 @@
   letter-spacing: 0.03em;
 }
 
+/* ========================= */
+/* RIGHT */
+/* ========================= */
 .contact-right {
   padding: 6rem 3rem;
   display: flex;
@@ -46,12 +58,17 @@
 .contact-right::before {
   content: '';
   position: absolute;
-  bottom: 0; left: 3rem; right: 3rem;
+  bottom: 0;
+  left: 3rem;
+  right: 3rem;
   height: 1px;
   background: linear-gradient(90deg, var(--accent), transparent);
   opacity: 0.3;
 }
 
+/* ========================= */
+/* LINKS */
+/* ========================= */
 .contact-link {
   display: flex;
   align-items: center;
@@ -64,6 +81,7 @@
   position: relative;
   overflow: hidden;
 }
+
 .contact-link:hover {
   border-color: var(--accent);
   background: var(--accent-dim);
@@ -90,4 +108,50 @@
   font-size: 1.2rem;
   transition: transform 0.3s;
 }
-.contact-link:hover .contact-arrow { transform: translateX(4px) translateY(-4px); }
+
+.contact-link:hover .contact-arrow {
+  transform: translateX(4px) translateY(-4px);
+}
+
+/* ========================= */
+/* 📱 RESPONSIVE */
+/* ========================= */
+
+/* Tablet */
+@media (max-width: 900px) {
+  #contact {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+  .contact-left,
+  .contact-right {
+    padding: 3rem 1.5rem;
+  }
+
+  .contact-big {
+    font-size: clamp(2.2rem, 10vw, 3.5rem);
+    line-height: 1;
+  }
+
+  .contact-sub {
+    font-size: 0.7rem;
+    max-width: 100%;
+  }
+
+  .contact-right::before {
+    left: 1.5rem;
+    right: 1.5rem;
+  }
+
+  .contact-link {
+    padding: 1rem;
+  }
+
+  .contact-link-value {
+    font-size: 0.85rem;
+  }
+}
