@@ -1,0 +1,157 @@
+#contact {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  padding: 0;
+  min-height: 60vh;
+}
+
+/* ========================= */
+/* LEFT */
+/* ========================= */
+.contact-left {
+  padding: 6rem 3rem;
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-big {
+  font-size: clamp(3rem, 5vw, 5.5rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 0.9;
+  margin-bottom: 2rem;
+}
+
+.contact-big .italic {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--accent);
+  font-weight: 400;
+}
+
+.contact-sub {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--muted);
+  line-height: 1.8;
+  max-width: 380px;
+  margin-bottom: 2.5rem;
+  letter-spacing: 0.03em;
+}
+
+/* ========================= */
+/* RIGHT */
+/* ========================= */
+.contact-right {
+  padding: 6rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+  position: relative;
+}
+
+.contact-right::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 3rem;
+  right: 3rem;
+  height: 1px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  opacity: 0.3;
+}
+
+/* ========================= */
+/* LINKS */
+/* ========================= */
+.contact-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--border);
+  text-decoration: none;
+  color: var(--text);
+  transition: border-color 0.3s, background 0.3s, transform 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-link:hover {
+  border-color: var(--accent);
+  background: var(--accent-dim);
+  transform: translateX(4px);
+}
+
+.contact-link-label {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.2rem;
+}
+
+.contact-link-value {
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.contact-arrow {
+  color: var(--accent);
+  font-size: 1.2rem;
+  transition: transform 0.3s;
+}
+
+.contact-link:hover .contact-arrow {
+  transform: translateX(4px) translateY(-4px);
+}
+
+/* ========================= */
+/* 📱 RESPONSIVE */
+/* ========================= */
+
+/* Tablet */
+@media (max-width: 900px) {
+  #contact {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+  .contact-left,
+  .contact-right {
+    padding: 3rem 1.5rem;
+  }
+
+  .contact-big {
+    font-size: clamp(2.2rem, 10vw, 3.5rem);
+    line-height: 1;
+  }
+
+  .contact-sub {
+    font-size: 0.7rem;
+    max-width: 100%;
+  }
+
+  .contact-right::before {
+    left: 1.5rem;
+    right: 1.5rem;
+  }
+
+  .contact-link {
+    padding: 1rem;
+  }
+
+  .contact-link-value {
+    font-size: 0.85rem;
+  }
+}

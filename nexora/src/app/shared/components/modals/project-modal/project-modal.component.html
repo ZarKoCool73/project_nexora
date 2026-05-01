@@ -1,0 +1,65 @@
+<div class="modal-backdrop" (click)="onClose()">
+
+  <div class="modal-content" (click)="$event.stopPropagation()">
+
+    <!-- HEADER -->
+    <div class="modal-header">
+
+      <div>
+        <div class="modal-kicker">{{ project.context }}</div>
+        <h2 class="modal-title">{{ project.title }}</h2>
+      </div>
+
+      <button class="close-btn" (click)="onClose()">✕</button>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="modal-body">
+
+      <!-- DESCRIPCIÓN -->
+      <p class="modal-desc">
+        {{ project.desc }}
+      </p>
+
+      <!-- IMPACTO (PRIMERO, porque es lo más importante) -->
+      @if (project.impact) {
+        <div class="modal-card highlight">
+          <h4>IMPACTO</h4>
+          <p>{{ project.impact }}</p>
+        </div>
+      }
+
+      <!-- STACK + AÑO -->
+      <div class="modal-grid">
+
+        <div class="modal-card">
+          <h4>STACK TECNOLÓGICO</h4>
+          <p>{{ project.stack }}</p>
+        </div>
+
+        <div class="modal-card">
+          <h4>AÑO</h4>
+          <p>{{ project.year }}</p>
+        </div>
+
+      </div>
+
+      <!-- TECNOLOGÍAS -->
+      <div class="modal-section">
+
+        <h4 style="margin-bottom: 1rem;">TECNOLOGÍAS</h4>
+
+        <div class="tags">
+          @for (tag of project.tags; track tag) {
+            <span class="tag">{{ tag }}</span>
+          }
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

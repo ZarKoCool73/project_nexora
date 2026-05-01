@@ -1,0 +1,43 @@
+<section id="projects" reveal>
+
+  <div class="section-header">
+    <span class="section-num">02</span>
+    <h2 class="section-title">Proyectos destacados</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="projects-grid">
+
+    @for (project of projects; track project.title) {
+
+      <div class="project-card"
+           (click)="openProject(project)"
+           [class.proj-featured]="project.size === 'featured'"
+           [class.proj-regular]="project.size === 'regular'"
+           [class.proj-half]="project.size === 'half'">
+
+        <div class="proj-meta">
+          <div class="proj-tags">
+
+            @for (tag of project.tags; track tag) {
+              <span class="proj-tag">{{ tag }}</span>
+            }
+
+          </div>
+          <span class="proj-year">{{ project.year }}</span>
+        </div>
+
+        <h3 class="proj-title">{{ project.title }}</h3>
+        <p class="proj-desc">{{ project.desc }}</p>
+
+        <div class="proj-footer">
+          <span class="proj-stack">{{ project.stack }}</span>
+          <span class="proj-arrow">↗</span>
+        </div>
+
+      </div>
+
+    }
+
+  </div>
+</section>

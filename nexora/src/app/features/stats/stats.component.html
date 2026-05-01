@@ -1,0 +1,17 @@
+<div class="stats-bar" reveal>
+
+  @for (stat of stats; track stat.label) {
+    <div class="stat-item">
+
+      <div class="stat-number">
+        {{ stat.value }}<span>+</span>
+      </div>
+
+      <div class="stat-label">
+        {{ stat.label }}
+      </div>
+
+    </div>
+  }
+
+</div>
