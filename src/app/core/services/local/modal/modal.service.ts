@@ -6,10 +6,14 @@ import {
 } from '@angular/core';
 import {Project} from '../../../models/project.model';
 import {ProjectModalComponent} from '../../../../shared/components/modals/project-modal/project-modal.component';
+import {
+  CredentialModalComponent
+} from '../../../../shared/components/modals/credential-modal/credential-modal.component';
+import {Credential} from '../../../models/credentials.models';
 
 
 @Injectable({providedIn: 'root'})
-export class ProjectModalService {
+export class ModalService {
 
   private componentRef: any;
 
@@ -19,25 +23,33 @@ export class ProjectModalService {
   ) {
   }
 
-  open(project: Project) {
+  openPM(project: Project) {
 
-    // crear componente dinámico
     this.componentRef = createComponent(ProjectModalComponent, {
       environmentInjector: this.injector
     });
 
-    // pasar data
     this.componentRef.instance.project = project;
+    this.componentRef.instance.close.subscribe(() => {
+      this.close();
+    });
+    document.body.appendChild(this.componentRef.location.nativeElement);
+    this.appRef.attachView(this.componentRef.hostView);
+  }
 
-    // escuchar cierre
+  openCM(credential: Credential) {
+
+    this.componentRef = createComponent(CredentialModalComponent, {
+      environmentInjector: this.injector
+    });
+
+    this.componentRef.instance.credential = credential;
+
     this.componentRef.instance.close.subscribe(() => {
       this.close();
     });
 
-    // montar en DOM (BODY)
     document.body.appendChild(this.componentRef.location.nativeElement);
-
-    // conectar a Angular change detection
     this.appRef.attachView(this.componentRef.hostView);
   }
 
@@ -48,4 +60,5 @@ export class ProjectModalService {
       this.componentRef = null;
     }
   }
+
 }

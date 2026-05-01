@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {RevealDirective} from '../../shared/directives/reveal/reveal.directive';
 import {Project, PROJECTS} from '../../core/models/project.model';
-import {ProjectModalService} from '../../core/services/local/modal/modal.service';
+import {ModalService} from '../../core/services/local/modal/modal.service';
 
 @Component({
   selector: 'app-projects',
@@ -15,7 +15,7 @@ export class ProjectsComponent implements OnInit {
   projects: Project[] = PROJECTS;
 
   constructor(
-    private readonly modalService: ProjectModalService
+    private readonly modalService: ModalService
   ) {
   }
 
@@ -24,6 +24,6 @@ export class ProjectsComponent implements OnInit {
   }
 
   openProject(project: Project) {
-    this.modalService.open(project);
+    this.modalService.openPM(project);
   }
 }
