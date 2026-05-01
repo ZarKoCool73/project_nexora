@@ -9,37 +9,49 @@ export const skills: Skill[] = [
   {
     icon: '⬡',
     name: 'Frontend',
-    description: '· Angular · React · VueJS · TypeScript · SCSS · RxJS · NgRx · HTML5 · CSS3',
+    description: 'Angular · React · Vue · TypeScript · RxJS · NgRx · HTML · SCSS',
     level: 95
   },
   {
     icon: '◈',
     name: 'Backend',
-    description: '· Spring Boot · Node.js · Express · Spring Boot · REST APIs · Microservicios',
+    description: 'Spring Boot · Node.js · Express · REST APIs · Microservicios',
+    level: 90
+  },
+  {
+    icon: '🔗',
+    name: 'Integración de Sistemas',
+    description: 'Microservicios · APIs REST · Integración frontend-backend · Arquitectura distribuida',
     level: 90
   },
   {
     icon: '▣',
     name: 'Bases de datos',
-    description: '· PostgreSQL · MySQL · MongoDB · Redis · Firebase',
+    description: 'PostgreSQL · MySQL · Oracle · SQL Server · MongoDB · Redis',
     level: 88
   },
   {
     icon: '◎',
     name: 'Cloud & DevOps',
-    description: '· AWS (básico-intermedio) · Docker · CI/CD · Jenkins · GitHub Actions · ArgoCD',
-    level: 82
+    description: 'Azure · AWS · Docker · Jenkins · CI/CD · GitHub Actions · Bitbucket',
+    level: 85
+  },
+  {
+    icon: '🛡️',
+    name: 'Seguridad',
+    description: 'OWASP ZAP · Azure AD B2C · Autenticación · Autorización · Buenas prácticas OWASP',
+    level: 80
   },
   {
     icon: '⬟',
-    name: 'Arquitectura',
-    description: '· Microservicios · Clean Architecture · SOLID · MVC · APIs REST',
+    name: 'Calidad de Software',
+    description: 'SonarQube · Jest · Jasmine · Karma · Postman',
     level: 85
   },
   {
     icon: '◇',
-    name: 'Testing & QA',
-    description: '· Jasmine · Karma · Postman · Unit Testing · Integración básica',
-    level: 80
+    name: 'Arquitectura',
+    description: 'Microservicios · Clean Architecture · SOLID · REST APIs · MVC',
+    level: 85
   }
 ];

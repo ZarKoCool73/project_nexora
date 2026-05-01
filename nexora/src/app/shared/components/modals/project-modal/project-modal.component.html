@@ -1,0 +1,54 @@
+<div class="modal-backdrop" (click)="onClose()">
+
+  <div class="modal-content" (click)="$event.stopPropagation()">
+
+    <!-- HEADER -->
+    <div class="modal-header">
+
+      <div>
+        <div class="modal-kicker">PROYECTO DESTACADO</div>
+        <h2 class="modal-title">{{ project.title }}</h2>
+      </div>
+
+      <button class="close-btn" (click)="onClose()">✕</button>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="modal-body">
+
+      <p class="modal-desc">
+        {{ project.desc }}
+      </p>
+
+      <div class="modal-grid">
+
+        <div class="modal-card">
+          <h4>STACK</h4>
+          <p>{{ project.stack }}</p>
+        </div>
+
+        <div class="modal-card">
+          <h4>AÑO</h4>
+          <p>{{ project.year }}</p>
+        </div>
+
+      </div>
+
+      <div class="modal-section">
+
+        <h4 style="margin-bottom: 1rem;">Tecnologías</h4>
+
+        <div class="tags">
+          @for (tag of project.tags; track tag) {
+            <span class="tag">{{ tag }}</span>
+          }
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
