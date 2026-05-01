@@ -1,19 +1,21 @@
-// src/app/core/services/profile.service.ts
 import { Injectable, signal } from '@angular/core';
-import {Profile} from '../../../models/profile.model';
+import { Profile } from '../../../models/profile.model';
 
 @Injectable({ providedIn: 'root' })
 export class ProfileService {
 
   profile = signal<Profile>({
     name: 'Diego Gonzalez',
-    role: 'Ingeniero de Sistemas · Fullstack',
-    title: '// FULLSTACK ENGINEER · SYSTEMS ARCHITECT · PROBLEM SOLVER',
+    role: 'Full Stack Engineer',
+    title: '// ANGULAR · SPRING BOOT · ENTERPRISE SYSTEMS',
+
     description: `
-      Soy un profesional en Ingeniería de Sistemas con experiencia en fullstack, integración de microservicios en frontend,
-       buenas prácticas y herramientas modernas para los proyectos.
+      Ingeniero de Sistemas con experiencia en desarrollo Full Stack en entornos enterprise.
+      Especializado en Angular, Spring Boot y microservicios en proyectos del sector bancario y gobierno.
+      Enfoque en calidad de software, escalabilidad y entrega continua.
     `,
-    experience: 5,
+
+    experience: 4,
     available: true
   });
 
