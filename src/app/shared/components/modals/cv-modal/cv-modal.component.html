@@ -1,56 +1,81 @@
 <div class="modal-backdrop" (click)="onClose()">
-
   <div class="modal-content" (click)="$event.stopPropagation()">
 
     <!-- HEADER -->
     <div class="modal-header">
       <div>
-        <div class="modal-kicker">SELECCIÓN DE CV</div>
-        <h2 class="modal-title">Elige tu perfil profesional</h2>
+        <div class="modal-kicker">
+          <span class="kicker-line"></span>
+          Selección de CV
+        </div>
+        <h2 class="modal-title">
+          Elige el <em class="accent-word">perfil</em> profesional
+        </h2>
       </div>
-
       <button class="close-btn" (click)="onClose()">✕</button>
     </div>
 
-    <!-- BODY -->
-    <div class="modal-body">
+    <!-- DESC -->
+    <p class="modal-desc">
+      Cada versión está optimizada según el tipo de rol.
+      Si buscas un perfil integral, elige Fullstack.
+    </p>
 
-      <p class="modal-desc">
-        Cada versión está optimizada según el tipo de rol.
-        Si buscas un perfil integral, elige Fullstack.
-      </p>
+    <!-- DIVIDER -->
+    <div class="modal-divider"></div>
 
-      <!-- CARDS -->
-      <div class="cv-grid">
+    <!-- GRID -->
+    <div class="cv-grid">
 
-        @for (cv of cvs; track cv.title) {
-          <div class="cv-card" [class.highlight]="cv.highlight">
+      @for (cv of cvs; track cv.title; let i = $index) {
+        <div
+          class="cv-card"
+          [class.highlight]="cv.highlight">
 
-            @if (cv.highlight) {
-              <div class="badge">RECOMENDADO</div>
+          <!-- Corner brackets (solo en highlight) -->
+          @if (cv.highlight) {
+            <span class="corner tl"></span>
+            <span class="corner tr"></span>
+            <span class="corner bl"></span>
+            <span class="corner br"></span>
+          }
+
+          <!-- BADGE -->
+          @if (cv.highlight) {
+            <div class="badge">Recomendado</div>
+          }
+
+          <!-- NÚMERO -->
+          <div class="cv-num">{{ (i + 1).toString().padStart(2, '0') }} —</div>
+
+          <!-- TITLE -->
+          <h3 class="cv-title-card">{{ cv.title }}</h3>
+
+          <!-- DESC -->
+          <p class="cv-desc">{{ cv.desc }}</p>
+
+          <!-- STACK -->
+          <div class="cv-tags">
+            @for (tag of cv.stack.split(' · '); track tag) {
+              <span class="cv-tag">{{ tag }}</span>
             }
-
-            <h3>{{ cv.title }}</h3>
-
-            <p class="cv-desc">
-              {{ cv.desc }}
-            </p>
-
-            <div class="cv-stack">
-              {{ cv.stack }}
-            </div>
-
-            <button class="download-btn" (click)="download(cv.file)">
-              Descargar CV →
-            </button>
-
           </div>
-        }
 
-      </div>
+          <!-- ACTION -->
+          <button
+            class="download-btn"
+            [class.download-btn--featured]="cv.highlight"
+            (click)="download(cv.file)">
+            Descargar CV →
+          </button>
+
+        </div>
+      }
 
     </div>
 
-  </div>
+    <!-- FOOTER HINT -->
+    <p class="modal-hint">// Elige el que mejor se adapte al rol que buscas</p>
 
+  </div>
 </div>
