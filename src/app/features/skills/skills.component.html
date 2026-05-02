@@ -1,36 +1,58 @@
-<section id="skills" reveal>
+<div class="skills-grid" style="margin-top: 2rem">
 
-  <div class="section-header">
-    <span class="section-num">01</span>
-    <h2 class="section-title">Stack técnico</h2>
-    <div class="section-line"></div>
-  </div>
+  @for (skill of skills; track skill.name) {
+    <div class="skill-card" (mouseenter)="selectSkill(skill)" (mouseleave)="clearSkill()"
+         [class.active]="selectedSkill?.name === skill.name">
 
-  <div class="skills-grid">
+      <span class="skill-icon">{{ skill.icon }}</span>
 
-    @for (skill of skills; track skill.name) {
-      <div class="skill-card">
+      <div class="skill-name">{{ skill.name }}</div>
 
-        <span class="skill-icon">{{ skill.icon }}</span>
+      <div class="skill-desc">{{ skill.description }}</div>
 
-        <div class="skill-name">
-          {{ skill.name }}
+      <div class="skill-bar-track">
+        <div
+          class="skill-bar-fill"
+          [style.width.%]="skill.level">
         </div>
-
-        <div class="skill-desc">
-          {{ skill.description }}
-        </div>
-
-        <div class="skill-bar-track">
-          <div
-            class="skill-bar-fill"
-            [style.width.%]="skill.level">
-          </div>
-        </div>
-
       </div>
-    }
+
+    </div>
+  }
+
+</div>
+
+<!-- 🔥 PANEL DINÁMICO -->
+@if (selectedSkill) {
+  <div class="skill-detail-panel">
+
+    <h3>{{ selectedSkill.name }}</h3>
+
+    <div class="tech-grid">
+
+      @for (tech of selectedSkill.techs; track tech.name) {
+        <div class="tech-card">
+
+          <div class="tech-icon">{{ tech.icon }}</div>
+
+          <div class="tech-info">
+            <div class="tech-name">{{ tech.name }}</div>
+            <div class="tech-meta">
+              {{ tech.years }} años · Nivel {{ tech.level }}%
+            </div>
+          </div>
+
+          <div class="tech-bar">
+            <div
+              class="tech-fill"
+              [style.width.%]="tech.level">
+            </div>
+          </div>
+
+        </div>
+      }
+
+    </div>
 
   </div>
-
-</section>
+}

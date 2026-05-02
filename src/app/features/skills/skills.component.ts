@@ -18,6 +18,16 @@ export class SkillsComponent implements AfterViewInit {
   constructor(private readonly el: ElementRef) {
   }
 
+  selectedSkill: Skill | null = null;
+
+  selectSkill(skill: Skill) {
+    this.selectedSkill = skill;
+  }
+
+  clearSkill() {
+    this.selectedSkill = null;
+  }
+
   ngAfterViewInit() {
     const bars = this.el.nativeElement.querySelectorAll('.skill-bar-fill');
 
