@@ -10,6 +10,7 @@ import {
   CredentialModalComponent
 } from '../../../../shared/components/modals/credential-modal/credential-modal.component';
 import {Credential} from '../../../models/credentials.models';
+import {CvModalComponent} from '../../../../shared/components/modals/cv-modal/cv-modal.component';
 
 
 @Injectable({providedIn: 'root'})
@@ -44,6 +45,19 @@ export class ModalService {
     });
 
     this.componentRef.instance.credential = credential;
+
+    this.componentRef.instance.close.subscribe(() => {
+      this.close();
+    });
+
+    document.body.appendChild(this.componentRef.location.nativeElement);
+    this.appRef.attachView(this.componentRef.hostView);
+  }
+
+  openCvModal() {
+    this.componentRef = createComponent(CvModalComponent, {
+      environmentInjector: this.injector
+    });
 
     this.componentRef.instance.close.subscribe(() => {
       this.close();

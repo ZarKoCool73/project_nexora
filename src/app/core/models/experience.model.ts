@@ -11,7 +11,7 @@ export const EXPERIENCE: Experience[] = [
     role: 'Full Stack Engineer Intermedio',
     company: 'IDM Technology',
     description:
-      'Desarrollo y mantenimiento de aplicaciones web para el sector bancario. Implementación de funcionalidades frontend y backend, integración de sistemas, resolución de incidencias y mejora continua bajo estándares de calidad y metodologías ágiles.'
+      'Desarrollo y evolución de aplicaciones web para el sector bancario, implementando funcionalidades tanto en frontend como backend. Integración de servicios, resolución de incidencias en producción y mejora continua del sistema bajo estándares de calidad y metodologías ágiles.'
   },
 
   {
@@ -19,7 +19,7 @@ export const EXPERIENCE: Experience[] = [
     role: 'Analista Programador Full Stack Semi Senior',
     company: 'INDRA',
     description:
-      'Desarrollo e implementación de aplicaciones full stack en Angular y Spring Boot. Participación en análisis de requerimientos, pruebas unitarias, corrección de incidencias y despliegues en entornos productivos bajo metodologías ágiles.'
+      'Desarrollo de aplicaciones full stack con Angular y Spring Boot, participando en el análisis de requerimientos, implementación de funcionalidades, pruebas unitarias y despliegues a producción en entornos ágiles.'
   },
 
   {
@@ -27,7 +27,7 @@ export const EXPERIENCE: Experience[] = [
     role: 'Analista Programador Full Stack Junior',
     company: 'Minsait',
     description:
-      'Desarrollo de soluciones tecnológicas para entidades públicas y privadas. Implementación de componentes frontend en Angular e integración con servicios backend, participación en mejoras funcionales y soporte a sistemas en producción.'
+      'Implementación de soluciones web para entidades públicas y privadas, desarrollando componentes frontend en Angular e integrándolos con servicios backend. Participación en mejoras funcionales y soporte a sistemas en producción.'
   },
 
   {
@@ -35,7 +35,7 @@ export const EXPERIENCE: Experience[] = [
     role: 'Programador / Soporte de Sistemas',
     company: 'DINET Operador Logístico',
     description:
-      'Gestión de tickets y soporte a usuarios finales. Mejora de flujos del sistema, optimización de procesos internos y capacitación a usuarios para el uso de la plataforma operativa.'
+      'Soporte a usuarios y gestión de incidencias mediante tickets, optimizando flujos del sistema y mejorando procesos internos. Capacitación a usuarios para el uso eficiente de la plataforma.'
   },
 
   {
@@ -43,6 +43,6 @@ export const EXPERIENCE: Experience[] = [
     role: 'Analista Programador',
     company: 'CloudComputing Perú S.A.C.',
     description:
-      'Análisis e identificación de observaciones en sistemas asignados. Elaboración de mejoras funcionales y soporte en el desarrollo continuo de aplicaciones web en entornos cloud.'
+      'Análisis y levantamiento de observaciones en sistemas existentes, desarrollo de mejoras funcionales y apoyo en la evolución continua de aplicaciones web en entornos cloud.'
   }
 ];

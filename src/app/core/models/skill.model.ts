@@ -9,13 +9,13 @@ export const skills: Skill[] = [
   {
     icon: '⬡',
     name: 'Frontend',
-    description: 'Angular · React · Vue · TypeScript · RxJS · NgRx · HTML · SCSS',
+    description: 'Angular · React · Vue · TypeScript · RxJS · NgRx · HTML · HTML5 · SCSS · CSS · Flutter',
     level: 95
   },
   {
     icon: '◈',
     name: 'Backend',
-    description: 'Spring Boot · Node.js · Express · REST APIs · Microservicios',
+    description: 'Spring Boot · Node.js · Python - Flask · Express · REST APIs · Microservicios · PHP · .NET',
     level: 90
   },
   {
@@ -27,13 +27,13 @@ export const skills: Skill[] = [
   {
     icon: '▣',
     name: 'Bases de datos',
-    description: 'PostgreSQL · MySQL · Oracle · SQL Server · MongoDB · Redis',
+    description: 'PostgreSQL · MySQL · Oracle · SQL Server · MongoDB Atlas · Redis · Kafka · Firebase RealTime Database · Firebase Authentication',
     level: 88
   },
   {
     icon: '◎',
     name: 'Cloud & DevOps',
-    description: 'Azure · AWS · Docker · Jenkins · CI/CD · GitHub Actions · Bitbucket',
+    description: 'Azure · AWS · Docker · Jenkins · CI/CD · GitHub Actions · Bitbucket · ArgoCD',
     level: 85
   },
   {
@@ -45,7 +45,7 @@ export const skills: Skill[] = [
   {
     icon: '⬟',
     name: 'Calidad de Software',
-    description: 'SonarQube · Jest · Jasmine · Karma · Postman',
+    description: 'SonarQube · Jest · Jasmine · Karma · Postman · BlackDuck · Checkmarx',
     level: 85
   },
   {

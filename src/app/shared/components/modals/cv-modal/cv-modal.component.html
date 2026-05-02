@@ -1,0 +1,56 @@
+<div class="modal-backdrop" (click)="onClose()">
+
+  <div class="modal-content" (click)="$event.stopPropagation()">
+
+    <!-- HEADER -->
+    <div class="modal-header">
+      <div>
+        <div class="modal-kicker">SELECCIÓN DE CV</div>
+        <h2 class="modal-title">Elige tu perfil profesional</h2>
+      </div>
+
+      <button class="close-btn" (click)="onClose()">✕</button>
+    </div>
+
+    <!-- BODY -->
+    <div class="modal-body">
+
+      <p class="modal-desc">
+        Cada versión está optimizada según el tipo de rol.
+        Si buscas un perfil integral, elige Fullstack.
+      </p>
+
+      <!-- CARDS -->
+      <div class="cv-grid">
+
+        @for (cv of cvs; track cv.title) {
+          <div class="cv-card" [class.highlight]="cv.highlight">
+
+            @if (cv.highlight) {
+              <div class="badge">RECOMENDADO</div>
+            }
+
+            <h3>{{ cv.title }}</h3>
+
+            <p class="cv-desc">
+              {{ cv.desc }}
+            </p>
+
+            <div class="cv-stack">
+              {{ cv.stack }}
+            </div>
+
+            <button class="download-btn" (click)="download(cv.file)">
+              Descargar CV →
+            </button>
+
+          </div>
+        }
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

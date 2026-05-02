@@ -19,7 +19,7 @@ export const PROJECTS: Project[] = [
     context: 'INDRA PERÚ · INTEGRATEL · 2024',
     desc: 'Desarrollo de módulos en sistema de expedientes digitales con integración Azure AD B2C y mantenimiento en producción.',
     stack: 'Angular',
-    tags: ['Azure AD B2C', 'Bitbucket', 'Jenkins', 'Jasmine', 'Karma', 'SonarQube', 'Postman', 'Bitbucket', 'CI/CD'],
+    tags: ['Azure AD B2C', 'Bitbucket', 'Jenkins', 'Jasmine', 'Karma', 'SonarQube', 'Postman', 'CI/CD'],
     year: 2024,
     duration: '4 Meses',
     size: 'featured',
@@ -135,6 +135,18 @@ export const PROJECTS: Project[] = [
   },
 
   {
+    title: 'Sistema de Aprendizaje de Lenguaje de Señas',
+    context: 'PROYECTO PERSONAL / TESIS · 2025',
+    desc: 'Aplicación interactiva para el aprendizaje de lenguaje de señas mediante reconocimiento de gestos en tiempo real usando visión por computadora.',
+    stack: 'Angular · Flask · Node.js',
+    tags: ['OpenCV', 'Keras', 'Jasmine', 'Karma', 'MediaPipe', 'REST APIs', 'Tensorflow', 'Bootstrap', 'Postman', 'MongoDB Atlas'],
+    year: 2025,
+    duration: '6 Meses',
+    size: 'featured',
+    impact: 'Sistema funcional capaz de reconocer señas en tiempo real, facilitando el aprendizaje interactivo y demostrando integración de IA en aplicaciones web.'
+  },
+
+  {
     title: 'Mesa de Partes Virtual – SIGED',
     context: 'CloudComputing Perú S.A.C. · RENIEC · 2023',
     desc: 'Implementación de mesa de partes virtual integrada al SIGED.',
@@ -168,21 +180,7 @@ export const PROJECTS: Project[] = [
     duration: '8 Meses',
     size: 'half',
     impact: 'Mejora de estabilidad del sistema'
-  }
-  ,
-
-  {
-    title: 'Migración SIGED a JBoss',
-    context: 'CloudComputing Perú S.A.C. · RENIEC · 2023',
-    desc: 'Migración del sistema SIGED a servidor JBoss.',
-    stack: 'Angular · React · Spring Boot',
-    tags: ['JBoss', 'Jasmine', 'Karma', 'SonarQube', 'Bitbucket', 'Postman', 'CI/CD', 'Jenkins'],
-    year: 2023,
-    duration: '8 Meses',
-    size: 'regular',
-    impact: 'Mejora de estabilidad del sistema'
   },
-
   {
     title: 'Software para la detección de mascarilla – Expotec 2021',
     context: 'Universidad Autónoma del Perú · Expotec 2021-I · Categoría Intermedia',

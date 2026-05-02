@@ -132,39 +132,6 @@ export const credentials: Credential[] = [
   },
 
   {
-    title: 'Analista Programador',
-    issuer: 'CloudComputing Perú S.A.C.',
-    type: 'Certificación',
-    date: 2023,
-    status: 'Completo',
-    description: 'Experiencia laboral desde marzo 2022 hasta junio 2023 en proyectos SIGED para OEFA y RENIEC utilizando Java, Angular y otras tecnologías.',
-    fileUrl: '/certs/TRA_CC.pdf',
-    fileType: 'pdf'
-  },
-
-  {
-    title: 'Joven Profesional',
-    issuer: 'Indra Perú S.A.',
-    type: 'Certificación',
-    date: 2025,
-    status: 'Completo',
-    description: 'Desempeño del cargo de Joven Profesional desde el 02 de mayo de 2024 hasta el 31 de mayo de 2025.',
-    fileUrl: '/imagen/TRA_INDRA_1.jpg',
-    fileType: 'image'
-  },
-
-  {
-    title: 'Analista Programador FullStack Junior',
-    issuer: 'Indra Perú S.A.',
-    type: 'Certificación',
-    date: 2026,
-    status: 'Completo',
-    description: 'Desempeño del cargo de Analista Programador FullStack Junior desde el 03 de septiembre de 2025 hasta el 31 de enero de 2026.',
-    fileUrl: '/certs/TRA_INDRA_2.pdf',
-    fileType: 'pdf'
-  },
-
-  {
     title: 'Segundo Puesto - Ciclo 9',
     issuer: 'Universidad Autónoma del Perú',
     type: 'Certificación',
@@ -195,6 +162,56 @@ export const credentials: Credential[] = [
     status: 'Activo',
     description: 'Innovation Master Class - 3.5 horas (4 de mayo de 2024)',
     fileUrl: '/imagen/CERT_IMC.jpg',
+    fileType: 'image'
+  },
+  {
+    title: 'Universidad CSS - Aprende CSS desde Cero hasta Experto!',
+    issuer: 'Udemy',
+    type: 'Certificación',
+    date: 2026,
+    status: 'Activo',
+    description: 'Universidad CSS - Aprende CSS desde Cero hasta Experto! - 7.5 horas en total (2 de mayo de 2026)',
+    fileUrl: '/imagen/CERT_CSS.jpg',
+    fileType: 'image'
+  },
+  {
+    title: 'Angular y Spring Boot: Crea tu primera App Full Stack',
+    issuer: 'Udemy',
+    type: 'Certificación',
+    date: 2026,
+    status: 'Activo',
+    description: 'Angular y Spring Boot: Crea tu primera App Full Stack - 3.5 horas en total (2 de mayo de 2026)',
+    fileUrl: '/imagen/CERT_ANGULAR_SPRINGBOOT.jpg',
+    fileType: 'image'
+  },
+  {
+    title: 'Universidad HTML - Aprende HTML desde Cero hasta Experto',
+    issuer: 'Udemy',
+    type: 'Certificación',
+    date: 2023,
+    status: 'Activo',
+    description: 'Universidad HTML - Aprende HTML desde Cero hasta Experto - 6.5 horas en total (6 de Marzo de 2023)',
+    fileUrl: '/imagen/CERT_HTML.jpg',
+    fileType: 'image'
+  },
+  {
+    title: 'Curso de Desarrollo Web con Angular 11+. ¡La biblia!',
+    issuer: 'Udemy',
+    type: 'Certificación',
+    date: 2022,
+    status: 'Activo',
+    description: 'Curso de Desarrollo Web con Angular 11+. ¡La biblia! - 19 horas en total (9 de agosto de 2022)',
+    fileUrl: '/imagen/CERT_ANGULAR.jpg',
+    fileType: 'image'
+  },
+  {
+    title: 'JavaFX, Swing, y Spring Boot - Crea tu primera GUI con Java',
+    issuer: 'Udemy',
+    type: 'Certificación',
+    date: 2026,
+    status: 'Activo',
+    description: 'JavaFX, Swing, y Spring Boot - Crea tu primera GUI con Java - 3.5 horas en total (2 de mayo de 2026)',
+    fileUrl: '/imagen/CERT_SPRING_SWING.jpg',
     fileType: 'image'
   },
   {

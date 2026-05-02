@@ -24,6 +24,30 @@
   --serif: 'Instrument Serif', serif;
 }
 
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #F7F8FA;
+    --surface: #FFFFFF;
+    --border: #E5E7EB;
+    --border-bright: #D1D5DB;
+    --text: #0F172A;
+    --muted: #6B7280;
+    --accent: #16A34A;
+    --accent-dim: rgba(22,163,74,0.08);
+    --accent2: #EA580C;
+    --accent3: #4F46E5;
+  }
+
+  body::before {
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(0,0,0,0.03) 40px),
+      repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(0,0,0,0.03) 40px);
+  }
+
+  nav {
+    background: rgba(255,255,255,0.85);
+  }
+}
 
 /* ============================= */
 /* RESET */
