@@ -1,45 +1,55 @@
-import {Component, HostListener, OnInit} from '@angular/core';
+import { Component, HostListener, NgZone, OnDestroy, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-cursor',
   standalone: true,
-  templateUrl: 'cursor.component.html',
-  styleUrl: 'cursor.component.scss'
+  templateUrl: './cursor.component.html',
+  styleUrls: ['./cursor.component.scss']
 })
-export class CursorComponent implements OnInit{
+export class CursorComponent implements OnInit, OnDestroy {
 
-  mouseX = 0;
-  mouseY = 0;
+  private mouseX = 0;
+  private mouseY = 0;
 
-  ringX = 0;
-  ringY = 0;
+  private ringX = 0;
+  private ringY = 0;
 
   dotTransform = '';
   ringTransform = '';
 
+  private rafId: number | null = null;
+  private ease = 0.15;
+
+  constructor(private ngZone: NgZone) {}
+
+  /* 🎯 mouse real (funciona mejor que pointermove en algunos casos) */
   @HostListener('document:mousemove', ['$event'])
   onMouseMove(e: MouseEvent) {
     this.mouseX = e.clientX;
     this.mouseY = e.clientY;
 
-    this.dotTransform = `translate3d(${this.mouseX}px, ${this.mouseY}px, 0)`;
+    this.dotTransform =
+      `translate3d(${this.mouseX}px, ${this.mouseY}px, 0)`;
   }
 
   ngOnInit() {
-    this.animateRing();
+    /* 🔥 IMPORTANTÍSIMO: salir de Angular zone */
+    this.ngZone.runOutsideAngular(() => {
+      this.animate();
+    });
   }
 
-  animateRing() {
-    const delay = 0.15;
+  private animate = () => {
+    this.ringX += (this.mouseX - this.ringX) * this.ease;
+    this.ringY += (this.mouseY - this.ringY) * this.ease;
 
-    const animate = () => {
-      this.ringX += (this.mouseX - this.ringX) * delay;
-      this.ringY += (this.mouseY - this.ringY) * delay;
+    this.ringTransform =
+      `translate3d(${this.ringX}px, ${this.ringY}px, 0)`;
 
-      this.ringTransform = `translate3d(${this.ringX}px, ${this.ringY}px, 0)`;
-      requestAnimationFrame(animate);
-    };
+    this.rafId = requestAnimationFrame(this.animate);
+  };
 
-    animate();
+  ngOnDestroy() {
+    if (this.rafId) cancelAnimationFrame(this.rafId);
   }
 }
