@@ -41,7 +41,7 @@ export const EXPERIENCE: Experience[] = [
   {
     period: 'Mar 2022 — Jun 2023',
     role: 'Analista Programador',
-    company: 'CloudComputing Perú',
+    company: 'CloudComputing Perú S.A.C.',
     description:
       'Análisis e identificación de observaciones en sistemas asignados. Elaboración de mejoras funcionales y soporte en el desarrollo continuo de aplicaciones web en entornos cloud.'
   }
