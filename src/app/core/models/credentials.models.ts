@@ -135,7 +135,7 @@ export const credentials: Credential[] = [
     title: 'Analista Programador',
     issuer: 'CloudComputing Perú S.A.C.',
     type: 'Certificación',
-    date: 2024,
+    date: 2023,
     status: 'Completo',
     description: 'Experiencia laboral desde marzo 2022 hasta junio 2023 en proyectos SIGED para OEFA y RENIEC utilizando Java, Angular y otras tecnologías.',
     fileUrl: '/certs/TRA_CC.pdf',
@@ -151,6 +151,17 @@ export const credentials: Credential[] = [
     description: 'Desempeño del cargo de Joven Profesional desde el 02 de mayo de 2024 hasta el 31 de mayo de 2025.',
     fileUrl: '/imagen/TRA_INDRA_1.jpg',
     fileType: 'image'
+  },
+
+  {
+    title: 'Analista Programador FullStack Junior',
+    issuer: 'Indra Perú S.A.',
+    type: 'Certificación',
+    date: 2026,
+    status: 'Completo',
+    description: 'Desempeño del cargo de Analista Programador FullStack Junior desde el 03 de septiembre de 2025 hasta el 31 de enero de 2026.',
+    fileUrl: '/certs/TRA_INDRA_2.pdf',
+    fileType: 'pdf'
   },
 
   {

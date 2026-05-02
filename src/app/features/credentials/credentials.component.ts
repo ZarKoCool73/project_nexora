@@ -23,21 +23,25 @@ export class CredentialsComponent {
     this.credentialModal.openCM(cert);
   }
 
+  private sortByDateDesc(a: Credential, b: Credential) {
+    return b.date - a.date;
+  }
+
   get titulos(): Credential[] {
-    return this.credentials.filter(c =>
-      c.type === 'Título' || c.type === 'Colegiatura'
-    );
+    return this.credentials
+      .filter(c => c.type === 'Título' || c.type === 'Colegiatura')
+      .sort(this.sortByDateDesc);
   }
 
   get diplomas(): Credential[] {
-    return this.credentials.filter(c =>
-      c.type === 'Diploma'
-    );
+    return this.credentials
+      .filter(c => c.type === 'Diploma')
+      .sort(this.sortByDateDesc);
   }
 
   get certificaciones(): Credential[] {
-    return this.credentials.filter(c =>
-      c.type === 'Certificación'
-    );
+    return this.credentials
+      .filter(c => c.type === 'Certificación')
+      .sort(this.sortByDateDesc);
   }
 }
