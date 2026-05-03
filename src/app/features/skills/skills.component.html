@@ -6,62 +6,68 @@
     <div class="section-line"></div>
   </div>
 
-  <div class="skills-grid" style="margin-top: 2rem">
+  <div class="skills-controls">
 
-    @for (skill of skills; track skill.name) {
-      <div class="skill-card" (mouseenter)="selectSkill(skill)" (mouseleave)="clearSkill()"
-           [class.active]="selectedSkill?.name === skill.name">
+    <input
+      type="text"
+      placeholder="Buscar tecnología..."
+      [(ngModel)]="searchTerm"
+      class="search-input"
+    />
 
-        <span class="skill-icon">{{ skill.icon }}</span>
+    <div class="filters">
+      @for (cat of categories; track cat) {
+        <button
+          (mouseenter)="setCategory(cat)"
+          [class.active]="selectedCategory === cat">
+          {{ cat }}
+        </button>
+      }
+    </div>
 
-        <div class="skill-name">{{ skill.name }}</div>
+  </div>
 
-        <div class="skill-desc">{{ skill.description }}</div>
+  <div class="skills-grid">
 
-        <div class="skill-bar-track">
+    @for (tech of filteredTechs; track tech.name) {
+      <div
+        class="tech-card"
+        (mouseenter)="hoverTech(tech)"
+        (mouseleave)="leaveTech()"
+        [class.active]="hoveredTech?.name === tech.name"
+      >
+
+        <div class="tech-header">
+          <span class="tech-icon">{{ tech.icon }}</span>
+
+          <div class="tech-info">
+            <div class="tech-name">{{ tech.name }}</div>
+            <div class="tech-meta">
+              {{ tech.category }} · {{ tech.years }} años
+            </div>
+          </div>
+
+          <span class="tech-level">{{ tech.level }}%</span>
+        </div>
+
+        <div class="tech-bar">
           <div
-            class="skill-bar-fill"
-            [style.width.%]="skill.level">
+            class="tech-fill"
+            [style.width.%]="tech.level">
           </div>
         </div>
+
+        <!-- 🔥 OVERLAY SOLO EN HOVER -->
+        @if (hoveredTech?.name === tech.name) {
+          <div class="tech-hover-panel">
+            <span class="hover-label">Experiencia</span>
+            <span class="hover-years">{{ tech.years }} años</span>
+          </div>
+        }
 
       </div>
     }
 
   </div>
 
-  <!-- 🔥 PANEL DINÁMICO -->
-  @if (selectedSkill) {
-    <div class="skill-detail-panel">
-
-      <h3>{{ selectedSkill.name }}</h3>
-
-      <div class="tech-grid">
-
-        @for (tech of selectedSkill.techs; track tech.name) {
-          <div class="tech-card">
-
-            <div class="tech-icon">{{ tech.icon }}</div>
-
-            <div class="tech-info">
-              <div class="tech-name">{{ tech.name }}</div>
-              <div class="tech-meta">
-                {{ tech.years }} años · Nivel {{ tech.level }}%
-              </div>
-            </div>
-
-            <div class="tech-bar">
-              <div
-                class="tech-fill"
-                [style.width.%]="tech.level">
-              </div>
-            </div>
-
-          </div>
-        }
-
-      </div>
-
-    </div>
-  }
 </section>

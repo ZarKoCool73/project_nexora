@@ -1,49 +1,72 @@
-import {AfterViewInit, Component, ElementRef} from '@angular/core';
-import {Skill, skills} from '../../core/models/skill.model';
-import {RevealDirective} from '../../shared/directives/reveal/reveal.directive';
+import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { RevealDirective } from '../../shared/directives/reveal/reveal.directive';
+import {Skill, skills, Tech} from '../../core/models/skill.model';
+
+interface FlatTech {
+  name: string;
+  icon: string;
+  level: number;
+  years: number;
+  category: string;
+}
 
 @Component({
   selector: 'app-skills',
   standalone: true,
+  imports: [RevealDirective, FormsModule],
   templateUrl: './skills.component.html',
-  imports: [
-    RevealDirective
-  ],
   styleUrls: ['./skills.component.scss']
 })
-export class SkillsComponent implements AfterViewInit {
+export class SkillsComponent {
 
-  skills: Skill[] = skills
+  skills: Skill[] = skills;
 
-  constructor(private readonly el: ElementRef) {
+  searchTerm = '';
+  selectedCategory = 'All';
+
+  hoveredTech: Tech | null = null;
+
+  hoverTech(tech: Tech) {
+    this.hoveredTech = tech;
   }
 
-  selectedSkill: Skill | null = null;
-
-  selectSkill(skill: Skill) {
-    this.selectedSkill = skill;
+  leaveTech() {
+    this.hoveredTech = null;
   }
 
-  clearSkill() {
-    this.selectedSkill = null;
+  // 🔥 categorías dinámicas (no hardcodeadas)
+  get categories(): string[] {
+    const cats = this.skills.map(s => s.name);
+    return ['All', ...cats];
   }
 
-  ngAfterViewInit() {
-    const bars = this.el.nativeElement.querySelectorAll('.skill-bar-fill');
+  // 🔥 flatten dinámico
+  get allTechs(): FlatTech[] {
+    return this.skills.flatMap(skill =>
+      skill.techs.map(tech => ({
+        ...tech,
+        category: skill.name
+      }))
+    );
+  }
 
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const el = entry.target as HTMLElement;
-          const width = el.style.width;
-          el.style.width = '0';
-          setTimeout(() => el.style.width = width, 200);
-          observer.unobserve(el);
-        }
-      });
-    }, {threshold: 0.5});
+  // 🔥 filtro final
+  get filteredTechs(): FlatTech[] {
+    return this.allTechs.filter(t => {
+      const matchSearch =
+        t.name.toLowerCase().includes(this.searchTerm.toLowerCase());
 
-    bars.forEach((bar: HTMLElement) => observer.observe(bar));
+      const matchCategory =
+        this.selectedCategory === 'All' ||
+        t.category === this.selectedCategory;
+
+      return matchSearch && matchCategory;
+    });
+  }
+
+  setCategory(cat: string) {
+    this.selectedCategory = cat;
   }
 
 }
