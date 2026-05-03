@@ -1,0 +1,38 @@
+<div class="pagination">
+
+  <button
+    (click)="prev()"
+    [disabled]="currentPage === 1">
+    ← Prev
+  </button>
+
+  <div class="pagination-center">
+
+    <div class="pagination-numbers">
+      <span class="page-current">
+        {{ currentPage.toString().padStart(2, '0') }}
+      </span>
+
+      <span class="page-divider">/</span>
+
+      <span class="page-total">
+        {{ totalPages.toString().padStart(2, '0') }}
+      </span>
+    </div>
+
+    <div class="progress-bar">
+      <div
+        class="progress-fill"
+        [style.width.%]="(currentPage / totalPages) * 100">
+      </div>
+    </div>
+
+  </div>
+
+  <button
+    (click)="next()"
+    [disabled]="currentPage === totalPages">
+    Next →
+  </button>
+
+</div>

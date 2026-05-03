@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RevealDirective } from '../../shared/directives/reveal/reveal.directive';
-import {Skill, skills, Tech} from '../../core/models/skill.model';
+import { Skill, skills } from '../../core/models/skill.model';
+import { PaginationComponent } from '../../shared/components/pagination/pagination.component';
 
 interface FlatTech {
   name: string;
@@ -14,20 +15,44 @@ interface FlatTech {
 @Component({
   selector: 'app-skills',
   standalone: true,
-  imports: [RevealDirective, FormsModule],
+  imports: [
+    RevealDirective,
+    FormsModule,
+    PaginationComponent
+  ],
   templateUrl: './skills.component.html',
   styleUrls: ['./skills.component.scss']
 })
 export class SkillsComponent {
 
+  // =========================
+  // 📦 DATA
+  // =========================
+
   skills: Skill[] = skills;
+
+  // =========================
+  // 🔍 FILTROS
+  // =========================
 
   searchTerm = '';
   selectedCategory = 'All';
 
-  hoveredTech: Tech | null = null;
+  // =========================
+  // 🎯 UI STATE
+  // =========================
 
-  hoverTech(tech: Tech) {
+  hoveredTech: FlatTech | null = null;
+
+  // =========================
+  // 📄 PAGINACIÓN
+  // =========================
+
+  currentPage = 1;
+  itemsPerPage = 5;
+
+
+  hoverTech(tech: FlatTech) {
     this.hoveredTech = tech;
   }
 
@@ -35,13 +60,26 @@ export class SkillsComponent {
     this.hoveredTech = null;
   }
 
-  // 🔥 categorías dinámicas (no hardcodeadas)
+  setCategory(cat: string) {
+    this.selectedCategory = cat;
+    this.currentPage = 1; // UX: reset
+  }
+
+  onSearchChange() {
+    this.currentPage = 1; // UX: reset
+  }
+
+  onPageChange(page: number) {
+    this.currentPage = page;
+  }
+
+  // categorías dinámicas
   get categories(): string[] {
     const cats = this.skills.map(s => s.name);
     return ['All', ...cats];
   }
 
-  // 🔥 flatten dinámico
+  // flatten (skills → techs)
   get allTechs(): FlatTech[] {
     return this.skills.flatMap(skill =>
       skill.techs.map(tech => ({
@@ -51,7 +89,7 @@ export class SkillsComponent {
     );
   }
 
-  // 🔥 filtro final
+  // filtro + búsqueda
   get filteredTechs(): FlatTech[] {
     return this.allTechs.filter(t => {
       const matchSearch =
@@ -65,8 +103,23 @@ export class SkillsComponent {
     });
   }
 
-  setCategory(cat: string) {
-    this.selectedCategory = cat;
+  get totalPages(): number {
+    return Math.ceil(this.filteredTechs.length / this.itemsPerPage);
+  }
+
+  get paginatedTechs(): FlatTech[] {
+    this.ensureValidPage(); // 🔥 evita páginas inválidas
+
+    const start = (this.currentPage - 1) * this.itemsPerPage;
+    return this.filteredTechs.slice(start, start + this.itemsPerPage);
+  }
+
+  private ensureValidPage() {
+    const total = this.totalPages;
+
+    if (this.currentPage > total) {
+      this.currentPage = total || 1;
+    }
   }
 
 }

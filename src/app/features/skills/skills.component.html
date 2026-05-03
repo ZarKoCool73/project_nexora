@@ -1,4 +1,4 @@
-<section id="skills" reveal>
+<section id="skills" style="margin-top: 2rem;" reveal>
 
   <div class="section-header">
     <span class="section-num">01</span>
@@ -29,7 +29,7 @@
 
   <div class="skills-grid">
 
-    @for (tech of filteredTechs; track tech.name) {
+    @for (tech of paginatedTechs; track tech.name) {
       <div
         class="tech-card"
         (mouseenter)="hoverTech(tech)"
@@ -67,7 +67,10 @@
 
       </div>
     }
-
   </div>
-
+  <app-pagination
+    [currentPage]="currentPage"
+    [totalPages]="totalPages"
+    (pageChange)="onPageChange($event)">
+  </app-pagination>
 </section>
