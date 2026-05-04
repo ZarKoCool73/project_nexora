@@ -43,7 +43,6 @@ export class ProjectsComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    // Ordenar por año (más reciente primero)
     this.projects = [...this.projects].sort((a, b) => b.year - a.year);
   }
 
@@ -109,14 +108,12 @@ export class ProjectsComponent implements OnInit {
 
   get paginatedProjects(): Project[] {
     this.ensureValidPage();
-
     const start = (this.currentPage - 1) * this.itemsPerPage;
     return this.filteredProjects.slice(start, start + this.itemsPerPage);
   }
 
   private ensureValidPage() {
     const total = this.totalPages;
-
     if (this.currentPage > total) {
       this.currentPage = total || 1;
     }
@@ -128,14 +125,11 @@ export class ProjectsComponent implements OnInit {
 
   onFiltersChange(filters: ProjectFilterState) {
     this.filterState = filters;
-
-    // 🔥 clave UX: resetear página
     this.currentPage = 1;
   }
 
   onPageChange(page: number) {
     this.currentPage = page;
-
     document
       .getElementById('projects')
       ?.scrollIntoView({ behavior: 'smooth', block: 'start' });

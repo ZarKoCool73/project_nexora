@@ -25,16 +25,36 @@
 
         <div class="proj-meta">
           <div class="proj-tags">
-
             @for (tag of project.tags; track tag) {
               <span class="proj-tag">{{ tag }}</span>
             }
-
           </div>
           <span class="proj-year">{{ project.year }}</span>
         </div>
 
-        <h3 class="proj-title">{{ project.title }}</h3>
+        <!-- TÍTULO + LOGOS a la misma altura -->
+        <div class="proj-title-row">
+          <h3 class="proj-title">{{ project.title }}</h3>
+
+          @if (project.companyLogo || project.clientLogo) {
+            <div class="proj-logos">
+
+              @if (project.companyLogo) {
+                <div class="logo-circle" [attr.title]="project.companyName">
+                  <img [src]="project.companyLogo" [alt]="project.companyName" />
+                </div>
+              }
+
+              @if (project.clientLogo) {
+                <div class="logo-circle" [attr.title]="project.clientName">
+                  <img [src]="project.clientLogo" [alt]="project.clientName" />
+                </div>
+              }
+
+            </div>
+          }
+        </div>
+
         <p class="proj-desc">{{ project.desc }}</p>
 
         <div class="proj-footer">
@@ -47,9 +67,11 @@
     }
 
   </div>
+
   <app-pagination
     [currentPage]="currentPage"
     [totalPages]="totalPages"
     (pageChange)="onPageChange($event)">
   </app-pagination>
+
 </section>

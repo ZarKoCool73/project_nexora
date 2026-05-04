@@ -7,9 +7,14 @@ export interface Project {
   size: 'featured' | 'regular' | 'half';
   url?: string;
   duration: string;
-
   context?: string;
   impact?: string;
+
+  // 🏢 Logos en círculo — rutas relativas a assets/
+  companyLogo?: string;   // ej: 'assets/logos/companies/indra.svg'
+  companyName?: string;   // tooltip al hacer hover
+  clientLogo?: string;    // ej: 'assets/logos/clients/integratel.svg'
+  clientName?: string;    // tooltip al hacer hover
 }
 
 export interface ProjectFilterState {
@@ -30,7 +35,11 @@ export const PROJECTS: Project[] = [
     year: 2024,
     duration: '4 Meses',
     size: 'featured',
-    impact: 'Estabilización de módulos críticos y reducción de incidencias en producción'
+    impact: 'Estabilización de módulos críticos y reducción de incidencias en producción',
+    companyLogo: '/imagen/LOGO_INDRA.svg',
+    companyName: 'INDRA PERÚ',
+    clientLogo: '/imagen/LOGO_INTEGRATEL.svg',
+    clientName: 'INTEGRATEL',
   },
 
   {
@@ -42,7 +51,11 @@ export const PROJECTS: Project[] = [
     year: 2024,
     duration: '4 Meses',
     size: 'regular',
-    impact: 'Optimización del flujo de atención de solicitudes'
+    impact: 'Optimización del flujo de atención de solicitudes',
+    companyLogo: '/imagen/LOGO_INDRA.svg',
+    companyName: 'INDRA PERÚ',
+    clientLogo: '/imagen/LOGO_INTEGRATEL.svg',
+    clientName: 'INTEGRATEL',
   },
 
   {
@@ -54,7 +67,11 @@ export const PROJECTS: Project[] = [
     year: 2024,
     duration: '8 Meses',
     size: 'featured',
-    impact: 'Migración de procesos internos'
+    impact: 'Migración de procesos internos',
+    companyLogo: '/imagen/LOGO_INDRA.svg',
+    companyName: 'INDRA PERÚ',
+    clientLogo: '/imagen/LOGO_INTEGRATEL.svg',
+    clientName: 'INTEGRATEL',
   },
 
   {
@@ -66,7 +83,8 @@ export const PROJECTS: Project[] = [
     year: 2025,
     duration: '4 Meses',
     size: 'half',
-    impact: 'Centralización del control de apuestas y mejora en la trazabilidad de operaciones y resultados'
+    impact: 'Centralización del control de apuestas y mejora en la trazabilidad de operaciones y resultados',
+    // Sin logos: proyecto personal
   },
 
   {
@@ -78,7 +96,11 @@ export const PROJECTS: Project[] = [
     year: 2025,
     duration: '8 Meses',
     size: 'half',
-    impact: 'Optimización del análisis comercial mediante estructura jerárquica de ventas'
+    impact: 'Optimización del análisis comercial mediante estructura jerárquica de ventas',
+    companyLogo: '/imagen/LOGO_INDRA.svg',
+    companyName: 'INDRA PERÚ',
+    clientLogo: '/imagen/LOGO_INTEGRATEL.svg',
+    clientName: 'INTEGRATEL',
   },
 
   {
@@ -90,7 +112,11 @@ export const PROJECTS: Project[] = [
     year: 2024,
     duration: '8 Meses',
     size: 'regular',
-    impact: 'Reducción de errores en validación de documentos'
+    impact: 'Reducción de errores en validación de documentos',
+    companyLogo: '/imagen/LOGO_INDRA.svg',
+    companyName: 'INDRA PERÚ',
+    clientLogo: '/imagen/LOGO_INTEGRATEL.svg',
+    clientName: 'INTEGRATEL',
   },
 
   {
@@ -102,7 +128,11 @@ export const PROJECTS: Project[] = [
     year: 2025,
     duration: '10 Meses',
     size: 'half',
-    impact: 'Optimización de procesos backend y frontend'
+    impact: 'Optimización de procesos backend y frontend',
+    companyLogo: '/imagen/LOGO_INDRA.svg',
+    companyName: 'INDRA PERÚ',
+    clientLogo: '/imagen/LOGO_INTEGRATEL.svg',
+    clientName: 'INTEGRATEL',
   },
 
   {
@@ -114,7 +144,11 @@ export const PROJECTS: Project[] = [
     year: 2025,
     duration: '12 Meses',
     size: 'half',
-    impact: 'Mejora en confiabilidad de transacciones'
+    impact: 'Mejora en confiabilidad de transacciones',
+    companyLogo: '/imagen/LOGO_INDRA.svg',
+    companyName: 'INDRA PERÚ',
+    clientLogo: '/imagen/LOGO_CLARO.svg',
+    clientName: 'CLARO',
   },
 
   {
@@ -126,7 +160,11 @@ export const PROJECTS: Project[] = [
     year: 2025,
     duration: '8 Meses',
     size: 'half',
-    impact: 'Mejor control de flujos documentarios'
+    impact: 'Mejor control de flujos documentarios',
+    companyLogo: '/imagen/LOGO_INDRA.svg',
+    companyName: 'INDRA PERÚ',
+    clientLogo: '/imagen/LOGO_CLARO.svg',
+    clientName: 'CLARO',
   },
 
   {
@@ -138,7 +176,11 @@ export const PROJECTS: Project[] = [
     year: 2023,
     duration: '8 Meses',
     size: 'featured',
-    impact: 'Modernización del sistema de gestión documental'
+    impact: 'Modernización del sistema de gestión documental',
+    companyLogo: '/imagen/LOGO_CC.svg',
+    companyName: 'CLOUDCOMPUTING PERÚ S.A.C',
+    clientLogo: '/imagen/LOGO_RENIEC.svg',
+    clientName: 'RENIEC',
   },
 
   {
@@ -150,7 +192,10 @@ export const PROJECTS: Project[] = [
     year: 2025,
     duration: '6 Meses',
     size: 'featured',
-    impact: 'Sistema funcional capaz de reconocer señas en tiempo real, facilitando el aprendizaje interactivo y demostrando integración de IA en aplicaciones web.'
+    impact: 'Sistema funcional capaz de reconocer señas en tiempo real.',
+    companyLogo: '/imagen/LOGO_UA.svg',
+    companyName: 'Universidad Autónoma del Perú',
+    // Sin logos: tesis personal
   },
 
   {
@@ -162,7 +207,11 @@ export const PROJECTS: Project[] = [
     year: 2023,
     duration: '7 Meses',
     size: 'regular',
-    impact: 'Digitalización del ingreso de documentos'
+    impact: 'Digitalización del ingreso de documentos',
+    companyLogo: '/imagen/LOGO_CC.svg',
+    companyName: 'CLOUDCOMPUTING PERÚ S.A.C',
+    clientLogo: '/imagen/LOGO_RENIEC.svg',
+    clientName: 'RENIEC',
   },
 
   {
@@ -174,7 +223,11 @@ export const PROJECTS: Project[] = [
     year: 2023,
     duration: '8 Meses',
     size: 'regular',
-    impact: 'Mejora de experiencia del usuario final'
+    impact: 'Mejora de experiencia del usuario final',
+    companyLogo: '/imagen/LOGO_CC.svg',
+    companyName: 'CLOUDCOMPUTING PERÚ S.A.C',
+    clientLogo: '/imagen/LOGO_RENIEC.svg',
+    clientName: 'RENIEC',
   },
 
   {
@@ -186,18 +239,26 @@ export const PROJECTS: Project[] = [
     year: 2023,
     duration: '8 Meses',
     size: 'half',
-    impact: 'Mejora de estabilidad del sistema'
+    impact: 'Mejora de estabilidad del sistema',
+    companyLogo: '/imagen/LOGO_CC.svg',
+    companyName: 'CLOUDCOMPUTING PERÚ S.A.C',
+    clientLogo: '/imagen/LOGO_RENIEC.svg',
+    clientName: 'RENIEC',
   },
+
   {
     title: 'Software para la detección de mascarilla – Expotec 2021',
     context: 'Universidad Autónoma del Perú · Expotec 2021-I · Categoría Intermedia',
-    desc: 'Sistema de visión por computadora para la detección de uso de mascarilla en tiempo real, como aporte a la responsabilidad social universitaria durante la pandemia.',
+    desc: 'Sistema de visión por computadora para la detección de uso de mascarilla en tiempo real.',
     stack: 'Python · Flask · Angular',
     tags: ['OpenCV', 'TensorFlow', 'Keras', 'MediaPipe', 'NumPy', 'Pandas', 'scikit-learn', 'REST API', 'Postman', 'Git'],
     year: 2021,
     duration: '4 Meses',
     size: 'featured',
-    impact: 'Primer puesto en el concurso Expotec 2021-I categoría intermedia, destacando por la implementación de un modelo de detección de mascarilla aplicado a responsabilidad social universitaria'
-  }
+    impact: 'Primer puesto en el concurso Expotec 2021-I categoría intermedia',
+    companyLogo: '/imagen/LOGO_UA.svg',
+    companyName: 'Universidad Autónoma del Perú',
+    // Sin clientLogo: proyecto universitario
+  },
 
 ];
