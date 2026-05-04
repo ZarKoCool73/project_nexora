@@ -12,6 +12,12 @@ export interface Project {
   impact?: string;
 }
 
+export interface ProjectFilterState {
+  search: string;
+  tags: string[];
+  years: number[];
+}
+
 export const PROJECTS: Project[] = [
 
   {

@@ -1,0 +1,39 @@
+<div class="projects-controls">
+
+  <!-- 🔍 search -->
+  <input
+    type="text"
+    placeholder="Buscar proyecto..."
+    [(ngModel)]="search"
+    (input)="onSearchChange()"
+    class="search-input"
+  />
+
+  <!-- 📅 years -->
+  <div class="filters">
+    @for (year of years; track year) {
+      <button
+        (click)="toggleYear(year)"
+        [class.active]="selectedYears.includes(year)">
+        {{ year }}
+      </button>
+    }
+  </div>
+
+  <!-- 🏷 tags -->
+  <div class="filters">
+    @for (tag of tags; track tag) {
+      <button
+        (click)="toggleTag(tag)"
+        [class.active]="selectedTags.includes(tag)">
+        {{ tag }}
+      </button>
+    }
+  </div>
+
+  <!-- limpiar -->
+  <button class="clear-btn" (click)="clear()">
+    Limpiar filtros
+  </button>
+
+</div>
