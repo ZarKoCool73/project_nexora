@@ -6,9 +6,15 @@
     <div class="section-line"></div>
   </div>
 
+  <app-project-filters
+    [tags]="availableTags"
+    [years]="availableYears"
+    (filtersChange)="onFiltersChange($event)">
+  </app-project-filters>
+
   <div class="projects-grid">
 
-    @for (project of projects; track project.title) {
+    @for (project of paginatedProjects; track project.title) {
 
       <div class="project-card"
            (click)="openProject(project)"
@@ -40,4 +46,9 @@
     }
 
   </div>
+  <app-pagination
+    [currentPage]="currentPage"
+    [totalPages]="totalPages"
+    (pageChange)="onPageChange($event)">
+  </app-pagination>
 </section>
