@@ -20,6 +20,17 @@
     }
   </div>
 
+  <!-- ⚙️ stacks -->
+  <div class="filters">
+    @for (stack of stacks; track stack) {
+      <button
+        (click)="toggleStack(stack)"
+        [class.active]="selectedStacks.includes(stack)">
+        {{ stack }}
+      </button>
+    }
+  </div>
+
   <!-- 🏷 tags -->
   <div class="filters">
     @for (tag of tags; track tag) {

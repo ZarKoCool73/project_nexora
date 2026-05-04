@@ -1,5 +1,5 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {FormsModule} from '@angular/forms';
 import {ProjectFilterState} from '../../../../core/models/project.model';
 
 @Component({
@@ -13,6 +13,7 @@ export class ProjectFiltersComponent {
 
   @Input() tags: string[] = [];
   @Input() years: number[] = [];
+  @Input() stacks: string[] = [];
 
   @Output() filtersChange = new EventEmitter<ProjectFilterState>();
 
@@ -20,6 +21,7 @@ export class ProjectFiltersComponent {
   search = '';
   selectedTags: string[] = [];
   selectedYears: number[] = [];
+  selectedStacks: string[] = [];
 
   // =========================
   // 🔥 INTERACCIONES
@@ -47,10 +49,20 @@ export class ProjectFiltersComponent {
     this.emit();
   }
 
+  toggleStack(stack: string) {
+    if (this.selectedStacks.includes(stack)) {
+      this.selectedStacks = this.selectedStacks.filter(s => s !== stack);
+    } else {
+      this.selectedStacks = [...this.selectedStacks, stack];
+    }
+    this.emit();
+  }
+
   clear() {
     this.search = '';
     this.selectedTags = [];
     this.selectedYears = [];
+    this.selectedStacks = [];
     this.emit();
   }
 
@@ -58,7 +70,8 @@ export class ProjectFiltersComponent {
     this.filtersChange.emit({
       search: this.search,
       tags: this.selectedTags,
-      years: this.selectedYears
+      years: this.selectedYears,
+      stacks: this.selectedStacks
     });
   }
 }

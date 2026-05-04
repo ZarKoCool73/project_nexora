@@ -15,6 +15,7 @@ export interface Project {
 export interface ProjectFilterState {
   search: string;
   tags: string[];
+  stacks: string[];
   years: number[];
 }
 
@@ -64,7 +65,7 @@ export const PROJECTS: Project[] = [
     tags: ['MongoDB Atlas', 'SonarQube', 'Jasmine', 'Karma', 'Postman'],
     year: 2025,
     duration: '4 Meses',
-    size: 'regular',
+    size: 'half',
     impact: 'Centralización del control de apuestas y mejora en la trazabilidad de operaciones y resultados'
   },
 
@@ -76,7 +77,7 @@ export const PROJECTS: Project[] = [
     tags: ['Oracle', 'Jasmine', 'Karma', 'SonarQube', 'Bitbucket', 'Postman', 'CI/CD', 'Jenkins'],
     year: 2025,
     duration: '8 Meses',
-    size: 'featured',
+    size: 'half',
     impact: 'Optimización del análisis comercial mediante estructura jerárquica de ventas'
   },
 
@@ -100,7 +101,7 @@ export const PROJECTS: Project[] = [
     tags: ['PL/SQL', 'Oracle', 'Jenkins', 'SonarQube', 'Bitbucket', 'Postman', 'Mockito', 'Jasmine', 'Karma', 'CI/CD'],
     year: 2025,
     duration: '10 Meses',
-    size: 'featured',
+    size: 'half',
     impact: 'Optimización de procesos backend y frontend'
   },
 

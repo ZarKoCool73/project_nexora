@@ -25,6 +25,7 @@ export class ProjectsComponent implements OnInit {
   filterState: ProjectFilterState = {
     search: '',
     tags: [],
+    stacks: [],
     years: []
   };
 
@@ -58,6 +59,16 @@ export class ProjectsComponent implements OnInit {
     return [...new Set(this.projects.map(p => p.year))];
   }
 
+  get availableStacks(): string[] {
+    return [
+      ...new Set(
+        this.projects.flatMap(p =>
+          p.stack.split('·').map(s => s.trim())
+        )
+      )
+    ];
+  }
+
   // =========================
   // 🔍 FILTRADO
   // =========================
@@ -78,7 +89,13 @@ export class ProjectsComponent implements OnInit {
         this.filterState.years.length === 0 ||
         this.filterState.years.includes(p.year);
 
-      return matchSearch && matchTags && matchYears;
+      const projectStacks = p.stack.split('·').map(s => s.trim());
+
+      const matchStacks =
+        this.filterState.stacks.length === 0 ||
+        this.filterState.stacks.every(s => projectStacks.includes(s));
+
+      return matchSearch && matchTags && matchYears && matchStacks;
     });
   }
 
