@@ -5,9 +5,31 @@
     <!-- HEADER -->
     <div class="modal-header">
 
-      <div>
-        <div class="modal-kicker">{{ project.context }}</div>
-        <h2 class="modal-title">{{ project.title }}</h2>
+      <div class="modal-title-row">
+
+        <div class="modal-title-left">
+          <div class="modal-kicker">{{ project.context }}</div>
+          <h2 class="modal-title">{{ project.title }}</h2>
+        </div>
+
+        @if (project.companyLogo || project.clientLogo) {
+          <div class="modal-logos">
+
+            @if (project.companyLogo) {
+              <div class="logo-circle" [attr.title]="project.companyName">
+                <img [src]="project.companyLogo" [alt]="project.companyName"/>
+              </div>
+            }
+
+            @if (project.clientLogo) {
+              <div class="logo-circle" [attr.title]="project.clientName">
+                <img [src]="project.clientLogo" [alt]="project.clientName"/>
+              </div>
+            }
+
+          </div>
+        }
+
       </div>
 
       <button class="close-btn" (click)="onClose()">✕</button>
