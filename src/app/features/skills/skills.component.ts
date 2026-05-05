@@ -1,16 +1,8 @@
-import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { RevealDirective } from '../../shared/directives/reveal/reveal.directive';
-import { Skill, skills } from '../../core/models/skill.model';
-import { PaginationComponent } from '../../shared/components/pagination/pagination.component';
-
-interface FlatTech {
-  name: string;
-  icon: string;
-  level: number;
-  years: number;
-  category: string;
-}
+import {Component} from '@angular/core';
+import {FormsModule} from '@angular/forms';
+import {RevealDirective} from '../../shared/directives/reveal/reveal.directive';
+import {Skill, skills, FlatTech} from '../../core/models/skill.model';
+import {PaginationComponent} from '../../shared/components/pagination/pagination.component';
 
 @Component({
   selector: 'app-skills',
@@ -25,29 +17,10 @@ interface FlatTech {
 })
 export class SkillsComponent {
 
-  // =========================
-  // 📦 DATA
-  // =========================
-
   skills: Skill[] = skills;
-
-  // =========================
-  // 🔍 FILTROS
-  // =========================
-
   searchTerm = '';
   selectedCategory = 'All';
-
-  // =========================
-  // 🎯 UI STATE
-  // =========================
-
   hoveredTech: FlatTech | null = null;
-
-  // =========================
-  // 📄 PAGINACIÓN
-  // =========================
-
   currentPage = 1;
   itemsPerPage = 5;
 
@@ -62,10 +35,6 @@ export class SkillsComponent {
 
   setCategory(cat: string) {
     this.selectedCategory = cat;
-    this.currentPage = 1; // UX: reset
-  }
-
-  onSearchChange() {
     this.currentPage = 1; // UX: reset
   }
 

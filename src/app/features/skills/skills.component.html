@@ -43,7 +43,7 @@
           <div class="tech-info">
             <div class="tech-name">{{ tech.name }}</div>
             <div class="tech-meta">
-              {{ tech.category }} · {{ tech.years }} años
+              {{ tech.category }} · {{ tech.years }} {{ tech.years > 1 ? 'años' : 'año' }}
             </div>
           </div>
 
@@ -61,7 +61,7 @@
         @if (hoveredTech?.name === tech.name) {
           <div class="tech-hover-panel">
             <span class="hover-label">Experiencia</span>
-            <span class="hover-years">{{ tech.years }} años</span>
+            <span class="hover-years">{{ tech.years }} {{ tech.years > 1 ? 'años' : 'año' }}</span>
           </div>
         }
 

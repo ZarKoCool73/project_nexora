@@ -33,7 +33,7 @@ export class ProjectsComponent implements OnInit {
   // 📄 PAGINACIÓN
   // =========================
   currentPage = 1;
-  itemsPerPage = 5;
+  itemsPerPage = 4;
 
   // =========================
   // 🔥 INIT

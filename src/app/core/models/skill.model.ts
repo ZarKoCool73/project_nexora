@@ -22,14 +22,17 @@ export interface Tech {
 }
 
 export const skills: Skill[] = [
+
   {
     icon: '⬡',
     name: 'Frontend',
-    description: 'Angular · React · TypeScript · UI/UX',
+    description: 'Angular · React · Vue · Flutter · TypeScript · UI/UX',
     level: 95,
     techs: [
       {name: 'Angular', icon: '🅰️', level: 98, years: 5},
       {name: 'React', icon: '⚛️', level: 89, years: 3},
+      {name: 'Vue', icon: '🧩', level: 85, years: 2},
+      {name: 'Flutter', icon: '📱', level: 85, years: 2},
       {name: 'TypeScript', icon: 'TS', level: 95, years: 5},
       {name: 'SCSS', icon: '🎨', level: 90, years: 3},
       {name: 'RxJS', icon: '🔄', level: 90, years: 3}
@@ -80,23 +83,26 @@ export const skills: Skill[] = [
   {
     icon: '◎',
     name: 'Cloud & DevOps',
-    description: 'CI/CD · Contenedores · Cloud',
-    level: 85,
+    description: 'CI/CD · Contenedores · Cloud · GitOps',
+    level: 88,
     techs: [
       {name: 'Docker', icon: '🐳', level: 85, years: 2},
       {name: 'AWS', icon: '☁️', level: 80, years: 2},
       {name: 'Azure', icon: '🔷', level: 80, years: 2},
       {name: 'Jenkins', icon: '🤖', level: 85, years: 3},
-      {name: 'GitHub Actions', icon: '⚡', level: 78, years: 1}
+      {name: 'GitHub Actions', icon: '⚡', level: 78, years: 1},
+      {name: 'ArgoCD', icon: '🚀', level: 80, years: 1}
     ]
   },
 
   {
     icon: '🛡️',
-    name: 'Seguridad',
-    description: 'Autenticación · OWASP · Protección de APIs',
-    level: 80,
+    name: 'Seguridad & DevSecOps',
+    description: 'SAST · SCA · Autenticación · OWASP',
+    level: 85,
     techs: [
+      {name: 'Black Duck (SCA)', icon: '🧩', level: 78, years: 1},
+      {name: 'Checkmarx (SAST)', icon: '🔍', level: 78, years: 1},
       {name: 'JWT', icon: '🔑', level: 85, years: 3},
       {name: 'OAuth2', icon: '🔐', level: 80, years: 2},
       {name: 'OWASP', icon: '🛡️', level: 78, years: 2},
@@ -107,14 +113,14 @@ export const skills: Skill[] = [
   {
     icon: '⬟',
     name: 'Calidad de Software',
-    description: 'Testing · Análisis estático · QA',
-    level: 85,
+    description: 'Testing · QA · Análisis estático',
+    level: 88,
     techs: [
       {name: 'Jasmine', icon: '🧪', level: 89, years: 4},
       {name: 'Karma', icon: '⚙️', level: 89, years: 4},
       {name: 'Jest', icon: '🃏', level: 80, years: 3},
       {name: 'SonarQube', icon: '📊', level: 90, years: 3},
-      {name: 'Postman', icon: '📮', level: 90, years: 3},
+      {name: 'Postman', icon: '📮', level: 90, years: 3}
     ]
   },
 
@@ -128,6 +134,17 @@ export const skills: Skill[] = [
       {name: 'SOLID', icon: '📐', level: 88, years: 3},
       {name: 'MVC', icon: '🧩', level: 85, years: 3},
       {name: 'Patrones de diseño', icon: '🧠', level: 82, years: 2}
+    ]
+  },
+
+  {
+    icon: '📋',
+    name: 'ALM & Productividad',
+    description: 'Agile · Documentación · Gestión de proyectos',
+    level: 85,
+    techs: [
+      {name: 'JIRA', icon: '📊', level: 90, years: 3},
+      {name: 'Confluence', icon: '📚', level: 88, years: 2}
     ]
   }
 ];

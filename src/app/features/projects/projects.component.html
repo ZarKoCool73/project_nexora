@@ -2,7 +2,7 @@
 
   <div class="section-header">
     <span class="section-num">02</span>
-    <h2 class="section-title">Proyectos destacados</h2>
+    <h2 class="section-title"> Proyectos destacados <span class="projects-count">({{ filteredProjects.length }})</span> </h2>
     <div class="section-line"></div>
   </div>
 
@@ -25,8 +25,12 @@
 
         <div class="proj-meta">
           <div class="proj-tags">
-            @for (tag of project.tags; track tag) {
+            @for (tag of project.tags.slice(0, 4); track tag) {
               <span class="proj-tag">{{ tag }}</span>
+            }
+
+            @if (project.tags.length > 4) {
+              <span class="proj-tag more">+{{ project.tags.length - 4 }}</span>
             }
           </div>
           <span class="proj-year">{{ project.year }}</span>
@@ -41,13 +45,13 @@
 
               @if (project.companyLogo) {
                 <div class="logo-circle" [attr.title]="project.companyName">
-                  <img [src]="project.companyLogo" [alt]="project.companyName" />
+                  <img [src]="project.companyLogo" [alt]="project.companyName"/>
                 </div>
               }
 
               @if (project.clientLogo) {
                 <div class="logo-circle" [attr.title]="project.clientName">
-                  <img [src]="project.clientLogo" [alt]="project.clientName" />
+                  <img [src]="project.clientLogo" [alt]="project.clientName"/>
                 </div>
               }
 
