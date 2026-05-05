@@ -1,9 +1,17 @@
 <div class="pagination">
 
+  <!-- FIRST -->
+  <button
+    (click)="goFirst()"
+    [disabled]="currentPage === 1">
+    «
+  </button>
+
+  <!-- PREV -->
   <button
     (click)="prev()"
     [disabled]="currentPage === 1">
-    ← Prev
+    ←
   </button>
 
   <div class="pagination-center">
@@ -29,10 +37,18 @@
 
   </div>
 
+  <!-- NEXT -->
   <button
     (click)="next()"
     [disabled]="currentPage === totalPages">
-    Next →
+    →
+  </button>
+
+  <!-- LAST -->
+  <button
+    (click)="goLast()"
+    [disabled]="currentPage === totalPages">
+    »
   </button>
 
 </div>

@@ -73,3 +73,17 @@
   background: linear-gradient(90deg, var(--accent3), var(--accent));
   transition: width 0.4s ease;
 }
+
+@media (max-width: 600px) {
+
+  .pagination {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+  }
+
+  .pagination-center {
+    order: -1; /* lo sube arriba */
+  }
+
+}

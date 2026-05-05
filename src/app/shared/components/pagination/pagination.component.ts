@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'app-pagination',
@@ -22,6 +22,18 @@ export class PaginationComponent {
   prev() {
     if (this.currentPage > 1) {
       this.pageChange.emit(this.currentPage - 1);
+    }
+  }
+
+  goFirst() {
+    if (this.currentPage !== 1) {
+      this.pageChange.emit(1);
+    }
+  }
+
+  goLast() {
+    if (this.currentPage !== this.totalPages) {
+      this.pageChange.emit(this.totalPages);
     }
   }
 

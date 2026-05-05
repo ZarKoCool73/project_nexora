@@ -22,7 +22,7 @@ export class SkillsComponent {
   selectedCategory = 'All';
   hoveredTech: FlatTech | null = null;
   currentPage = 1;
-  itemsPerPage = 5;
+  itemsPerPage = 4;
 
 
   hoverTech(tech: FlatTech) {
