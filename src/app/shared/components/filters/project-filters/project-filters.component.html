@@ -1,6 +1,6 @@
 <div class="projects-controls">
 
-  <!-- 🔍 search -->
+  <!-- 🔍 SEARCH -->
   <input
     type="text"
     placeholder="Buscar proyecto..."
@@ -9,42 +9,146 @@
     class="search-input"
   />
 
-  <!-- 📅 years -->
-  <div class="filters">
-    @for (year of years; track year) {
+  <!-- OVERLAY: cierra el panel al hacer clic en cualquier otro lado -->
+  @if (openPanel) {
+    <div class="panel-overlay" (click)="openPanel = null"></div>
+  }
+
+  <!-- 📦 DROPDOWNS -->
+  <div class="filter-bar">
+
+    <!-- Tecnología -->
+    <div class="dropdown" [class.dropdown--right]="panelAlignRight">
       <button
-        (click)="toggleYear(year)"
-        [class.active]="selectedYears.includes(year)">
-        {{ year }}
+        class="dropdown-btn"
+        [class.active]="selectedTags.length > 0"
+        (click)="togglePanel('tech', $event)">
+        <span>Tecnología</span>
+        @if (selectedTags.length > 0) {
+          <span class="badge">{{ selectedTags.length }}</span>
+        }
+        <span class="arrow" [class.rotated]="openPanel === 'tech'">▾</span>
       </button>
-    }
+
+      @if (openPanel === 'tech') {
+        <div class="dropdown-panel"
+             [style.top.px]="panelTopPx ?? undefined">
+          <p class="panel-title">FILTRAR POR TECNOLOGÍA</p>
+          <div class="panel-groups">
+            @for (group of tagGroups; track group.label) {
+              <div class="tag-group">
+                <p class="group-label">{{ group.label }}</p>
+                <div class="chips-wrap">
+                  @for (tag of group.tags; track tag) {
+                    @if (tags.includes(tag)) {
+                      <span
+                        class="chip"
+                        [class.active]="selectedTags.includes(tag)"
+                        (click)="toggleTag(tag)">
+                        {{ tag }}
+                      </span>
+                    }
+                  }
+                </div>
+              </div>
+            }
+          </div>
+        </div>
+      }
+    </div>
+
+    <!-- Año -->
+    <div class="dropdown" [class.dropdown--right]="panelAlignRight">
+      <button
+        class="dropdown-btn"
+        [class.active]="selectedYears.length > 0"
+        (click)="togglePanel('year', $event)">
+        <span>Año</span>
+        @if (selectedYears.length > 0) {
+          <span class="badge">{{ selectedYears.length }}</span>
+        }
+        <span class="arrow" [class.rotated]="openPanel === 'year'">▾</span>
+      </button>
+
+      @if (openPanel === 'year') {
+        <div class="dropdown-panel dropdown-panel--sm"
+             [style.top.px]="panelTopPx ?? undefined">
+          <p class="panel-title">FILTRAR POR AÑO</p>
+          <div class="yr-btns">
+            @for (year of years; track year) {
+              <button
+                class="yr-btn"
+                [class.active]="selectedYears.includes(year)"
+                (click)="toggleYear(year)">
+                {{ year }}
+              </button>
+            }
+          </div>
+        </div>
+      }
+    </div>
+
+    <!-- Stack -->
+    <div class="dropdown" [class.dropdown--right]="panelAlignRight">
+      <button
+        class="dropdown-btn"
+        [class.active]="selectedStacks.length > 0"
+        (click)="togglePanel('stack', $event)">
+        <span>Stack</span>
+        @if (selectedStacks.length > 0) {
+          <span class="badge">{{ selectedStacks.length }}</span>
+        }
+        <span class="arrow" [class.rotated]="openPanel === 'stack'">▾</span>
+      </button>
+
+      @if (openPanel === 'stack') {
+        <div class="dropdown-panel dropdown-panel--sm"
+             [style.top.px]="panelTopPx ?? undefined">
+          <p class="panel-title">FILTRAR POR STACK</p>
+          <div class="chips-wrap">
+            @for (stack of stacks; track stack) {
+              <span
+                class="chip"
+                [class.active]="selectedStacks.includes(stack)"
+                (click)="toggleStack(stack)">
+                {{ stack }}
+              </span>
+            }
+          </div>
+        </div>
+      }
+    </div>
+
   </div>
 
-  <!-- ⚙️ stacks -->
-  <div class="filters">
-    @for (stack of stacks; track stack) {
-      <button
-        (click)="toggleStack(stack)"
-        [class.active]="selectedStacks.includes(stack)">
-        {{ stack }}
-      </button>
-    }
-  </div>
+  <!-- 💊 ACTIVE PILLS -->
+  @if (hasActiveFilters) {
+    <div class="active-pills">
 
-  <!-- 🏷 tags -->
-  <div class="filters">
-    @for (tag of tags; track tag) {
-      <button
-        (click)="toggleTag(tag)"
-        [class.active]="selectedTags.includes(tag)">
-        {{ tag }}
-      </button>
-    }
-  </div>
+      @for (tag of selectedTags; track tag) {
+        <span class="pill">
+          {{ tag }}
+          <span class="pill-x" (click)="toggleTag(tag)">✕</span>
+        </span>
+      }
 
-  <!-- limpiar -->
-  <button class="clear-btn" (click)="clear()">
-    Limpiar filtros
-  </button>
+      @for (year of selectedYears; track year) {
+        <span class="pill">
+          {{ year }}
+          <span class="pill-x" (click)="toggleYear(year)">✕</span>
+        </span>
+      }
+
+      @for (stack of selectedStacks; track stack) {
+        <span class="pill">
+          {{ stack }}
+          <span class="pill-x" (click)="toggleStack(stack)">✕</span>
+        </span>
+      }
+
+      <button class="clear-btn" (click)="clear()">Limpiar filtros</button>
+
+    </div>
+  }
 
 </div>

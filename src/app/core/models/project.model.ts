@@ -24,6 +24,51 @@ export interface ProjectFilterState {
   years: number[];
 }
 
+// ========================= //
+// GRUPOS DE TECNOLOGÍAS     //
+// ========================= //
+export interface TagGroup {
+  label: string;
+  tags: string[];
+}
+
+export const TAG_GROUPS: TagGroup[] = [
+  {
+    label: 'CI/CD',
+    tags: ['CI/CD', 'Jenkins', 'ArgoCD', 'Bitbucket'],
+  },
+  {
+    label: 'Calidad',
+    tags: ['SonarQube', 'BlackDuck', 'Checkmarx', 'OWASP ZAP'],
+  },
+  {
+    label: 'Testing',
+    tags: ['Jasmine', 'Karma', 'Mockito', 'Jest'],
+  },
+  {
+    label: 'IA / Visión',
+    tags: ['OpenCV', 'TensorFlow', 'Keras', 'MediaPipe', 'NumPy', 'Pandas', 'scikit-learn'],
+  },
+  {
+    label: 'Base de datos',
+    tags: ['Oracle', 'MongoDB Atlas', 'PL/SQL', 'Redis'],
+  },
+  {
+    label: 'Mensajería',
+    tags: ['Kafka', 'AS400', 'BFF'],
+  },
+  {
+    label: 'Frontend',
+    tags: ['Angular Material', 'Bootstrap', 'Figma', 'Azure AD B2C'],
+  },
+  {
+    label: 'Otros',
+    tags: ['REST APIs', 'Postman', 'JBoss', 'Git'],
+  },
+];
+
+export type PanelId = 'tech' | 'year' | 'stack' | null;
+
 export const PROJECTS: Project[] = [
 
   {
