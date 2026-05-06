@@ -32,51 +32,14 @@ export interface TagGroup {
   tags: string[];
 }
 
-export const TAG_GROUPS: TagGroup[] = [
-  {
-    label: 'CI/CD',
-    tags: ['CI/CD', 'Jenkins', 'ArgoCD', 'Bitbucket'],
-  },
-  {
-    label: 'Calidad',
-    tags: ['SonarQube', 'BlackDuck', 'Checkmarx', 'OWASP ZAP'],
-  },
-  {
-    label: 'Testing',
-    tags: ['Jasmine', 'Karma', 'Mockito', 'Jest'],
-  },
-  {
-    label: 'IA / Visión',
-    tags: ['OpenCV', 'TensorFlow', 'Keras', 'MediaPipe', 'NumPy', 'Pandas', 'scikit-learn'],
-  },
-  {
-    label: 'Base de datos',
-    tags: ['Oracle', 'MongoDB Atlas', 'PL/SQL', 'Redis'],
-  },
-  {
-    label: 'Mensajería',
-    tags: ['Kafka', 'AS400', 'BFF'],
-  },
-  {
-    label: 'Frontend',
-    tags: ['Angular Material', 'Bootstrap', 'Figma', 'Azure AD B2C'],
-  },
-  {
-    label: 'Otros',
-    tags: ['REST APIs', 'Postman', 'JBoss', 'Git'],
-  },
-];
-
-export type PanelId = 'tech' | 'year' | 'stack' | null;
-
 export const PROJECTS: Project[] = [
 
   // =========================
-  // 🏦 ENTIDAD BANCARIA (IDM)
+  // 🏦 Scotiabank (IDM)
   // =========================
   {
-    title: 'SMS-CONSUMER – Entidad Bancaria',
-    context: 'IDM Technology · Entidad Bancaria · 2026',
+    title: 'SMS-CONSUMER – Scotiabank',
+    context: 'IDM Technology · Scotiabank · 2026',
     desc: 'Optimización de servicio batch para consumo de colas AS400 e integración con Kafka.',
     stack: 'Spring Boot',
     tags: ['AS400', 'Kafka', 'SonarQube', 'CI/CD', 'Jenkins', 'ArgoCD', 'BlackDuck', 'Checkmarx', 'Bitbucket', 'Postman', 'Arquitectura Hexagonal'],
@@ -86,12 +49,12 @@ export const PROJECTS: Project[] = [
     impact: 'Mejora en rendimiento y tiempos de procesamiento mediante paralelización.',
     companyLogo: '/imagen/LOGO_IDM.svg',
     companyName: 'IDM Technology',
-    clientLogo: '/imagen/LOGO_EB.svg',
-    clientName: 'ENTIDAD BANCARIA',
+    clientLogo: '/imagen/LOGO_SB.svg',
+    clientName: 'Scotiabank',
   },
   {
-    title: 'MAIL-CONSUMER – Entidad Bancaria',
-    context: 'IDM Technology · Entidad Bancaria · 2026',
+    title: 'MAIL-CONSUMER – Scotiabank',
+    context: 'IDM Technology · Scotiabank · 2026',
     desc: 'Optimización de servicio batch para consumo de colas AS400 e integración con Kafka.',
     stack: 'Spring Boot',
     tags: ['AS400', 'Kafka', 'SonarQube', 'CI/CD', 'Jenkins', 'ArgoCD', 'BlackDuck', 'Checkmarx', 'Bitbucket', 'Postman', 'Arquitectura Hexagonal'],
@@ -101,12 +64,12 @@ export const PROJECTS: Project[] = [
     impact: 'Mejora en rendimiento y tiempos de procesamiento mediante paralelización.',
     companyLogo: '/imagen/LOGO_IDM.svg',
     companyName: 'IDM Technology',
-    clientLogo: '/imagen/LOGO_EB.svg',
-    clientName: 'ENTIDAD BANCARIA',
+    clientLogo: '/imagen/LOGO_SB.svg',
+    clientName: 'Scotiabank',
   },
   {
-    title: 'GESINTEL – Entidad Bancaria',
-    context: 'IDM Technology · Entidad Bancaria · 2026',
+    title: 'GESINTEL – Scotiabank',
+    context: 'IDM Technology · Scotiabank · 2026',
     desc: 'Sistema para validación de personas PEP, sancionadas y entidades financieras.',
     stack: 'React · Spring Boot',
     tags: ['SonarQube', 'CI/CD', 'Jenkins', 'ArgoCD', 'BlackDuck', 'Checkmarx', 'Bitbucket', 'Postman'],
@@ -116,12 +79,12 @@ export const PROJECTS: Project[] = [
     impact: 'Mejora en seguridad, estabilidad y actualización tecnológica del sistema.',
     companyLogo: '/imagen/LOGO_IDM.svg',
     companyName: 'IDM Technology',
-    clientLogo: '/imagen/LOGO_EB.svg',
-    clientName: 'ENTIDAD BANCARIA',
+    clientLogo: '/imagen/LOGO_SB.svg',
+    clientName: 'Scotiabank',
   },
   {
-    title: 'BFF – Entidad Bancaria',
-    context: 'IDM Technology · Entidad Bancaria · 2026',
+    title: 'BFF – Scotiabank',
+    context: 'IDM Technology · Scotiabank · 2026',
     desc: 'Desarrollo de BFF para orquestación y consumo de servicios backend.',
     stack: 'Spring Boot',
     tags: ['SonarQube', 'CI/CD', 'Jenkins', 'ArgoCD', 'BlackDuck', 'Checkmarx', 'Bitbucket', 'Postman', 'Arquitectura Hexagonal'],
@@ -131,12 +94,12 @@ export const PROJECTS: Project[] = [
     impact: 'Mejora en la seguridad del consumo de servicios',
     companyLogo: '/imagen/LOGO_IDM.svg',
     companyName: 'IDM Technology',
-    clientLogo: '/imagen/LOGO_EB.svg',
-    clientName: 'ENTIDAD BANCARIA',
+    clientLogo: '/imagen/LOGO_SB.svg',
+    clientName: 'Scotiabank',
   },
   {
-    title: 'Validation-Listener – Entidad Bancaria',
-    context: 'IDM Technology · Entidad Bancaria · 2026',
+    title: 'Validation-Listener – Scotiabank',
+    context: 'IDM Technology · Scotiabank · 2026',
     desc: 'Implementación de servicio listener para consumo de colas AS400.',
     stack: 'Spring Boot',
     tags: ['AS400', 'Redis', 'Kafka', 'SonarQube', 'CI/CD', 'Jenkins', 'ArgoCD', 'BlackDuck', 'Checkmarx', 'Bitbucket', 'Postman', 'Arquitectura Hexagonal'],
@@ -146,12 +109,12 @@ export const PROJECTS: Project[] = [
     impact: 'Optimización del tiempo de respuesta',
     companyLogo: '/imagen/LOGO_IDM.svg',
     companyName: 'IDM Technology',
-    clientLogo: '/imagen/LOGO_EB.svg',
-    clientName: 'ENTIDAD BANCARIA',
+    clientLogo: '/imagen/LOGO_SB.svg',
+    clientName: 'Scotiabank',
   },
   {
-    title: 'Validation-API – Entidad Bancaria',
-    context: 'IDM Technology · Entidad Bancaria · 2026',
+    title: 'Validation-API – Scotiabank',
+    context: 'IDM Technology · Scotiabank · 2026',
     desc: 'API para validación de personas PEP.',
     stack: 'Spring Boot',
     tags: ['SonarQube', 'CI/CD', 'Jenkins', 'ArgoCD', 'BlackDuck', 'Checkmarx', 'Bitbucket', 'Postman', 'Arquitectura Hexagonal'],
@@ -161,8 +124,8 @@ export const PROJECTS: Project[] = [
     impact: 'Mejora en rendimiento y calidad de código',
     companyLogo: '/imagen/LOGO_IDM.svg',
     companyName: 'IDM Technology',
-    clientLogo: '/imagen/LOGO_EB.svg',
-    clientName: 'ENTIDAD BANCARIA',
+    clientLogo: '/imagen/LOGO_SB.svg',
+    clientName: 'Scotiabank',
   },
 
   // =========================
