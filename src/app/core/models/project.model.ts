@@ -1,58 +1,32 @@
-export type ProjectTier =
-  | 'hero'
-  | 'featured'
-  | 'standard'
-  | 'minor';
+export type ProjectTier = | 'hero' | 'featured' | 'standard' | 'minor';
+export type ProjectCategory = | 'banking' | 'telecom' | 'government' | 'ai' | 'enterprise' | 'personal';
 
-export type ProjectCategory =
-  | 'banking'
-  | 'telecom'
-  | 'government'
-  | 'ai'
-  | 'enterprise'
-  | 'personal';
+export type ProjectComplexity = | 'high' | 'medium' | 'low';
 
-export type ProjectComplexity =
-  | 'high'
-  | 'medium'
-  | 'low';
-
-export type ProjectRole =
-  | 'frontend'
-  | 'backend'
-  | 'fullstack'
-  | 'architecture';
+export type ProjectRole = | 'frontend' | 'backend' | 'fullstack' | 'architecture';
 
 export interface Project {
   title: string;
   desc: string;
   impact?: string;
   context?: string;
-
   stack: string;
   tags: string[];
-
   tier: ProjectTier;
   category: ProjectCategory;
   complexity: ProjectComplexity;
   role: ProjectRole;
-
   size: 'featured' | 'regular' | 'half';
-
   featuredOrder?: number;
-
   year: number;
   duration: string;
-
   highlightMetrics?: string[];
-
   companyLogo?: string;
   companyName?: string;
-
   clientLogo?: string;
   clientName?: string;
-
   url?: string;
+  slug?: string;
 }
 
 export interface ProjectFilterState {
@@ -63,10 +37,6 @@ export interface ProjectFilterState {
 }
 
 export const PROJECTS: Project[] = [
-
-  // =========================================================
-  // 🏆 HERO PROJECTS
-  // =========================================================
 
   {
     title: 'SMS-CONSUMER – Scotiabank',
@@ -88,6 +58,7 @@ export const PROJECTS: Project[] = [
     companyName: 'IDM Technology',
     clientLogo: '/imagen/LOGO_SB.svg',
     clientName: 'Scotiabank',
+    slug: 'sms-consumer-scotiabank'
   },
 
   {
@@ -178,10 +149,6 @@ export const PROJECTS: Project[] = [
     clientName: 'Diego Gonzalez',
   },
 
-  // =========================================================
-  // ⭐ FEATURED PROJECTS
-  // =========================================================
-
   {
     title: 'GESINTEL – Scotiabank',
     context: 'IDM Technology · Scotiabank · 2026',
@@ -201,6 +168,7 @@ export const PROJECTS: Project[] = [
     companyName: 'IDM Technology',
     clientLogo: '/imagen/LOGO_SB.svg',
     clientName: 'Scotiabank',
+    slug: 'gesintel-scotiabank'
   },
 
   {
@@ -350,10 +318,6 @@ export const PROJECTS: Project[] = [
     clientName: 'INTEGRATEL',
   },
 
-  // =========================================================
-  // 📦 STANDARD PROJECTS
-  // =========================================================
-
   {
     title: 'Expediente Virtual – Bandeja SAR',
     context: 'INDRA PERÚ · INTEGRATEL · 2024',
@@ -479,10 +443,6 @@ export const PROJECTS: Project[] = [
     clientLogo: '/imagen/LOGO_RENIEC.svg',
     clientName: 'RENIEC',
   },
-
-  // =========================================================
-  // 🧩 MINOR PROJECTS
-  // =========================================================
 
   {
     title: 'MAIL-CONSUMER – Scotiabank',

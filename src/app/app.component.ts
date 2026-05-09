@@ -9,6 +9,7 @@ import {ContactComponent} from './features/contact/contact.component';
 import {FooterComponent} from './shared/components/footer/footer.component';
 import {CursorComponent} from './shared/components/cursor/cursor.component';
 import {CredentialsComponent} from './features/credentials/credentials.component';
+import {RouterOutlet} from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -24,7 +25,8 @@ import {CredentialsComponent} from './features/credentials/credentials.component
     ContactComponent,
     FooterComponent,
     CursorComponent,
-    CredentialsComponent
+    CredentialsComponent,
+    RouterOutlet
   ],
   styleUrls: ['./app.component.scss']
 })

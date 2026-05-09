@@ -1,9 +1,10 @@
-import { Component, Input } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {Component, Input} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { Project } from '../../../../core/models/project.model';
+import {Project} from '../../../../core/models/project.model';
 
-import { ModalService } from '../../../../core/services/local/modal/modal.service';
+import {ModalService} from '../../../../core/services/local/modal/modal.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-hero-project-card',
@@ -14,15 +15,17 @@ import { ModalService } from '../../../../core/services/local/modal/modal.servic
 })
 export class HeroProjectCardComponent {
 
-  @Input({ required: true })
+  @Input({required: true})
   project!: Project;
 
   constructor(
-    private readonly modalService: ModalService
-  ) {}
+    private readonly modalService: ModalService,
+    private readonly _route: Router
+  ) {
+  }
 
   openProject(): void {
-    this.modalService.openPM(this.project);
+    this._route.navigate(['/projects', this.project.slug]).then();
   }
 
 }
