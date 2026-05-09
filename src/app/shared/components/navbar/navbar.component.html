@@ -1,16 +1,16 @@
 <nav>
 
-  <a href="#" class="nav-logo">DG // Portfolio</a>
+  <a href="/" class="nav-logo">DG // Portfolio</a>
 
-  <button class="nav-toggle" (click)="menuOpen = !menuOpen">
+  <button class="nav-toggle" (click)="closeMenu()">
     ☰
   </button>
 
   <ul class="nav-links">
 
     <li>
-      <a routerLink="/">
-        Inicio
+      <a routerLink="/skills">
+        Habilidades
       </a>
     </li>
 
@@ -21,13 +21,19 @@
     </li>
 
     <li>
-      <a routerLink="/projects">
+      <a routerLink="/experience">
         Experiencia
       </a>
     </li>
 
     <li>
-      <a routerLink="/projects">
+      <a routerLink="/credentials">
+        Credenciales
+      </a>
+    </li>
+
+    <li>
+      <a routerLink="/contact">
         Contacto
       </a>
     </li>
