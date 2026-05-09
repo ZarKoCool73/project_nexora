@@ -1,11 +1,22 @@
 <section id="projects" reveal>
 
+  <!-- HEADER -->
   <div class="section-header">
+
     <span class="section-num">02</span>
-    <h2 class="section-title"> Proyectos destacados <span class="projects-count">({{ filteredProjects.length }})</span> </h2>
+
+    <h2 class="section-title">
+      Proyectos
+      <span class="projects-count">
+        ({{ filteredProjects.length }})
+      </span>
+    </h2>
+
     <div class="section-line"></div>
+
   </div>
 
+  <!-- FILTERS -->
   <app-project-filters
     [tags]="availableTags"
     [years]="availableYears"
@@ -13,69 +24,24 @@
     (filtersChange)="onFiltersChange($event)">
   </app-project-filters>
 
-  <div class="projects-grid">
+  <!-- HERO -->
+  <app-hero-projects
+    [projects]="heroProjects">
+  </app-hero-projects>
 
-    @for (project of paginatedProjects; track project.title) {
+  <!-- FEATURED -->
+  <app-featured-projects
+    [projects]="featuredProjects">
+  </app-featured-projects>
 
-      <div class="project-card"
-           (click)="openProject(project)"
-           [class.proj-featured]="project.size === 'featured'"
-           [class.proj-regular]="project.size === 'regular'"
-           [class.proj-half]="project.size === 'half'">
+  <!-- STANDARD -->
+  <app-standard-projects
+    [projects]="standardProjects">
+  </app-standard-projects>
 
-        <div class="proj-meta">
-          <div class="proj-tags">
-            @for (tag of project.tags.slice(0, 4); track tag) {
-              <span class="proj-tag">{{ tag }}</span>
-            }
-
-            @if (project.tags.length > 4) {
-              <span class="proj-tag more">+{{ project.tags.length - 4 }}</span>
-            }
-          </div>
-          <span class="proj-year">{{ project.year }}</span>
-        </div>
-
-        <!-- TÍTULO + LOGOS a la misma altura -->
-        <div class="proj-title-row">
-          <h3 class="proj-title">{{ project.title }}</h3>
-
-          @if (project.companyLogo || project.clientLogo) {
-            <div class="proj-logos">
-
-              @if (project.companyLogo) {
-                <div class="logo-circle" [attr.title]="project.companyName">
-                  <img [src]="project.companyLogo" [alt]="project.companyName"/>
-                </div>
-              }
-
-              @if (project.clientLogo) {
-                <div class="logo-circle" [attr.title]="project.clientName">
-                  <img [src]="project.clientLogo" [alt]="project.clientName"/>
-                </div>
-              }
-
-            </div>
-          }
-        </div>
-
-        <p class="proj-desc">{{ project.desc }}</p>
-
-        <div class="proj-footer">
-          <span class="proj-stack">{{ project.stack }}</span>
-          <span class="proj-arrow">↗</span>
-        </div>
-
-      </div>
-
-    }
-
-  </div>
-
-  <app-pagination
-    [currentPage]="currentPage"
-    [totalPages]="totalPages"
-    (pageChange)="onPageChange($event)">
-  </app-pagination>
+  <!-- ARCHIVE -->
+  <app-archive-projects
+    [projects]="minorProjects">
+  </app-archive-projects>
 
 </section>

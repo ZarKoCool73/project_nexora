@@ -1,0 +1,116 @@
+<div class="hero-card"
+     (click)="openProject()">
+
+  <!-- GLOW -->
+  <div class="hero-glow"></div>
+
+  <!-- TOP -->
+  <div class="hero-top">
+
+    <!-- TAGS -->
+    <div class="hero-tags">
+
+      @for (tag of project.tags.slice(0, 4); track tag) {
+
+        <span class="hero-tag">
+          {{ tag }}
+        </span>
+
+      }
+
+      @if (project.tags.length > 4) {
+
+        <span class="hero-tag more">
+          +{{ project.tags.length - 4 }}
+        </span>
+
+      }
+
+    </div>
+
+    <!-- YEAR -->
+    <div class="hero-year">
+      {{ project.year }}
+    </div>
+
+  </div>
+
+  <!-- CENTER -->
+  <div class="hero-content">
+
+    <!-- TITLE -->
+    <h3 class="hero-title">
+      {{ project.title }}
+    </h3>
+
+    <!-- DESCRIPTION -->
+    <p class="hero-description">
+      {{ project.desc }}
+    </p>
+
+    <!-- IMPACT -->
+    @if (project.impact) {
+
+      <div class="hero-impact">
+
+        <span class="impact-label">
+          IMPACT
+        </span>
+
+        <p class="impact-text">
+          {{ project.impact }}
+        </p>
+
+      </div>
+
+    }
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="hero-footer">
+
+    <!-- STACK -->
+    <div class="hero-stack">
+      {{ project.stack }}
+    </div>
+
+    <!-- LOGOS -->
+    <div class="hero-logos">
+
+      @if (project.companyLogo) {
+
+        <div class="hero-logo"
+             [attr.title]="project.companyName">
+
+          <img
+            [src]="project.companyLogo"
+            [alt]="project.companyName">
+
+        </div>
+
+      }
+
+      @if (project.clientLogo) {
+
+        <div class="hero-logo"
+             [attr.title]="project.clientName">
+
+          <img
+            [src]="project.clientLogo"
+            [alt]="project.clientName">
+
+        </div>
+
+      }
+
+    </div>
+
+  </div>
+
+  <!-- CORNER -->
+  <div class="hero-corner">
+    ↗
+  </div>
+
+</div>

@@ -1,0 +1,33 @@
+<div
+  class="standard-projects"
+  *ngIf="projects.length">
+
+  <div class="standard-header">
+
+    <div>
+
+      <div class="standard-kicker">
+        Sistemas Productivos
+      </div>
+
+      <h3 class="standard-title">
+        Proyectos de Ingeniería
+      </h3>
+
+    </div>
+
+  </div>
+
+  <div class="standard-grid">
+
+    @for (project of projects; track project.title) {
+
+      <app-standard-project-card
+        [project]="project">
+      </app-standard-project-card>
+
+    }
+
+  </div>
+
+</div>

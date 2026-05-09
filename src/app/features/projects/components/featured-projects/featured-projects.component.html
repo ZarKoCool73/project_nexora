@@ -1,0 +1,39 @@
+<div
+  class="featured-projects"
+  *ngIf="projects.length">
+
+  <!-- HEADER -->
+  <div class="featured-header">
+
+    <div>
+
+      <div class="featured-kicker">
+        Selección Destacada
+      </div>
+
+      <h3 class="featured-title">
+        Proyectos Destacados
+      </h3>
+
+    </div>
+
+    <div class="featured-count">
+      {{ projects.length }}
+    </div>
+
+  </div>
+
+  <!-- GRID -->
+  <div class="featured-grid">
+
+    @for (project of projects; track project.title) {
+
+      <app-featured-project-card
+        [project]="project">
+      </app-featured-project-card>
+
+    }
+
+  </div>
+
+</div>

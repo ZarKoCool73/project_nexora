@@ -1,20 +1,58 @@
+export type ProjectTier =
+  | 'hero'
+  | 'featured'
+  | 'standard'
+  | 'minor';
+
+export type ProjectCategory =
+  | 'banking'
+  | 'telecom'
+  | 'government'
+  | 'ai'
+  | 'enterprise'
+  | 'personal';
+
+export type ProjectComplexity =
+  | 'high'
+  | 'medium'
+  | 'low';
+
+export type ProjectRole =
+  | 'frontend'
+  | 'backend'
+  | 'fullstack'
+  | 'architecture';
+
 export interface Project {
   title: string;
   desc: string;
-  tags: string[];
-  stack: string;
-  year: number;
-  size: 'featured' | 'regular' | 'half';
-  url?: string;
-  duration: string;
-  context?: string;
   impact?: string;
+  context?: string;
 
-  // 🏢 Logos en círculo — rutas relativas a assets/
-  companyLogo?: string;   // ej: 'assets/logos/companies/indra.svg'
-  companyName?: string;   // tooltip al hacer hover
-  clientLogo?: string;    // ej: 'assets/logos/clients/integratel.svg'
-  clientName?: string;    // tooltip al hacer hover
+  stack: string;
+  tags: string[];
+
+  tier: ProjectTier;
+  category: ProjectCategory;
+  complexity: ProjectComplexity;
+  role: ProjectRole;
+
+  size: 'featured' | 'regular' | 'half';
+
+  featuredOrder?: number;
+
+  year: number;
+  duration: string;
+
+  highlightMetrics?: string[];
+
+  companyLogo?: string;
+  companyName?: string;
+
+  clientLogo?: string;
+  clientName?: string;
+
+  url?: string;
 }
 
 export interface ProjectFilterState {
@@ -24,263 +62,464 @@ export interface ProjectFilterState {
   years: number[];
 }
 
-// ========================= //
-// GRUPOS DE TECNOLOGÍAS     //
-// ========================= //
-export interface TagGroup {
-  label: string;
-  tags: string[];
-}
-
 export const PROJECTS: Project[] = [
 
-  // =========================
-  // 🏦 Scotiabank (IDM)
-  // =========================
+  // =========================================================
+  // 🏆 HERO PROJECTS
+  // =========================================================
+
   {
     title: 'SMS-CONSUMER – Scotiabank',
     context: 'IDM Technology · Scotiabank · 2026',
     desc: 'Optimización de servicio batch para consumo de colas AS400 e integración con Kafka.',
+    impact: 'Optimización de procesamiento batch mediante paralelización de consumo AS400 y modernización backend sobre Java 25.',
     stack: 'Spring Boot',
-    tags: ['AS400', 'Kafka', 'SonarQube', 'CI/CD', 'Jenkins', 'ArgoCD', 'BlackDuck', 'Checkmarx', 'Bitbucket', 'Postman', 'Arquitectura Hexagonal'],
+    tags: ['AS400', 'Kafka', 'Redis', 'SonarQube', 'CI/CD', 'Jenkins', 'ArgoCD', 'Hexagonal Architecture'],
+    tier: 'hero',
+    category: 'banking',
+    complexity: 'high',
+    role: 'backend',
+    featuredOrder: 1,
+    size: 'featured',
     year: 2026,
     duration: '4 Meses',
-    size: 'half',
-    impact: 'Reducción de tiempos de procesamiento en servicios batch mediante ejecución paralela y modernización tecnológica con Java 25.',
+    highlightMetrics: ['Kafka', 'AS400', 'Java 25', 'Hexagonal Architecture'],
     companyLogo: '/imagen/LOGO_IDM.svg',
     companyName: 'IDM Technology',
     clientLogo: '/imagen/LOGO_SB.svg',
     clientName: 'Scotiabank',
   },
-  {
-    title: 'MAIL-CONSUMER – Scotiabank',
-    context: 'IDM Technology · Scotiabank · 2026',
-    desc: 'Optimización de servicio batch para consumo de colas AS400 e integración con Kafka.',
-    stack: 'Spring Boot',
-    tags: ['AS400', 'Kafka', 'SonarQube', 'CI/CD', 'Jenkins', 'ArgoCD', 'BlackDuck', 'Checkmarx', 'Bitbucket', 'Postman', 'Arquitectura Hexagonal'],
-    year: 2026,
-    duration: '4 Meses',
-    size: 'half',
-    impact: 'Reducción de tiempos de procesamiento en servicios batch mediante ejecución paralela y modernización tecnológica con Java 25.',
-    companyLogo: '/imagen/LOGO_IDM.svg',
-    companyName: 'IDM Technology',
-    clientLogo: '/imagen/LOGO_SB.svg',
-    clientName: 'Scotiabank',
-  },
-  {
-    title: 'GESINTEL – Scotiabank',
-    context: 'IDM Technology · Scotiabank · 2026',
-    desc: 'Sistema para validación de personas PEP, sancionadas y entidades financieras.',
-    stack: 'React · Spring Boot',
-    tags: ['SonarQube', 'CI/CD', 'Jenkins', 'ArgoCD', 'BlackDuck', 'Checkmarx', 'Bitbucket', 'Postman'],
-    year: 2026,
-    duration: '4 Meses',
-    size: 'half',
-    impact: 'Mejora en seguridad, estabilidad y actualización tecnológica del sistema.',
-    companyLogo: '/imagen/LOGO_IDM.svg',
-    companyName: 'IDM Technology',
-    clientLogo: '/imagen/LOGO_SB.svg',
-    clientName: 'Scotiabank',
-  },
-  {
-    title: 'BFF – Scotiabank',
-    context: 'IDM Technology · Scotiabank · 2026',
-    desc: 'Desarrollo de BFF para orquestación y consumo de servicios backend.',
-    stack: 'Spring Boot',
-    tags: ['SonarQube', 'CI/CD', 'Jenkins', 'ArgoCD', 'BlackDuck', 'Checkmarx', 'Bitbucket', 'Postman', 'Arquitectura Hexagonal'],
-    year: 2026,
-    duration: '4 Meses',
-    size: 'half',
-    impact: 'Mejora en seguridad, mantenibilidad y rendimiento del consumo de servicios mediante modernización del BFF sobre Java 25.',
-    companyLogo: '/imagen/LOGO_IDM.svg',
-    companyName: 'IDM Technology',
-    clientLogo: '/imagen/LOGO_SB.svg',
-    clientName: 'Scotiabank',
-  },
+
   {
     title: 'Validation-Listener – Scotiabank',
     context: 'IDM Technology · Scotiabank · 2026',
-    desc: 'Implementación de servicio listener para consumo de colas AS400.',
+    desc: 'Listener backend para procesamiento de colas AS400 e integración distribuida.',
+    impact: 'Reducción de tiempos de respuesta mediante consumo eficiente de colas AS400 e integración con Redis y Kafka.',
     stack: 'Spring Boot',
-    tags: ['AS400', 'Redis', 'Kafka', 'SonarQube', 'CI/CD', 'Jenkins', 'ArgoCD', 'BlackDuck', 'Checkmarx', 'Bitbucket', 'Postman', 'Arquitectura Hexagonal'],
+    tags: ['AS400', 'Redis', 'Kafka', 'CI/CD', 'Jenkins', 'ArgoCD'],
+    tier: 'hero',
+    category: 'banking',
+    complexity: 'high',
+    role: 'backend',
+    featuredOrder: 2,
+    size: 'featured',
     year: 2026,
     duration: '4 Meses',
-    size: 'half',
-    impact: 'Optimización de tiempos de respuesta mediante procesamiento eficiente de colas AS400 e integración de caché distribuida con Redis.',
-    companyLogo: '/imagen/LOGO_IDM.svg',
-    companyName: 'IDM Technology',
-    clientLogo: '/imagen/LOGO_SB.svg',
-    clientName: 'Scotiabank',
-  },
-  {
-    title: 'Validation-API – Scotiabank',
-    context: 'IDM Technology · Scotiabank · 2026',
-    desc: 'API para validación de personas PEP.',
-    stack: 'Spring Boot',
-    tags: ['SonarQube', 'CI/CD', 'Jenkins', 'ArgoCD', 'BlackDuck', 'Checkmarx', 'Bitbucket', 'Postman', 'Arquitectura Hexagonal'],
-    year: 2026,
-    duration: '4 Meses',
-    size: 'half',
-    impact: 'Mejora en rendimiento y calidad de código',
+    highlightMetrics: ['Redis', 'Kafka', 'AS400', 'Distributed Cache'],
     companyLogo: '/imagen/LOGO_IDM.svg',
     companyName: 'IDM Technology',
     clientLogo: '/imagen/LOGO_SB.svg',
     clientName: 'Scotiabank',
   },
 
-  // =========================
-  // 🟠 INTEGRATEL (INDRA)
-  // =========================
   {
-    title: 'Expediente Virtual – INTEGRATEL',
-    context: 'INDRA PERÚ · INTEGRATEL · 2024',
-    desc: 'Desarrollo de módulos en sistema de expedientes digitales.',
-    stack: 'Angular',
-    tags: ['Azure AD B2C', 'Jasmine', 'Karma', 'SonarQube', 'CI/CD', 'Jenkins', 'Bitbucket', 'Postman'],
-    year: 2024,
-    duration: '4 Meses',
-    size: 'half',
-    impact: 'Reducción de incidencias en producción',
-    companyLogo: '/imagen/LOGO_INDRA.svg',
-    companyName: 'INDRA PERÚ',
-    clientLogo: '/imagen/LOGO_INTEGRATEL.svg',
-    clientName: 'INTEGRATEL',
-  },
-  {
-    title: 'Expediente Virtual – Bandeja SAR',
-    context: 'INDRA PERÚ · INTEGRATEL · 2024',
-    desc: 'Módulo de bandeja SAR.',
-    stack: 'Angular · Spring Boot',
-    tags: ['Figma', 'Jasmine', 'Karma', 'Mockito', 'SonarQube', 'CI/CD', 'Jenkins', 'Bitbucket', 'Postman'],
-    year: 2024,
-    duration: '4 Meses',
-    size: 'regular',
-    impact: 'Optimización del flujo',
-    companyLogo: '/imagen/LOGO_INDRA.svg',
-    companyName: 'INDRA PERÚ',
-    clientLogo: '/imagen/LOGO_INTEGRATEL.svg',
-    clientName: 'INTEGRATEL',
-  },
-  {
-    title: 'PACIFYC – INTEGRATEL',
-    context: 'INDRA PERÚ · INTEGRATEL · 2024',
-    desc: 'Plataforma de gestión interna.',
-    stack: 'Angular · Spring Boot',
-    tags: ['PL/SQL', 'Jasmine', 'Karma', 'Mockito', 'SonarQube', 'CI/CD', 'Jenkins', 'Bitbucket', 'Postman'],
-    year: 2024,
-    duration: '8 Meses',
-    size: 'regular',
-    impact: 'Migración de procesos',
-    companyLogo: '/imagen/LOGO_INDRA.svg',
-    companyName: 'INDRA PERÚ',
-    clientLogo: '/imagen/LOGO_INTEGRATEL.svg',
-    clientName: 'INTEGRATEL',
-  },
-  {
-    title: 'SIVADAC – INTEGRATEL',
-    context: 'INDRA PERÚ · INTEGRATEL · 2024',
-    desc: 'Validación documental.',
-    stack: 'Angular',
-    tags: ['Figma', 'Jasmine', 'Karma', 'SonarQube', 'CI/CD', 'Jenkins', 'Bitbucket', 'Postman'],
-    year: 2024,
-    duration: '8 Meses',
-    size: 'regular',
-    impact: 'Reducción de errores',
-    companyLogo: '/imagen/LOGO_INDRA.svg',
-    companyName: 'INDRA PERÚ',
-    clientLogo: '/imagen/LOGO_INTEGRATEL.svg',
-    clientName: 'INTEGRATEL',
-  },
-  {
-    title: 'Jerarquía de Ventas – INTEGRATEL',
-    context: 'INDRA PERÚ · INTEGRATEL · 2025',
-    desc: 'Gestión jerárquica.',
+    title: 'SIGED – RENIEC',
+    context: 'CloudComputing Perú S.A.C. · RENIEC · 2023',
+    desc: 'Sistema de gestión documental para procesos institucionales.',
+    impact: 'Modernización tecnológica y optimización de procesos documentales institucionales.',
     stack: 'Angular · React · Spring Boot',
-    tags: ['Oracle', 'Jasmine', 'Karma', 'SonarQube', 'CI/CD', 'Jenkins', 'Bitbucket', 'Postman'],
-    year: 2025,
+    tags: ['Angular Material', 'PL/SQL', 'Spring Boot', 'Jenkins', 'SonarQube'],
+    tier: 'hero',
+    category: 'government',
+    complexity: 'high',
+    role: 'fullstack',
+    featuredOrder: 3,
+    size: 'featured',
+    year: 2023,
     duration: '8 Meses',
-    size: 'half',
-    impact: 'Optimización comercial',
-    companyLogo: '/imagen/LOGO_INDRA.svg',
-    companyName: 'INDRA PERÚ',
-    clientLogo: '/imagen/LOGO_INTEGRATEL.svg',
-    clientName: 'INTEGRATEL',
-  },
-  {
-    title: 'SISTEC – INTEGRATEL',
-    context: 'INDRA PERÚ · INTEGRATEL · 2025',
-    desc: 'Sistema interno.',
-    stack: 'Angular · Spring Boot',
-    tags: ['PL/SQL', 'Oracle', 'Jasmine', 'Karma', 'Mockito', 'SonarQube', 'CI/CD', 'Jenkins', 'Bitbucket', 'Postman'],
-    year: 2025,
-    duration: '10 Meses',
-    size: 'half',
-    impact: 'Optimización procesos',
-    companyLogo: '/imagen/LOGO_INDRA.svg',
-    companyName: 'INDRA PERÚ',
-    clientLogo: '/imagen/LOGO_INTEGRATEL.svg',
-    clientName: 'INTEGRATEL',
+    highlightMetrics: ['Spring Boot', 'Angular', 'React', 'Government System'],
+    companyLogo: '/imagen/LOGO_CC.svg',
+    companyName: 'CloudComputing Perú S.A.C.',
+    clientLogo: '/imagen/LOGO_RENIEC.svg',
+    clientName: 'RENIEC',
   },
 
-  // =========================
-  // 🔵 CLARO
-  // =========================
   {
     title: 'Botón de Pago – CLARO',
     context: 'INDRA PERÚ · CLARO · 2025',
-    desc: 'Integración de pagos.',
+    desc: 'Plataforma de integración y procesamiento de pagos.',
+    impact: 'Incremento de confiabilidad y seguridad en flujos de pagos digitales empresariales.',
     stack: 'Angular · Spring Boot',
-    tags: ['Jest', 'Mockito', 'SonarQube', 'CI/CD', 'Jenkins', 'Bitbucket', 'Postman', 'OWASP ZAP'],
+    tags: ['OWASP ZAP', 'Mockito', 'Jest', 'SonarQube', 'CI/CD'],
+    tier: 'hero',
+    category: 'telecom',
+    complexity: 'high',
+    role: 'fullstack',
+    featuredOrder: 4,
+    size: 'featured',
     year: 2025,
     duration: '12 Meses',
-    size: 'half',
-    impact: 'Mejora en confiabilidad',
+    highlightMetrics: ['OWASP', 'Payments', 'Spring Boot', 'Enterprise Security'],
     companyLogo: '/imagen/LOGO_INDRA.svg',
     companyName: 'INDRA PERÚ',
     clientLogo: '/imagen/LOGO_CLARO.svg',
     clientName: 'CLARO',
   },
+
+  {
+    title: 'Sistema de Lenguaje de Señas - UA',
+    context: 'TESIS · 2025',
+    desc: 'Sistema inteligente de reconocimiento de señas en tiempo real.',
+    impact: 'Implementación funcional de reconocimiento gestual mediante IA y visión computacional.',
+    stack: 'Angular · Flask · Node.js',
+    tags: ['TensorFlow', 'Keras', 'MediaPipe', 'OpenCV', 'MongoDB Atlas'],
+    tier: 'hero',
+    category: 'ai',
+    complexity: 'high',
+    role: 'fullstack',
+    featuredOrder: 5,
+    size: 'featured',
+    year: 2025,
+    duration: '6 Meses',
+    highlightMetrics: ['TensorFlow', 'OpenCV', 'MediaPipe', 'Real-Time AI'],
+    companyLogo: '/imagen/LOGO_UA.svg',
+    companyName: 'Universidad Autónoma del Perú',
+    clientLogo: '/imagen/FOTO.svg',
+    clientName: 'Diego Gonzalez',
+  },
+
+  // =========================================================
+  // ⭐ FEATURED PROJECTS
+  // =========================================================
+
+  {
+    title: 'GESINTEL – Scotiabank',
+    context: 'IDM Technology · Scotiabank · 2026',
+    desc: 'Sistema de validación de personas PEP y entidades financieras.',
+    impact: 'Fortalecimiento de validaciones financieras y actualización tecnológica del sistema.',
+    stack: 'React · Spring Boot',
+    tags: ['SonarQube', 'CI/CD', 'Jenkins', 'Postman'],
+    tier: 'featured',
+    category: 'banking',
+    complexity: 'medium',
+    role: 'fullstack',
+    size: 'half',
+    year: 2026,
+    duration: '4 Meses',
+    highlightMetrics: ['PEP Validation', 'Spring Boot', 'React'],
+    companyLogo: '/imagen/LOGO_IDM.svg',
+    companyName: 'IDM Technology',
+    clientLogo: '/imagen/LOGO_SB.svg',
+    clientName: 'Scotiabank',
+  },
+
+  {
+    title: 'BFF – Scotiabank',
+    context: 'IDM Technology · Scotiabank · 2026',
+    desc: 'Backend for Frontend para orquestación de servicios empresariales.',
+    impact: 'Optimización de consumo de APIs y desacoplamiento de servicios backend.',
+    stack: 'Spring Boot',
+    tags: ['Hexagonal Architecture', 'CI/CD', 'Jenkins'],
+    tier: 'featured',
+    category: 'banking',
+    complexity: 'medium',
+    role: 'backend',
+    size: 'half',
+    year: 2026,
+    duration: '4 Meses',
+    highlightMetrics: ['BFF', 'API Gateway', 'Hexagonal Architecture'],
+    companyLogo: '/imagen/LOGO_IDM.svg',
+    companyName: 'IDM Technology',
+    clientLogo: '/imagen/LOGO_SB.svg',
+    clientName: 'Scotiabank',
+  },
+
+  {
+    title: 'Validation-API – Scotiabank',
+    context: 'IDM Technology · Scotiabank · 2026',
+    desc: 'API empresarial para validación de personas PEP.',
+    impact: 'Mejora de rendimiento y estabilidad mediante optimización de validaciones backend.',
+    stack: 'Spring Boot',
+    tags: ['SonarQube', 'CI/CD', 'Jenkins'],
+    tier: 'featured',
+    category: 'banking',
+    complexity: 'medium',
+    role: 'backend',
+    size: 'half',
+    year: 2026,
+    duration: '4 Meses',
+    highlightMetrics: ['REST API', 'Validation Services', 'Spring Boot'],
+    companyLogo: '/imagen/LOGO_IDM.svg',
+    companyName: 'IDM Technology',
+    clientLogo: '/imagen/LOGO_SB.svg',
+    clientName: 'Scotiabank',
+  },
+
+  {
+    title: 'Expediente Virtual – INTEGRATEL',
+    context: 'INDRA PERÚ · INTEGRATEL · 2024',
+    desc: 'Desarrollo de módulos para sistema de expedientes digitales.',
+    impact: 'Reducción de incidencias y mejora de estabilidad en producción.',
+    stack: 'Angular',
+    tags: ['Azure AD B2C', 'Jasmine', 'Karma', 'SonarQube'],
+    tier: 'featured',
+    category: 'telecom',
+    complexity: 'medium',
+    role: 'frontend',
+    size: 'half',
+    year: 2024,
+    duration: '4 Meses',
+    highlightMetrics: ['Angular', 'Azure AD', 'Testing'],
+    companyLogo: '/imagen/LOGO_INDRA.svg',
+    companyName: 'INDRA PERÚ',
+    clientLogo: '/imagen/LOGO_INTEGRATEL.svg',
+    clientName: 'INTEGRATEL',
+  },
+
+  {
+    title: 'PACIFYC – INTEGRATEL',
+    context: 'INDRA PERÚ · INTEGRATEL · 2024',
+    desc: 'Plataforma de gestión interna empresarial.',
+    impact: 'Migración y optimización de procesos internos empresariales.',
+    stack: 'Angular · Spring Boot',
+    tags: ['PL/SQL', 'Mockito', 'SonarQube'],
+    tier: 'featured',
+    category: 'enterprise',
+    complexity: 'medium',
+    role: 'fullstack',
+    size: 'regular',
+    year: 2024,
+    duration: '8 Meses',
+    highlightMetrics: ['Enterprise Platform', 'PL/SQL', 'Spring Boot'],
+    companyLogo: '/imagen/LOGO_INDRA.svg',
+    companyName: 'INDRA PERÚ',
+    clientLogo: '/imagen/LOGO_INTEGRATEL.svg',
+    clientName: 'INTEGRATEL',
+  },
+
+  {
+    title: 'SISTEC – INTEGRATEL',
+    context: 'INDRA PERÚ · INTEGRATEL · 2025',
+    desc: 'Sistema interno empresarial para optimización operativa.',
+    impact: 'Mejora de procesos internos y mantenimiento evolutivo.',
+    stack: 'Angular · Spring Boot',
+    tags: ['Oracle', 'PL/SQL', 'Mockito'],
+    tier: 'featured',
+    category: 'enterprise',
+    complexity: 'medium',
+    role: 'fullstack',
+    size: 'regular',
+    year: 2025,
+    duration: '10 Meses',
+    highlightMetrics: ['Oracle', 'Enterprise', 'Spring Boot'],
+    companyLogo: '/imagen/LOGO_INDRA.svg',
+    companyName: 'INDRA PERÚ',
+    clientLogo: '/imagen/LOGO_INTEGRATEL.svg',
+    clientName: 'INTEGRATEL',
+  },
+
   {
     title: 'WEB INCIDENTES – CLARO',
     context: 'INDRA PERÚ · CLARO · 2025',
-    desc: 'Sistema web para la gestión de incidentes',
+    desc: 'Sistema web para gestión de incidentes operativos.',
+    impact: 'Modernización tecnológica y optimización del flujo de incidencias.',
     stack: 'Angular · Spring Boot',
-    tags: ['BFF', 'Jest', 'SonarQube', 'CI/CD', 'Jenkins', 'Bitbucket', 'Postman', 'OWASP ZAP'],
+    tags: ['BFF', 'OWASP ZAP', 'Jest'],
+    tier: 'featured',
+    category: 'telecom',
+    complexity: 'medium',
+    role: 'fullstack',
+    size: 'half',
     year: 2025,
     duration: '8 Meses',
-    size: 'half',
-    impact: 'Optimización y migración en nuevos lineamientos actualizados a la fecha',
+    highlightMetrics: ['Incident Management', 'OWASP', 'BFF'],
     companyLogo: '/imagen/LOGO_INDRA.svg',
     companyName: 'INDRA PERÚ',
     clientLogo: '/imagen/LOGO_CLARO.svg',
     clientName: 'CLARO',
   },
+
+  {
+    title: 'Jerarquía de Ventas – INTEGRATEL',
+    context: 'INDRA PERÚ · INTEGRATEL · 2025',
+    desc: 'Sistema para gestión jerárquica de ventas.',
+    impact: 'Optimización de procesos comerciales y jerarquización empresarial.',
+    stack: 'Angular · React · Spring Boot',
+    tags: ['Oracle', 'Jasmine', 'Karma'],
+    tier: 'featured',
+    category: 'telecom',
+    complexity: 'medium',
+    role: 'fullstack',
+    size: 'half',
+    year: 2025,
+    duration: '8 Meses',
+    highlightMetrics: ['Sales Hierarchy', 'Angular', 'React'],
+    companyLogo: '/imagen/LOGO_INDRA.svg',
+    companyName: 'INDRA PERÚ',
+    clientLogo: '/imagen/LOGO_INTEGRATEL.svg',
+    clientName: 'INTEGRATEL',
+  },
+
+  // =========================================================
+  // 📦 STANDARD PROJECTS
+  // =========================================================
+
+  {
+    title: 'Expediente Virtual – Bandeja SAR',
+    context: 'INDRA PERÚ · INTEGRATEL · 2024',
+    desc: 'Módulo de bandeja SAR para gestión documental.',
+    impact: 'Optimización del flujo documental empresarial.',
+    stack: 'Angular · Spring Boot',
+    tags: ['Mockito', 'Figma', 'Karma'],
+    tier: 'standard',
+    category: 'enterprise',
+    complexity: 'low',
+    role: 'fullstack',
+    size: 'regular',
+    year: 2024,
+    duration: '4 Meses',
+    highlightMetrics: ['SAR', 'Angular', 'Spring Boot'],
+    companyLogo: '/imagen/LOGO_INDRA.svg',
+    companyName: 'INDRA PERÚ',
+    clientLogo: '/imagen/LOGO_INTEGRATEL.svg',
+    clientName: 'INTEGRATEL',
+  },
+
+  {
+    title: 'SIVADAC – INTEGRATEL',
+    context: 'INDRA PERÚ · INTEGRATEL · 2024',
+    desc: 'Sistema de validación documental.',
+    impact: 'Reducción de errores operativos en validaciones documentales.',
+    stack: 'Angular',
+    tags: ['Figma', 'Karma', 'SonarQube'],
+    tier: 'standard',
+    category: 'enterprise',
+    complexity: 'low',
+    role: 'frontend',
+    size: 'regular',
+    year: 2024,
+    duration: '8 Meses',
+    highlightMetrics: ['Document Validation', 'Angular'],
+    companyLogo: '/imagen/LOGO_INDRA.svg',
+    companyName: 'INDRA PERÚ',
+    clientLogo: '/imagen/LOGO_INTEGRATEL.svg',
+    clientName: 'INTEGRATEL',
+  },
+
   {
     title: 'PCD – CLARO',
     context: 'INDRA PERÚ · CLARO · 2025',
-    desc: 'Control documental.',
+    desc: 'Sistema de control documental empresarial.',
+    impact: 'Mejora de trazabilidad y control de flujos documentales.',
     stack: 'Angular · Spring Boot',
-    tags: ['BFF', 'Jest', 'SonarQube', 'CI/CD', 'Jenkins', 'Bitbucket', 'Postman', 'OWASP ZAP'],
+    tags: ['BFF', 'Jest', 'OWASP ZAP'],
+    tier: 'standard',
+    category: 'telecom',
+    complexity: 'medium',
+    role: 'fullstack',
+    size: 'half',
     year: 2025,
     duration: '8 Meses',
-    size: 'half',
-    impact: 'Mejor control de flujos',
+    highlightMetrics: ['Document Control', 'BFF'],
     companyLogo: '/imagen/LOGO_INDRA.svg',
     companyName: 'INDRA PERÚ',
     clientLogo: '/imagen/LOGO_CLARO.svg',
     clientName: 'CLARO',
+  },
+
+  {
+    title: 'Mesa de Partes Virtual – RENIEC',
+    context: 'CloudComputing Perú S.A.C. · RENIEC · 2023',
+    desc: 'Sistema virtual para recepción y gestión documental.',
+    impact: 'Digitalización de procesos documentales institucionales.',
+    stack: 'Angular · React · Spring Boot',
+    tags: ['Bootstrap', 'Spring Boot'],
+    tier: 'standard',
+    category: 'government',
+    complexity: 'medium',
+    role: 'fullstack',
+    size: 'regular',
+    year: 2023,
+    duration: '7 Meses',
+    highlightMetrics: ['Digital Process', 'Government'],
+    companyLogo: '/imagen/LOGO_CC.svg',
+    companyName: 'CloudComputing Perú S.A.C.',
+    clientLogo: '/imagen/LOGO_RENIEC.svg',
+    clientName: 'RENIEC',
+  },
+
+  {
+    title: 'Módulo Usuario Final – RENIEC',
+    context: 'CloudComputing Perú S.A.C. · RENIEC · 2023',
+    desc: 'Módulo de experiencia y gestión de usuarios.',
+    impact: 'Mejora de experiencia de usuario y accesibilidad del sistema.',
+    stack: 'Angular · React · Spring Boot',
+    tags: ['Mockito', 'PL/SQL'],
+    tier: 'standard',
+    category: 'government',
+    complexity: 'medium',
+    role: 'fullstack',
+    size: 'regular',
+    year: 2023,
+    duration: '8 Meses',
+    highlightMetrics: ['UX Improvement', 'Government'],
+    companyLogo: '/imagen/LOGO_CC.svg',
+    companyName: 'CloudComputing Perú S.A.C.',
+    clientLogo: '/imagen/LOGO_RENIEC.svg',
+    clientName: 'RENIEC',
+  },
+
+  {
+    title: 'Migración SIGED a JBoss – RENIEC',
+    context: 'CloudComputing Perú S.A.C. · RENIEC · 2023',
+    desc: 'Migración tecnológica del sistema SIGED hacia JBoss.',
+    impact: 'Incremento de estabilidad y modernización de infraestructura.',
+    stack: 'Angular · React · Spring Boot',
+    tags: ['JBoss', 'Jenkins', 'CI/CD'],
+    tier: 'standard',
+    category: 'government',
+    complexity: 'medium',
+    role: 'backend',
+    size: 'half',
+    year: 2023,
+    duration: '8 Meses',
+    highlightMetrics: ['JBoss', 'Migration', 'Infrastructure'],
+    companyLogo: '/imagen/LOGO_CC.svg',
+    companyName: 'CloudComputing Perú S.A.C.',
+    clientLogo: '/imagen/LOGO_RENIEC.svg',
+    clientName: 'RENIEC',
+  },
+
+  // =========================================================
+  // 🧩 MINOR PROJECTS
+  // =========================================================
+
+  {
+    title: 'MAIL-CONSUMER – Scotiabank',
+    context: 'IDM Technology · Scotiabank · 2026',
+    desc: 'Servicio batch para consumo de colas AS400.',
+    impact: 'Optimización de procesamiento de colas y servicios backend.',
+    stack: 'Spring Boot',
+    tags: ['Kafka', 'AS400', 'CI/CD'],
+    tier: 'minor',
+    category: 'banking',
+    complexity: 'medium',
+    role: 'backend',
+    size: 'half',
+    year: 2026,
+    duration: '4 Meses',
+    highlightMetrics: ['Kafka', 'AS400'],
+    companyLogo: '/imagen/LOGO_IDM.svg',
+    companyName: 'IDM Technology',
+    clientLogo: '/imagen/LOGO_SB.svg',
+    clientName: 'Scotiabank',
   },
 
   {
     title: 'Botón de Pago (BFF) – CLARO',
-    context: 'INDRA PERÚ · CLARO · 2025',
-    desc: 'Desarrollo de BFF para orquestación y consumo de servicios backend.',
+    context: 'INDRA PERÚ · CLARO · 2026',
+    desc: 'BFF para orquestación de servicios de pagos.',
+    impact: 'Mejora de seguridad y consumo de APIs empresariales.',
     stack: 'Node.js',
-    tags: ['SonarQube', 'CI/CD', 'Jenkins', 'Bitbucket', 'Postman', 'Testing'],
+    tags: ['Testing', 'SonarQube'],
+    tier: 'minor',
+    category: 'telecom',
+    complexity: 'medium',
+    role: 'backend',
+    size: 'half',
     year: 2026,
     duration: '4 Meses',
-    size: 'half',
-    impact: 'Mejora en la seguridad del consumo de servicios',
+    highlightMetrics: ['BFF', 'Node.js'],
     companyLogo: '/imagen/LOGO_INDRA.svg',
     companyName: 'INDRA PERÚ',
     clientLogo: '/imagen/LOGO_CLARO.svg',
@@ -289,125 +528,59 @@ export const PROJECTS: Project[] = [
 
   {
     title: 'WEB INCIDENTES (BFF) – CLARO',
-    context: 'INDRA PERÚ · CLARO · 2025',
-    desc: 'Desarrollo de BFF para orquestación y consumo de servicios backend.',
+    context: 'INDRA PERÚ · CLARO · 2026',
+    desc: 'BFF para integración de servicios empresariales.',
+    impact: 'Optimización de comunicación entre frontend y backend.',
     stack: 'Node.js',
-    tags: ['SonarQube', 'CI/CD', 'Jenkins', 'Bitbucket', 'Postman', 'Testing'],
+    tags: ['Testing', 'CI/CD'],
+    tier: 'minor',
+    category: 'telecom',
+    complexity: 'medium',
+    role: 'backend',
+    size: 'half',
     year: 2026,
     duration: '4 Meses',
-    size: 'half',
-    impact: 'Mejora en la seguridad del consumo de servicios',
+    highlightMetrics: ['BFF', 'Node.js'],
     companyLogo: '/imagen/LOGO_INDRA.svg',
     companyName: 'INDRA PERÚ',
     clientLogo: '/imagen/LOGO_CLARO.svg',
     clientName: 'CLARO',
   },
 
-  // =========================
-  // 🟣 RENIEC
-  // =========================
-  {
-    title: 'SIGED – RENIEC',
-    context: 'CloudComputing Perú S.A.C. · RENIEC · 2023',
-    desc: 'Sistema de gestión documental.',
-    stack: 'Angular · React · Spring Boot',
-    tags: ['Angular Material', 'PL/SQL', 'Jasmine', 'Karma', 'SonarQube', 'CI/CD', 'Jenkins', 'Bitbucket', 'Postman'],
-    year: 2023,
-    duration: '8 Meses',
-    size: 'featured',
-    impact: 'Modernización del sistema',
-    companyLogo: '/imagen/LOGO_CC.svg',
-    companyName: 'CLOUDCOMPUTING PERÚ S.A.C',
-    clientLogo: '/imagen/LOGO_RENIEC.svg',
-    clientName: 'RENIEC',
-  },
-  {
-    title: 'Mesa de Partes Virtual – RENIEC',
-    context: 'CloudComputing Perú S.A.C. · RENIEC · 2023',
-    desc: 'Mesa de partes virtual.',
-    stack: 'Angular · React · Spring Boot',
-    tags: ['Bootstrap', 'Jasmine', 'Karma', 'SonarQube', 'CI/CD', 'Jenkins', 'Bitbucket', 'Postman'],
-    year: 2023,
-    duration: '7 Meses',
-    size: 'regular',
-    impact: 'Digitalización',
-    companyLogo: '/imagen/LOGO_CC.svg',
-    companyName: 'CLOUDCOMPUTING PERÚ S.A.C',
-    clientLogo: '/imagen/LOGO_RENIEC.svg',
-    clientName: 'RENIEC',
-  },
-  {
-    title: 'Módulo Usuario Final – RENIEC',
-    context: 'CloudComputing Perú S.A.C. · RENIEC · 2023',
-    desc: 'Módulo de usuario.',
-    stack: 'Angular · React · Spring Boot',
-    tags: ['PL/SQL', 'Jasmine', 'Karma', 'Mockito', 'SonarQube', 'CI/CD', 'Bitbucket', 'Postman'],
-    year: 2023,
-    duration: '8 Meses',
-    size: 'regular',
-    impact: 'Mejora UX',
-    companyLogo: '/imagen/LOGO_CC.svg',
-    companyName: 'CLOUDCOMPUTING PERÚ S.A.C',
-    clientLogo: '/imagen/LOGO_RENIEC.svg',
-    clientName: 'RENIEC',
-  },
-  {
-    title: 'Migración SIGED a JBoss – RENIEC',
-    context: 'CloudComputing Perú S.A.C. · RENIEC · 2023',
-    desc: 'Migración a JBoss.',
-    stack: 'Angular · React · Spring Boot',
-    tags: ['JBoss', 'Jasmine', 'Karma', 'SonarQube', 'CI/CD', 'Jenkins', 'Bitbucket', 'Postman'],
-    year: 2023,
-    duration: '8 Meses',
-    size: 'half',
-    impact: 'Mejora de estabilidad',
-    companyLogo: '/imagen/LOGO_CC.svg',
-    companyName: 'CLOUDCOMPUTING PERÚ S.A.C',
-    clientLogo: '/imagen/LOGO_RENIEC.svg',
-    clientName: 'RENIEC',
-  },
-
-  // =========================
-  // 🎓 PERSONAL / OTROS
-  // =========================
-  {
-    title: 'Sistema de Lenguaje de Señas - UA',
-    context: 'TESIS · 2025',
-    desc: 'Reconocimiento de gestos de lenguaje de señas para personas sordomudas',
-    stack: 'Angular · Flask · Node.js',
-    tags: ['MongoDB Atlas', 'OpenCV', 'TensorFlow', 'Keras', 'MediaPipe'],
-    year: 2025,
-    duration: '6 Meses',
-    size: 'half',
-    impact: 'Sistema funcional en tiempo real para gente sordomuda',
-    companyLogo: '/imagen/LOGO_UA.svg',
-    companyName: 'Universidad Autónoma del Perú',
-    clientLogo: '/imagen/FOTO.svg',
-    clientName: 'Diego Gonzalez',
-  },
   {
     title: 'Gestión de Apuestas Deportivas - PERSONAL',
     context: 'PROYECTO PERSONAL · 2025',
-    desc: 'Sistema de apuestas.',
+    desc: 'Sistema de gestión y centralización de apuestas deportivas.',
+    impact: 'Centralización y automatización de apuestas deportivas.',
     stack: 'Angular · Node.js',
-    tags: ['MongoDB Atlas', 'Jasmine', 'Karma', 'SonarQube', 'Postman'],
+    tags: ['MongoDB Atlas', 'Jasmine', 'Karma'],
+    tier: 'minor',
+    category: 'personal',
+    complexity: 'medium',
+    role: 'fullstack',
+    size: 'half',
     year: 2025,
     duration: '4 Meses',
-    size: 'half',
-    impact: 'Centralización de apuestas',
+    highlightMetrics: ['MongoDB', 'Node.js'],
     companyLogo: '/imagen/FOTO.svg',
     companyName: 'Diego Gonzalez',
   },
+
   {
     title: 'Detección de Mascarilla (Expotec 2021) - UA',
-    context: 'Universidad Autónoma del Perú',
-    desc: 'Visión por computadora.',
+    context: 'Universidad Autónoma del Perú · 2021',
+    desc: 'Sistema de visión computacional para detección de mascarillas.',
+    impact: 'Proyecto ganador en Expotec 2021 mediante IA y visión computacional.',
     stack: 'Python · Flask · Angular',
-    tags: ['OpenCV', 'TensorFlow', 'Keras'],
+    tags: ['TensorFlow', 'OpenCV', 'Keras'],
+    tier: 'minor',
+    category: 'ai',
+    complexity: 'low',
+    role: 'fullstack',
+    size: 'half',
     year: 2021,
     duration: '4 Meses',
-    size: 'half',
-    impact: '1er puesto',
+    highlightMetrics: ['Computer Vision', 'TensorFlow'],
     companyLogo: '/imagen/LOGO_UA.svg',
     companyName: 'Universidad Autónoma del Perú',
     clientLogo: '/imagen/FOTO.svg',

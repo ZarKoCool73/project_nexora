@@ -1,0 +1,91 @@
+.archive-row {
+  display: grid;
+
+  grid-template-columns:
+    100px
+    1fr
+    220px
+    40px;
+
+  align-items: center;
+
+  gap: 1rem;
+
+  padding: 1.25rem 0;
+
+  border-bottom:
+    1px solid rgba(255,255,255,0.05);
+
+  transition:
+    background 0.25s ease,
+    padding-left 0.25s ease;
+
+  cursor: none;
+
+  &:hover {
+
+    background:
+      rgba(255,255,255,0.02);
+
+    padding-left: 1rem;
+
+  }
+
+  &:hover .archive-arrow {
+    transform: translate(3px, -3px);
+    opacity: 1;
+  }
+
+}
+
+.archive-year {
+  font-family: var(--mono);
+
+  font-size: 0.68rem;
+
+  color: var(--muted);
+}
+
+.archive-title {
+  font-size: 0.92rem;
+
+  font-weight: 600;
+
+  letter-spacing: -0.02em;
+}
+
+.archive-stack {
+  font-family: var(--mono);
+
+  font-size: 0.68rem;
+
+  color: #7B8CFF;
+}
+
+.archive-arrow {
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+
+  opacity: 0.5;
+
+  color: var(--accent);
+}
+
+@media (max-width: 700px) {
+
+  .archive-row {
+
+    grid-template-columns: 1fr;
+
+    gap: 0.5rem;
+
+    padding: 1rem 0;
+
+  }
+
+  .archive-arrow {
+    display: none;
+  }
+
+}

@@ -1,0 +1,45 @@
+.standard-projects {
+  margin-bottom: 3rem;
+  margin-top: 4rem;
+}
+
+.standard-header {
+  margin-bottom: 2rem;
+}
+
+.standard-kicker {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.8rem;
+}
+
+.standard-title {
+  font-size: clamp(1.6rem, 3vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.standard-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+@media (max-width: 1024px) {
+
+  .standard-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+@media (max-width: 700px) {
+
+  .standard-grid {
+    grid-template-columns: 1fr;
+  }
+
+}

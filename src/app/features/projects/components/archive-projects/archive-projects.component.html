@@ -1,0 +1,29 @@
+<div
+  class="archive-projects"
+  *ngIf="projects.length">
+
+  <div class="archive-header">
+
+    <div class="archive-kicker">
+      Additional Work
+    </div>
+
+    <h3 class="archive-title">
+      Archive Projects
+    </h3>
+
+  </div>
+
+  <div class="archive-table">
+
+    @for (project of projects; track project.title) {
+
+      <app-archive-project-row
+        [project]="project">
+      </app-archive-project-row>
+
+    }
+
+  </div>
+
+</div>

@@ -1,0 +1,23 @@
+import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+import { Project } from '../../../../core/models/project.model';
+
+import { HeroProjectCardComponent } from '../../shared/hero-project-card/hero-project-card.component';
+
+@Component({
+  selector: 'app-hero-projects',
+  standalone: true,
+  imports: [
+    CommonModule,
+    HeroProjectCardComponent
+  ],
+  templateUrl: './hero-projects.component.html',
+  styleUrls: ['./hero-projects.component.scss']
+})
+export class HeroProjectsComponent {
+
+  @Input({ required: true })
+  projects: Project[] = [];
+
+}

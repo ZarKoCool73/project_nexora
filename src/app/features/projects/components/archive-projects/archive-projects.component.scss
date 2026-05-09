@@ -1,0 +1,28 @@
+.archive-projects {
+  margin-bottom: 3rem;
+  margin-top: 4rem;
+}
+
+.archive-header {
+  margin-bottom: 2rem;
+}
+
+.archive-kicker {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.8rem;
+}
+
+.archive-title {
+  font-size: clamp(1.5rem, 3vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.archive-table {
+  border-top:
+    1px solid rgba(255,255,255,0.06);
+}

@@ -1,0 +1,73 @@
+<div
+  class="standard-card"
+  (click)="openProject()">
+
+  <div class="standard-top">
+
+    <span class="standard-year">
+      {{ project.year }}
+    </span>
+
+    <span class="standard-arrow">
+      ↗
+    </span>
+
+  </div>
+
+  <h3 class="standard-title">
+    {{ project.title }}
+  </h3>
+
+  <p class="standard-description">
+    {{ project.desc }}
+  </p>
+
+  <div class="standard-tags">
+
+    @for (tag of project.tags.slice(0, 3); track tag) {
+
+      <span class="standard-tag">
+        {{ tag }}
+      </span>
+
+    }
+
+  </div>
+
+  <div class="standard-footer">
+
+    <span class="standard-stack">
+      {{ project.stack }}
+    </span>
+
+    <div class="standard-logos">
+
+      @if (project.companyLogo) {
+
+        <div class="standard-logo">
+
+          <img
+            [src]="project.companyLogo"
+            [alt]="project.companyName">
+
+        </div>
+
+      }
+
+      @if (project.clientLogo) {
+
+        <div class="standard-logo">
+
+          <img
+            [src]="project.clientLogo"
+            [alt]="project.clientName">
+
+        </div>
+
+      }
+
+    </div>
+
+  </div>
+
+</div>

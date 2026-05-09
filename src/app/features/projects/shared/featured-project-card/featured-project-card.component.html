@@ -1,0 +1,125 @@
+<div
+  class="featured-card"
+  (click)="openProject()">
+
+  <!-- LEFT ACCENT -->
+  <div class="featured-accent"></div>
+
+  <!-- TOP -->
+  <div class="featured-top">
+
+    <div class="featured-meta">
+
+      <span class="featured-year">
+        {{ project.year }}
+      </span>
+
+      <span class="featured-duration">
+        {{ project.duration }}
+      </span>
+
+    </div>
+
+    <div class="featured-arrow">
+      ↗
+    </div>
+
+  </div>
+
+  <!-- CONTENT -->
+  <div class="featured-content">
+
+    <h3 class="featured-title">
+      {{ project.title }}
+    </h3>
+
+    <p class="featured-description">
+      {{ project.desc }}
+    </p>
+
+  </div>
+
+  <!-- IMPACT -->
+  @if (project.impact) {
+
+    <div class="featured-impact">
+
+      <span class="impact-label">
+        Impact
+      </span>
+
+      <p class="impact-text">
+        {{ project.impact }}
+      </p>
+
+    </div>
+
+  }
+
+  <!-- TAGS -->
+  <div class="featured-tags">
+
+    @for (tag of project.tags.slice(0, 5); track tag) {
+
+      <span class="featured-tag">
+        {{ tag }}
+      </span>
+
+    }
+
+    @if (project.tags.length > 5) {
+
+      <span class="featured-tag more">
+        +{{ project.tags.length - 5 }}
+      </span>
+
+    }
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="featured-footer">
+
+    <!-- STACK -->
+    <div class="featured-stack">
+      {{ project.stack }}
+    </div>
+
+    <!-- LOGOS -->
+    <div
+      class="featured-logos"
+      *ngIf="project.companyLogo || project.clientLogo">
+
+      @if (project.companyLogo) {
+
+        <div
+          class="featured-logo"
+          [attr.title]="project.companyName">
+
+          <img
+            [src]="project.companyLogo"
+            [alt]="project.companyName">
+
+        </div>
+
+      }
+
+      @if (project.clientLogo) {
+
+        <div
+          class="featured-logo"
+          [attr.title]="project.clientName">
+
+          <img
+            [src]="project.clientLogo"
+            [alt]="project.clientName">
+
+        </div>
+
+      }
+
+    </div>
+
+  </div>
+
+</div>
