@@ -22,7 +22,7 @@ import {Project, PROJECTS} from '../../../../core/models/project.model';
   imports: [
     CommonModule,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
   ],
   templateUrl: './project-details-page.component.html',
   styleUrls: ['./project-details-page.component.scss']
@@ -66,6 +66,10 @@ export class ProjectDetailsPageComponent implements OnInit {
       .replace(/[^a-z0-9]+/g, '-')
       .replace(/(^-|-$)/g, '');
 
+  }
+
+  goBack() {
+    this.router.navigate(['/projects']).then();
   }
 
 }

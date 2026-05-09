@@ -14,7 +14,7 @@ export class StatsComponent implements AfterViewInit {
 
   stats = [
     {value: 5, label: 'Años de experiencia'},
-    {value: 10, label: 'Proyectos entregados'},
+    {value: 17, label: 'Proyectos entregados'},
     {value: 36, label: 'Tecnologías dominadas'},
     {value: 3, label: 'Empresas colaboradas'},
   ];

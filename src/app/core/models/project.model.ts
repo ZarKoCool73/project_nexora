@@ -27,6 +27,25 @@ export interface Project {
   clientLogo?: string;
   clientName?: string;
   url?: string;
+  architectureFlow?: ArchitectureNode[];
+}
+
+export interface ArchitectureNode {
+
+  title: string;
+
+  type:
+    | 'frontend'
+    | 'backend'
+    | 'database'
+    | 'queue'
+    | 'security'
+    | 'ai'
+    | 'cloud'
+    | 'integration'
+    | 'gateway'
+    | 'testing';
+
 }
 
 export interface ProjectFilterState {
@@ -55,6 +74,12 @@ export const PROJECTS: Project[] = [
     year: 2026,
     duration: '4 Meses',
     highlightMetrics: ['Kafka', 'AS400', 'Java 25', 'Hexagonal Architecture'],
+    architectureFlow: [
+      {title: 'AS400', type: 'integration'},
+      {title: 'Kafka', type: 'queue'},
+      {title: 'Spring Boot', type: 'backend'},
+      {title: 'Redis', type: 'database'}
+    ],
     companyLogo: '/imagen/LOGO_IDM.svg',
     companyName: 'IDM Technology',
     clientLogo: '/imagen/LOGO_SB.svg',
@@ -78,6 +103,12 @@ export const PROJECTS: Project[] = [
     year: 2026,
     duration: '4 Meses',
     highlightMetrics: ['Redis', 'Kafka', 'AS400', 'Distributed Cache'],
+    architectureFlow: [
+      {title: 'AS400', type: 'integration'},
+      {title: 'Kafka', type: 'queue'},
+      {title: 'Spring Boot', type: 'backend'},
+      {title: 'Redis', type: 'database'}
+    ],
     companyLogo: '/imagen/LOGO_IDM.svg',
     companyName: 'IDM Technology',
     clientLogo: '/imagen/LOGO_SB.svg',
@@ -101,6 +132,12 @@ export const PROJECTS: Project[] = [
     year: 2023,
     duration: '8 Meses',
     highlightMetrics: ['Spring Boot', 'Angular', 'React', 'Government System'],
+    architectureFlow: [
+      {title: 'Angular', type: 'frontend'},
+      {title: 'React', type: 'frontend'},
+      {title: 'Spring Boot', type: 'backend'},
+      {title: 'PL/SQL', type: 'database'}
+    ],
     companyLogo: '/imagen/LOGO_CC.svg',
     companyName: 'CloudComputing Perú S.A.C.',
     clientLogo: '/imagen/LOGO_RENIEC.svg',
@@ -124,6 +161,12 @@ export const PROJECTS: Project[] = [
     year: 2025,
     duration: '12 Meses',
     highlightMetrics: ['OWASP', 'Payments', 'Spring Boot', 'Enterprise Security'],
+    architectureFlow: [
+      {title: 'Angular', type: 'frontend'},
+      {title: 'BFF', type: 'gateway'},
+      {title: 'Spring Boot', type: 'backend'},
+      {title: 'OWASP', type: 'security'}
+    ],
     companyLogo: '/imagen/LOGO_INDRA.svg',
     companyName: 'INDRA PERÚ',
     clientLogo: '/imagen/LOGO_CLARO.svg',
@@ -147,6 +190,12 @@ export const PROJECTS: Project[] = [
     year: 2025,
     duration: '6 Meses',
     highlightMetrics: ['TensorFlow', 'OpenCV', 'MediaPipe', 'Real-Time AI'],
+    architectureFlow: [
+      {title: 'Camera', type: 'integration'},
+      {title: 'MediaPipe', type: 'ai'},
+      {title: 'TensorFlow', type: 'ai'},
+      {title: 'Flask API', type: 'backend'}
+    ],
     companyLogo: '/imagen/LOGO_UA.svg',
     companyName: 'Universidad Autónoma del Perú',
     clientLogo: '/imagen/FOTO.svg',
@@ -169,6 +218,12 @@ export const PROJECTS: Project[] = [
     year: 2026,
     duration: '4 Meses',
     highlightMetrics: ['PEP Validation', 'Spring Boot', 'React'],
+    architectureFlow: [
+      {title: 'React', type: 'frontend'},
+      {title: 'Validation Engine', type: 'backend'},
+      {title: 'Spring Boot', type: 'backend'},
+      {title: 'Database', type: 'database'}
+    ],
     companyLogo: '/imagen/LOGO_IDM.svg',
     companyName: 'IDM Technology',
     clientLogo: '/imagen/LOGO_SB.svg',
@@ -191,6 +246,12 @@ export const PROJECTS: Project[] = [
     year: 2026,
     duration: '4 Meses',
     highlightMetrics: ['BFF', 'API Gateway', 'Hexagonal Architecture'],
+    architectureFlow: [
+      {title: 'Frontend Apps', type: 'frontend'},
+      {title: 'BFF', type: 'gateway'},
+      {title: 'Spring Boot', type: 'backend'},
+      {title: 'Microservices', type: 'integration'}
+    ],
     companyLogo: '/imagen/LOGO_IDM.svg',
     companyName: 'IDM Technology',
     clientLogo: '/imagen/LOGO_SB.svg',
@@ -213,6 +274,12 @@ export const PROJECTS: Project[] = [
     year: 2026,
     duration: '4 Meses',
     highlightMetrics: ['REST API', 'Validation Services', 'Spring Boot'],
+    architectureFlow: [
+      {title: 'Clients', type: 'frontend'},
+      {title: 'REST API', type: 'gateway'},
+      {title: 'Spring Boot', type: 'backend'},
+      {title: 'Validation Engine', type: 'integration'}
+    ],
     companyLogo: '/imagen/LOGO_IDM.svg',
     companyName: 'IDM Technology',
     clientLogo: '/imagen/LOGO_SB.svg',

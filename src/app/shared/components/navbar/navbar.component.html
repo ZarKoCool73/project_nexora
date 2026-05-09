@@ -1,48 +1,81 @@
 <nav>
 
-  <a href="/" class="nav-logo">DG // Portfolio</a>
+  <a routerLink="/" class="nav-logo">
+    DG // Portfolio
+  </a>
 
-  <button class="nav-toggle" (click)="closeMenu()">
+  <!-- TOGGLE -->
+  <button
+    class="nav-toggle"
+    (click)="menuOpen = !menuOpen">
+
     ☰
+
   </button>
 
-  <ul class="nav-links">
+  <!-- LINKS -->
+  <ul
+    class="nav-links"
+    [class.open]="menuOpen">
 
     <li>
-      <a routerLink="/skills">
+      <a
+        routerLink="/skills"
+        (click)="closeMenu()">
+
         Habilidades
+
       </a>
     </li>
 
     <li>
-      <a routerLink="/projects">
+      <a
+        routerLink="/projects"
+        (click)="closeMenu()">
+
         Proyectos
+
       </a>
     </li>
 
     <li>
-      <a routerLink="/experience">
+      <a
+        routerLink="/experience"
+        (click)="closeMenu()">
+
         Experiencia
+
       </a>
     </li>
 
     <li>
-      <a routerLink="/credentials">
+      <a
+        routerLink="/credentials"
+        (click)="closeMenu()">
+
         Credenciales
+
       </a>
     </li>
 
     <li>
-      <a routerLink="/contact">
+      <a
+        routerLink="/contact"
+        (click)="closeMenu()">
+
         Contacto
+
       </a>
     </li>
 
   </ul>
 
   <div class="nav-status">
+
     <div class="status-dot"></div>
+
     Disponible para proyectos
+
   </div>
 
 </nav>
