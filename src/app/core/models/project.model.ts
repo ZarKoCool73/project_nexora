@@ -6,6 +6,7 @@ export type ProjectComplexity = | 'high' | 'medium' | 'low';
 export type ProjectRole = | 'frontend' | 'backend' | 'fullstack' | 'architecture';
 
 export interface Project {
+  id: string;
   title: string;
   desc: string;
   impact?: string;
@@ -26,7 +27,6 @@ export interface Project {
   clientLogo?: string;
   clientName?: string;
   url?: string;
-  slug?: string;
 }
 
 export interface ProjectFilterState {
@@ -39,6 +39,7 @@ export interface ProjectFilterState {
 export const PROJECTS: Project[] = [
 
   {
+    id: '1',
     title: 'SMS-CONSUMER – Scotiabank',
     context: 'IDM Technology · Scotiabank · 2026',
     desc: 'Optimización de servicio batch para consumo de colas AS400 e integración con Kafka.',
@@ -58,10 +59,10 @@ export const PROJECTS: Project[] = [
     companyName: 'IDM Technology',
     clientLogo: '/imagen/LOGO_SB.svg',
     clientName: 'Scotiabank',
-    slug: 'sms-consumer-scotiabank'
   },
 
   {
+    id: '2',
     title: 'Validation-Listener – Scotiabank',
     context: 'IDM Technology · Scotiabank · 2026',
     desc: 'Listener backend para procesamiento de colas AS400 e integración distribuida.',
@@ -84,6 +85,7 @@ export const PROJECTS: Project[] = [
   },
 
   {
+    id: '3',
     title: 'SIGED – RENIEC',
     context: 'CloudComputing Perú S.A.C. · RENIEC · 2023',
     desc: 'Sistema de gestión documental para procesos institucionales.',
@@ -106,6 +108,7 @@ export const PROJECTS: Project[] = [
   },
 
   {
+    id: '4',
     title: 'Botón de Pago – CLARO',
     context: 'INDRA PERÚ · CLARO · 2025',
     desc: 'Plataforma de integración y procesamiento de pagos.',
@@ -128,6 +131,7 @@ export const PROJECTS: Project[] = [
   },
 
   {
+    id: '5',
     title: 'Sistema de Lenguaje de Señas - UA',
     context: 'TESIS · 2025',
     desc: 'Sistema inteligente de reconocimiento de señas en tiempo real.',
@@ -150,6 +154,7 @@ export const PROJECTS: Project[] = [
   },
 
   {
+    id: '6',
     title: 'GESINTEL – Scotiabank',
     context: 'IDM Technology · Scotiabank · 2026',
     desc: 'Sistema de validación de personas PEP y entidades financieras.',
@@ -168,10 +173,10 @@ export const PROJECTS: Project[] = [
     companyName: 'IDM Technology',
     clientLogo: '/imagen/LOGO_SB.svg',
     clientName: 'Scotiabank',
-    slug: 'gesintel-scotiabank'
   },
 
   {
+    id: '7',
     title: 'BFF – Scotiabank',
     context: 'IDM Technology · Scotiabank · 2026',
     desc: 'Backend for Frontend para orquestación de servicios empresariales.',
@@ -193,6 +198,7 @@ export const PROJECTS: Project[] = [
   },
 
   {
+    id: '8',
     title: 'Validation-API – Scotiabank',
     context: 'IDM Technology · Scotiabank · 2026',
     desc: 'API empresarial para validación de personas PEP.',
@@ -214,6 +220,7 @@ export const PROJECTS: Project[] = [
   },
 
   {
+    id: '9',
     title: 'Expediente Virtual – INTEGRATEL',
     context: 'INDRA PERÚ · INTEGRATEL · 2024',
     desc: 'Desarrollo de módulos para sistema de expedientes digitales.',
@@ -235,6 +242,7 @@ export const PROJECTS: Project[] = [
   },
 
   {
+    id: '10',
     title: 'PACIFYC – INTEGRATEL',
     context: 'INDRA PERÚ · INTEGRATEL · 2024',
     desc: 'Plataforma de gestión interna empresarial.',
@@ -256,6 +264,7 @@ export const PROJECTS: Project[] = [
   },
 
   {
+    id: '11',
     title: 'SISTEC – INTEGRATEL',
     context: 'INDRA PERÚ · INTEGRATEL · 2025',
     desc: 'Sistema interno empresarial para optimización operativa.',
@@ -277,6 +286,7 @@ export const PROJECTS: Project[] = [
   },
 
   {
+    id: '12',
     title: 'WEB INCIDENTES – CLARO',
     context: 'INDRA PERÚ · CLARO · 2025',
     desc: 'Sistema web para gestión de incidentes operativos.',
@@ -298,6 +308,7 @@ export const PROJECTS: Project[] = [
   },
 
   {
+    id: '13',
     title: 'Jerarquía de Ventas – INTEGRATEL',
     context: 'INDRA PERÚ · INTEGRATEL · 2025',
     desc: 'Sistema para gestión jerárquica de ventas.',
@@ -319,6 +330,7 @@ export const PROJECTS: Project[] = [
   },
 
   {
+    id: '14',
     title: 'Expediente Virtual – Bandeja SAR',
     context: 'INDRA PERÚ · INTEGRATEL · 2024',
     desc: 'Módulo de bandeja SAR para gestión documental.',
@@ -340,6 +352,7 @@ export const PROJECTS: Project[] = [
   },
 
   {
+    id: '15',
     title: 'SIVADAC – INTEGRATEL',
     context: 'INDRA PERÚ · INTEGRATEL · 2024',
     desc: 'Sistema de validación documental.',
@@ -361,6 +374,7 @@ export const PROJECTS: Project[] = [
   },
 
   {
+    id: '16',
     title: 'PCD – CLARO',
     context: 'INDRA PERÚ · CLARO · 2025',
     desc: 'Sistema de control documental empresarial.',
@@ -382,6 +396,7 @@ export const PROJECTS: Project[] = [
   },
 
   {
+    id: '17',
     title: 'Mesa de Partes Virtual – RENIEC',
     context: 'CloudComputing Perú S.A.C. · RENIEC · 2023',
     desc: 'Sistema virtual para recepción y gestión documental.',
@@ -403,6 +418,7 @@ export const PROJECTS: Project[] = [
   },
 
   {
+    id: '18',
     title: 'Módulo Usuario Final – RENIEC',
     context: 'CloudComputing Perú S.A.C. · RENIEC · 2023',
     desc: 'Módulo de experiencia y gestión de usuarios.',
@@ -424,6 +440,7 @@ export const PROJECTS: Project[] = [
   },
 
   {
+    id: '19',
     title: 'Migración SIGED a JBoss – RENIEC',
     context: 'CloudComputing Perú S.A.C. · RENIEC · 2023',
     desc: 'Migración tecnológica del sistema SIGED hacia JBoss.',
@@ -445,6 +462,7 @@ export const PROJECTS: Project[] = [
   },
 
   {
+    id: '20',
     title: 'MAIL-CONSUMER – Scotiabank',
     context: 'IDM Technology · Scotiabank · 2026',
     desc: 'Servicio batch para consumo de colas AS400.',
@@ -466,6 +484,7 @@ export const PROJECTS: Project[] = [
   },
 
   {
+    id: '21',
     title: 'Botón de Pago (BFF) – CLARO',
     context: 'INDRA PERÚ · CLARO · 2026',
     desc: 'BFF para orquestación de servicios de pagos.',
@@ -487,6 +506,7 @@ export const PROJECTS: Project[] = [
   },
 
   {
+    id: '22',
     title: 'WEB INCIDENTES (BFF) – CLARO',
     context: 'INDRA PERÚ · CLARO · 2026',
     desc: 'BFF para integración de servicios empresariales.',
@@ -508,6 +528,7 @@ export const PROJECTS: Project[] = [
   },
 
   {
+    id: '23',
     title: 'Gestión de Apuestas Deportivas - PERSONAL',
     context: 'PROYECTO PERSONAL · 2025',
     desc: 'Sistema de gestión y centralización de apuestas deportivas.',
@@ -527,6 +548,7 @@ export const PROJECTS: Project[] = [
   },
 
   {
+    id: '24',
     title: 'Detección de Mascarilla (Expotec 2021) - UA',
     context: 'Universidad Autónoma del Perú · 2021',
     desc: 'Sistema de visión computacional para detección de mascarillas.',
