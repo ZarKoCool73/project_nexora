@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import {Component, ElementRef, Input, ViewChild} from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { Project } from '../../../../core/models/project.model';
@@ -19,5 +19,22 @@ export class StandardProjectsComponent {
 
   @Input({ required: true })
   projects: Project[] = [];
+
+  @ViewChild('slider')
+  slider!: ElementRef<HTMLDivElement>;
+
+  scrollLeft(): void {
+    this.slider.nativeElement.scrollBy({
+      left: -500,
+      behavior: 'smooth'
+    });
+  }
+
+  scrollRight(): void {
+    this.slider.nativeElement.scrollBy({
+      left: 500,
+      behavior: 'smooth'
+    });
+  }
 
 }

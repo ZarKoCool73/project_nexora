@@ -1,9 +1,9 @@
-import { Component, Input } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {Component, ElementRef, Input, ViewChild} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { Project } from '../../../../core/models/project.model';
+import {Project} from '../../../../core/models/project.model';
 
-import { FeaturedProjectCardComponent } from '../../shared/featured-project-card/featured-project-card.component';
+import {FeaturedProjectCardComponent} from '../../shared/featured-project-card/featured-project-card.component';
 
 @Component({
   selector: 'app-featured-projects',
@@ -17,7 +17,23 @@ import { FeaturedProjectCardComponent } from '../../shared/featured-project-card
 })
 export class FeaturedProjectsComponent {
 
-  @Input({ required: true })
+  @Input({required: true})
   projects: Project[] = [];
 
+  @ViewChild('slider')
+  slider!: ElementRef<HTMLDivElement>;
+
+  scrollLeft(): void {
+    this.slider.nativeElement.scrollBy({
+      left: -650,
+      behavior: 'smooth'
+    });
+  }
+
+  scrollRight(): void {
+    this.slider.nativeElement.scrollBy({
+      left: 650,
+      behavior: 'smooth'
+    });
+  }
 }

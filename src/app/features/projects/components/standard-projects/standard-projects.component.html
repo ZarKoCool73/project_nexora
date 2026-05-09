@@ -2,6 +2,7 @@
   class="standard-projects"
   *ngIf="projects.length">
 
+  <!-- HEADER -->
   <div class="standard-header">
 
     <div>
@@ -16,17 +17,57 @@
 
     </div>
 
+    <div class="standard-actions">
+
+      <button
+        class="standard-nav-btn"
+        (click)="scrollLeft()">
+
+        ←
+
+      </button>
+
+      <button
+        class="standard-nav-btn"
+        (click)="scrollRight()">
+
+        →
+
+      </button>
+
+    </div>
+
   </div>
 
-  <div class="standard-grid">
+  <!-- DESCRIPTION -->
+  <p class="standard-description">
+    Plataformas empresariales, sistemas administrativos,
+    automatización de procesos y soluciones escalables.
+  </p>
 
-    @for (project of projects; track project.title) {
+  <!-- WRAPPER -->
+  <div class="standard-slider-wrapper">
 
-      <app-standard-project-card
-        [project]="project">
-      </app-standard-project-card>
+    <div class="standard-fade standard-fade-left"></div>
+    <div class="standard-fade standard-fade-right"></div>
 
-    }
+    <div
+      class="standard-grid"
+      #slider>
+
+      @for (project of projects; track project.title) {
+
+        <div class="standard-slide">
+
+          <app-standard-project-card
+            [project]="project">
+          </app-standard-project-card>
+
+        </div>
+
+      }
+
+    </div>
 
   </div>
 

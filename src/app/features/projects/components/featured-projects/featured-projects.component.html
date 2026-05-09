@@ -17,22 +17,57 @@
 
     </div>
 
-    <div class="featured-count">
-      {{ projects.length }}
+    <div class="featured-right">
+
+      <div class="featured-actions">
+
+        <button
+          class="featured-nav-btn"
+          (click)="scrollLeft()">
+
+          ←
+
+        </button>
+
+        <button
+          class="featured-nav-btn"
+          (click)="scrollRight()">
+
+          →
+
+        </button>
+
+      </div>
+
     </div>
 
   </div>
 
-  <!-- GRID -->
-  <div class="featured-grid">
+  <!-- SLIDER -->
+  <div class="featured-slider-wrapper">
 
-    @for (project of projects; track project.title) {
+    <!-- FADES -->
+    <div class="featured-fade featured-fade-left"></div>
+    <div class="featured-fade featured-fade-right"></div>
 
-      <app-featured-project-card
-        [project]="project">
-      </app-featured-project-card>
+    <!-- TRACK -->
+    <div
+      class="featured-grid"
+      #slider>
 
-    }
+      @for (project of projects; track project.title) {
+
+        <div class="featured-slide">
+
+          <app-featured-project-card
+            [project]="project">
+          </app-featured-project-card>
+
+        </div>
+
+      }
+
+    </div>
 
   </div>
 

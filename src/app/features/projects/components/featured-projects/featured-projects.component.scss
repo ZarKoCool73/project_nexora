@@ -1,6 +1,7 @@
 .featured-projects {
-  margin-bottom: 3rem;
+  position: relative;
   margin-top: 4rem;
+  margin-bottom: 3rem;
 }
 
 /* ======================================== */
@@ -16,7 +17,7 @@
 
   margin-bottom: 2.5rem;
 
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .featured-kicker {
@@ -43,6 +44,16 @@
   line-height: 1;
 }
 
+/* ======================================== */
+/* RIGHT SIDE                               */
+/* ======================================== */
+
+.featured-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .featured-count {
   width: 58px;
   height: 58px;
@@ -66,28 +77,137 @@
   font-size: 0.82rem;
 
   color: var(--muted);
+
+  flex-shrink: 0;
 }
 
 /* ======================================== */
-/* GRID                                     */
+/* ACTIONS                                  */
+/* ======================================== */
+
+.featured-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.featured-nav-btn {
+  width: 52px;
+  height: 52px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  background: rgba(255,255,255,0.03);
+
+  backdrop-filter: blur(10px);
+
+  color: white;
+
+  font-size: 1rem;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
+
+  &:hover {
+
+    transform: translateY(-3px);
+
+    border-color: rgba(123,140,255,0.35);
+
+    background: rgba(123,140,255,0.08);
+
+  }
+}
+
+/* ======================================== */
+/* SLIDER WRAPPER                           */
+/* ======================================== */
+
+.featured-slider-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+/* ======================================== */
+/* FADE EFFECT                              */
+/* ======================================== */
+
+.featured-fade {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+
+  width: 120px;
+
+  z-index: 5;
+
+  pointer-events: none;
+}
+
+.featured-fade-left {
+  left: 0;
+
+  background: linear-gradient(
+    to right,
+    var(--bg-primary),
+    transparent
+  );
+}
+
+.featured-fade-right {
+  right: 0;
+
+  background: linear-gradient(
+    to left,
+    var(--bg-primary),
+    transparent
+  );
+}
+
+/* ======================================== */
+/* SLIDER                                   */
 /* ======================================== */
 
 .featured-grid {
   display: flex;
 
-  grid-template-columns: repeat(2, 1fr);
-
   gap: 1.5rem;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scroll-behavior: smooth;
+
+  padding-bottom: 1rem;
+
+  scrollbar-width: none;
+}
+
+.featured-grid::-webkit-scrollbar {
+  display: none;
+}
+
+/* ======================================== */
+/* SLIDE                                    */
+/* ======================================== */
+
+.featured-slide {
+  flex: 0 0 620px;
 }
 
 /* ======================================== */
 /* RESPONSIVE                               */
 /* ======================================== */
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
 
-  .featured-grid {
-    grid-template-columns: 1fr;
+  .featured-slide {
+    flex: 0 0 520px;
   }
 
 }
@@ -105,6 +225,14 @@
 
   .featured-title {
     font-size: 2rem;
+  }
+
+  .featured-slide {
+    flex: 0 0 92%;
+  }
+
+  .featured-fade {
+    width: 60px;
   }
 
 }
