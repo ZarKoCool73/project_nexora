@@ -1,1 +1,201 @@
-<p>project-details-page works!</p>
+<div class="project-page">
+
+  <app-navbar></app-navbar>
+
+  <section class="project-hero">
+
+    <!-- BACKGROUND FX -->
+    <div class="hero-glow hero-glow-1"></div>
+    <div class="hero-glow hero-glow-2"></div>
+
+    <div class="project-container">
+
+      <!-- TOP -->
+      <div class="project-top">
+
+        <div class="project-badge">
+          {{ project.tier | uppercase }}
+        </div>
+
+        <div class="project-year">
+          {{ project.year }}
+        </div>
+
+      </div>
+
+      <!-- TITLE -->
+      <h1 class="project-title">
+        {{ project.title }}
+      </h1>
+
+      <!-- CONTEXT -->
+      <div class="project-context">
+        {{ project.context }}
+      </div>
+
+      <!-- DESCRIPTION -->
+      <p class="project-description">
+        {{ project.desc }}
+      </p>
+
+      <!-- LOGOS -->
+      <div class="project-logos">
+
+        <div class="project-logo-card">
+
+          <img
+            [src]="project.companyLogo"
+            [alt]="project.companyName">
+
+        </div>
+
+        <div class="project-connector"></div>
+
+        <div class="project-logo-card">
+
+          <img
+            [src]="project.clientLogo"
+            [alt]="project.clientName">
+
+        </div>
+
+      </div>
+
+      <!-- METRICS -->
+      <div class="metrics-grid">
+
+        @for (
+          metric of project.highlightMetrics;
+          track metric
+          ) {
+
+          <div class="metric-card">
+
+            <div class="metric-dot"></div>
+
+            <span>
+              {{ metric }}
+            </span>
+
+          </div>
+
+        }
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- DASHBOARD -->
+  <section class="dashboard-section">
+
+    <div class="project-container">
+
+      <div class="dashboard-grid">
+
+        <!-- IMPACT -->
+        <div class="dashboard-card impact-card">
+
+          <div class="card-label">
+            IMPACTO
+          </div>
+
+          <h3>
+            Ingeniería de Alto Impacto
+          </h3>
+
+          <p>
+            {{ project.impact }}
+          </p>
+
+        </div>
+
+        <!-- STACK -->
+        <div class="dashboard-card stack-card">
+
+          <div class="card-label">
+            STACK
+          </div>
+
+          <h3>
+            {{ project.stack }}
+          </h3>
+
+          <div class="stack-tags">
+
+            @for (
+              tag of project.tags;
+              track tag
+              ) {
+
+              <span class="stack-tag">
+                {{ tag }}
+              </span>
+
+            }
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- ENGINEERING -->
+      <div class="engineering-card">
+
+        <div class="engineering-header">
+
+          <div>
+
+            <div class="card-label">
+              ENGINEERING OVERVIEW
+            </div>
+
+            <h2>
+              Arquitectura Distribuida
+            </h2>
+
+          </div>
+
+          <div class="complexity-badge">
+            {{ project.complexity }}
+          </div>
+
+        </div>
+
+        <div class="architecture-grid">
+
+          <div class="architecture-node">
+            AS400
+          </div>
+
+          <div class="architecture-line"></div>
+
+          <div class="architecture-node">
+            Kafka
+          </div>
+
+          <div class="architecture-line"></div>
+
+          <div class="architecture-node">
+            Spring Boot
+          </div>
+
+          <div class="architecture-line"></div>
+
+          <div class="architecture-node">
+            Redis
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <app-footer></app-footer>
+
+</div>
