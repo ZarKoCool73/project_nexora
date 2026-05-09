@@ -3,32 +3,69 @@
   <!-- HEADER -->
   <div class="hero-header">
 
-    <div class="hero-kicker">
-      Ingeniería Empresarial
+    <div>
+      <div class="hero-kicker">
+        Ingeniería Empresarial
+      </div>
+
+      <h3 class="hero-title">
+        Proyectos de Alto Impacto
+      </h3>
     </div>
 
-    <h3 class="hero-title">
-      Proyectos de Alto Impacto
-    </h3>
+    <div class="hero-actions">
 
-    <p class="hero-description">
-      Arquitecturas enterprise, procesamiento distribuido,
-      sistemas financieros, integración AS400,
-      Kafka, microservicios y modernización tecnológica.
-    </p>
+      <button
+        class="hero-nav-btn"
+        (click)="scrollLeft()">
+
+        ←
+
+      </button>
+
+      <button
+        class="hero-nav-btn"
+        (click)="scrollRight()">
+
+        →
+
+      </button>
+
+    </div>
 
   </div>
 
-  <!-- GRID -->
-  <div class="hero-grid">
+  <p class="hero-description">
+    Arquitecturas enterprise, procesamiento distribuido,
+    sistemas financieros, integración AS400,
+    Kafka, microservicios y modernización tecnológica.
+  </p>
 
-    @for (project of projects; track project.title) {
+  <!-- WRAPPER -->
+  <div class="hero-slider-wrapper">
 
-      <app-hero-project-card
-        [project]="project">
-      </app-hero-project-card>
+    <!-- FADE -->
+    <div class="hero-fade hero-fade-left"></div>
+    <div class="hero-fade hero-fade-right"></div>
 
-    }
+    <!-- SCROLL -->
+    <div
+      class="hero-slider"
+      #slider>
+
+      @for (project of projects; track project.title) {
+
+        <div class="hero-slide">
+
+          <app-hero-project-card
+            [project]="project">
+          </app-hero-project-card>
+
+        </div>
+
+      }
+
+    </div>
 
   </div>
 
