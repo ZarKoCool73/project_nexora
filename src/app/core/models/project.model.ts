@@ -6,6 +6,7 @@ export type ProjectComplexity = | 'high' | 'medium' | 'low';
 export type ProjectRole = | 'frontend' | 'backend' | 'fullstack' | 'architecture';
 
 export interface Project {
+  id: string;
   title: string;
   desc: string;
   impact?: string;
@@ -26,7 +27,25 @@ export interface Project {
   clientLogo?: string;
   clientName?: string;
   url?: string;
-  slug?: string;
+  architectureFlow?: ArchitectureNode[];
+}
+
+export interface ArchitectureNode {
+
+  title: string;
+
+  type:
+    | 'frontend'
+    | 'backend'
+    | 'database'
+    | 'queue'
+    | 'security'
+    | 'ai'
+    | 'cloud'
+    | 'integration'
+    | 'gateway'
+    | 'testing';
+
 }
 
 export interface ProjectFilterState {
@@ -39,6 +58,7 @@ export interface ProjectFilterState {
 export const PROJECTS: Project[] = [
 
   {
+    id: '1',
     title: 'SMS-CONSUMER – Scotiabank',
     context: 'IDM Technology · Scotiabank · 2026',
     desc: 'Optimización de servicio batch para consumo de colas AS400 e integración con Kafka.',
@@ -54,14 +74,20 @@ export const PROJECTS: Project[] = [
     year: 2026,
     duration: '4 Meses',
     highlightMetrics: ['Kafka', 'AS400', 'Java 25', 'Hexagonal Architecture'],
+    architectureFlow: [
+      {title: 'AS400', type: 'integration'},
+      {title: 'Kafka', type: 'queue'},
+      {title: 'Spring Boot', type: 'backend'},
+      {title: 'Redis', type: 'database'}
+    ],
     companyLogo: '/imagen/LOGO_IDM.svg',
     companyName: 'IDM Technology',
     clientLogo: '/imagen/LOGO_SB.svg',
     clientName: 'Scotiabank',
-    slug: 'sms-consumer-scotiabank'
   },
 
   {
+    id: '2',
     title: 'Validation-Listener – Scotiabank',
     context: 'IDM Technology · Scotiabank · 2026',
     desc: 'Listener backend para procesamiento de colas AS400 e integración distribuida.',
@@ -77,6 +103,12 @@ export const PROJECTS: Project[] = [
     year: 2026,
     duration: '4 Meses',
     highlightMetrics: ['Redis', 'Kafka', 'AS400', 'Distributed Cache'],
+    architectureFlow: [
+      {title: 'AS400', type: 'integration'},
+      {title: 'Kafka', type: 'queue'},
+      {title: 'Spring Boot', type: 'backend'},
+      {title: 'Redis', type: 'database'}
+    ],
     companyLogo: '/imagen/LOGO_IDM.svg',
     companyName: 'IDM Technology',
     clientLogo: '/imagen/LOGO_SB.svg',
@@ -84,6 +116,7 @@ export const PROJECTS: Project[] = [
   },
 
   {
+    id: '3',
     title: 'SIGED – RENIEC',
     context: 'CloudComputing Perú S.A.C. · RENIEC · 2023',
     desc: 'Sistema de gestión documental para procesos institucionales.',
@@ -99,6 +132,12 @@ export const PROJECTS: Project[] = [
     year: 2023,
     duration: '8 Meses',
     highlightMetrics: ['Spring Boot', 'Angular', 'React', 'Government System'],
+    architectureFlow: [
+      {title: 'Angular', type: 'frontend'},
+      {title: 'React', type: 'frontend'},
+      {title: 'Spring Boot', type: 'backend'},
+      {title: 'PL/SQL', type: 'database'}
+    ],
     companyLogo: '/imagen/LOGO_CC.svg',
     companyName: 'CloudComputing Perú S.A.C.',
     clientLogo: '/imagen/LOGO_RENIEC.svg',
@@ -106,6 +145,7 @@ export const PROJECTS: Project[] = [
   },
 
   {
+    id: '4',
     title: 'Botón de Pago – CLARO',
     context: 'INDRA PERÚ · CLARO · 2025',
     desc: 'Plataforma de integración y procesamiento de pagos.',
@@ -121,6 +161,12 @@ export const PROJECTS: Project[] = [
     year: 2025,
     duration: '12 Meses',
     highlightMetrics: ['OWASP', 'Payments', 'Spring Boot', 'Enterprise Security'],
+    architectureFlow: [
+      {title: 'Angular', type: 'frontend'},
+      {title: 'BFF', type: 'gateway'},
+      {title: 'Spring Boot', type: 'backend'},
+      {title: 'OWASP', type: 'security'}
+    ],
     companyLogo: '/imagen/LOGO_INDRA.svg',
     companyName: 'INDRA PERÚ',
     clientLogo: '/imagen/LOGO_CLARO.svg',
@@ -128,6 +174,7 @@ export const PROJECTS: Project[] = [
   },
 
   {
+    id: '5',
     title: 'Sistema de Lenguaje de Señas - UA',
     context: 'TESIS · 2025',
     desc: 'Sistema inteligente de reconocimiento de señas en tiempo real.',
@@ -143,6 +190,12 @@ export const PROJECTS: Project[] = [
     year: 2025,
     duration: '6 Meses',
     highlightMetrics: ['TensorFlow', 'OpenCV', 'MediaPipe', 'Real-Time AI'],
+    architectureFlow: [
+      {title: 'Camera', type: 'integration'},
+      {title: 'MediaPipe', type: 'ai'},
+      {title: 'TensorFlow', type: 'ai'},
+      {title: 'Flask API', type: 'backend'}
+    ],
     companyLogo: '/imagen/LOGO_UA.svg',
     companyName: 'Universidad Autónoma del Perú',
     clientLogo: '/imagen/FOTO.svg',
@@ -150,6 +203,7 @@ export const PROJECTS: Project[] = [
   },
 
   {
+    id: '6',
     title: 'GESINTEL – Scotiabank',
     context: 'IDM Technology · Scotiabank · 2026',
     desc: 'Sistema de validación de personas PEP y entidades financieras.',
@@ -164,14 +218,20 @@ export const PROJECTS: Project[] = [
     year: 2026,
     duration: '4 Meses',
     highlightMetrics: ['PEP Validation', 'Spring Boot', 'React'],
+    architectureFlow: [
+      {title: 'React', type: 'frontend'},
+      {title: 'Validation Engine', type: 'backend'},
+      {title: 'Spring Boot', type: 'backend'},
+      {title: 'Database', type: 'database'}
+    ],
     companyLogo: '/imagen/LOGO_IDM.svg',
     companyName: 'IDM Technology',
     clientLogo: '/imagen/LOGO_SB.svg',
     clientName: 'Scotiabank',
-    slug: 'gesintel-scotiabank'
   },
 
   {
+    id: '7',
     title: 'BFF – Scotiabank',
     context: 'IDM Technology · Scotiabank · 2026',
     desc: 'Backend for Frontend para orquestación de servicios empresariales.',
@@ -186,6 +246,12 @@ export const PROJECTS: Project[] = [
     year: 2026,
     duration: '4 Meses',
     highlightMetrics: ['BFF', 'API Gateway', 'Hexagonal Architecture'],
+    architectureFlow: [
+      {title: 'Frontend Apps', type: 'frontend'},
+      {title: 'BFF', type: 'gateway'},
+      {title: 'Spring Boot', type: 'backend'},
+      {title: 'Microservices', type: 'integration'}
+    ],
     companyLogo: '/imagen/LOGO_IDM.svg',
     companyName: 'IDM Technology',
     clientLogo: '/imagen/LOGO_SB.svg',
@@ -193,6 +259,7 @@ export const PROJECTS: Project[] = [
   },
 
   {
+    id: '8',
     title: 'Validation-API – Scotiabank',
     context: 'IDM Technology · Scotiabank · 2026',
     desc: 'API empresarial para validación de personas PEP.',
@@ -207,6 +274,12 @@ export const PROJECTS: Project[] = [
     year: 2026,
     duration: '4 Meses',
     highlightMetrics: ['REST API', 'Validation Services', 'Spring Boot'],
+    architectureFlow: [
+      {title: 'Clients', type: 'frontend'},
+      {title: 'REST API', type: 'gateway'},
+      {title: 'Spring Boot', type: 'backend'},
+      {title: 'Validation Engine', type: 'integration'}
+    ],
     companyLogo: '/imagen/LOGO_IDM.svg',
     companyName: 'IDM Technology',
     clientLogo: '/imagen/LOGO_SB.svg',
@@ -214,6 +287,7 @@ export const PROJECTS: Project[] = [
   },
 
   {
+    id: '9',
     title: 'Expediente Virtual – INTEGRATEL',
     context: 'INDRA PERÚ · INTEGRATEL · 2024',
     desc: 'Desarrollo de módulos para sistema de expedientes digitales.',
@@ -235,6 +309,7 @@ export const PROJECTS: Project[] = [
   },
 
   {
+    id: '10',
     title: 'PACIFYC – INTEGRATEL',
     context: 'INDRA PERÚ · INTEGRATEL · 2024',
     desc: 'Plataforma de gestión interna empresarial.',
@@ -256,6 +331,7 @@ export const PROJECTS: Project[] = [
   },
 
   {
+    id: '11',
     title: 'SISTEC – INTEGRATEL',
     context: 'INDRA PERÚ · INTEGRATEL · 2025',
     desc: 'Sistema interno empresarial para optimización operativa.',
@@ -277,6 +353,7 @@ export const PROJECTS: Project[] = [
   },
 
   {
+    id: '12',
     title: 'WEB INCIDENTES – CLARO',
     context: 'INDRA PERÚ · CLARO · 2025',
     desc: 'Sistema web para gestión de incidentes operativos.',
@@ -298,6 +375,7 @@ export const PROJECTS: Project[] = [
   },
 
   {
+    id: '13',
     title: 'Jerarquía de Ventas – INTEGRATEL',
     context: 'INDRA PERÚ · INTEGRATEL · 2025',
     desc: 'Sistema para gestión jerárquica de ventas.',
@@ -319,6 +397,7 @@ export const PROJECTS: Project[] = [
   },
 
   {
+    id: '14',
     title: 'Expediente Virtual – Bandeja SAR',
     context: 'INDRA PERÚ · INTEGRATEL · 2024',
     desc: 'Módulo de bandeja SAR para gestión documental.',
@@ -340,6 +419,7 @@ export const PROJECTS: Project[] = [
   },
 
   {
+    id: '15',
     title: 'SIVADAC – INTEGRATEL',
     context: 'INDRA PERÚ · INTEGRATEL · 2024',
     desc: 'Sistema de validación documental.',
@@ -361,6 +441,7 @@ export const PROJECTS: Project[] = [
   },
 
   {
+    id: '16',
     title: 'PCD – CLARO',
     context: 'INDRA PERÚ · CLARO · 2025',
     desc: 'Sistema de control documental empresarial.',
@@ -382,6 +463,7 @@ export const PROJECTS: Project[] = [
   },
 
   {
+    id: '17',
     title: 'Mesa de Partes Virtual – RENIEC',
     context: 'CloudComputing Perú S.A.C. · RENIEC · 2023',
     desc: 'Sistema virtual para recepción y gestión documental.',
@@ -403,6 +485,7 @@ export const PROJECTS: Project[] = [
   },
 
   {
+    id: '18',
     title: 'Módulo Usuario Final – RENIEC',
     context: 'CloudComputing Perú S.A.C. · RENIEC · 2023',
     desc: 'Módulo de experiencia y gestión de usuarios.',
@@ -424,6 +507,7 @@ export const PROJECTS: Project[] = [
   },
 
   {
+    id: '19',
     title: 'Migración SIGED a JBoss – RENIEC',
     context: 'CloudComputing Perú S.A.C. · RENIEC · 2023',
     desc: 'Migración tecnológica del sistema SIGED hacia JBoss.',
@@ -445,6 +529,7 @@ export const PROJECTS: Project[] = [
   },
 
   {
+    id: '20',
     title: 'MAIL-CONSUMER – Scotiabank',
     context: 'IDM Technology · Scotiabank · 2026',
     desc: 'Servicio batch para consumo de colas AS400.',
@@ -466,6 +551,7 @@ export const PROJECTS: Project[] = [
   },
 
   {
+    id: '21',
     title: 'Botón de Pago (BFF) – CLARO',
     context: 'INDRA PERÚ · CLARO · 2026',
     desc: 'BFF para orquestación de servicios de pagos.',
@@ -487,6 +573,7 @@ export const PROJECTS: Project[] = [
   },
 
   {
+    id: '22',
     title: 'WEB INCIDENTES (BFF) – CLARO',
     context: 'INDRA PERÚ · CLARO · 2026',
     desc: 'BFF para integración de servicios empresariales.',
@@ -508,6 +595,7 @@ export const PROJECTS: Project[] = [
   },
 
   {
+    id: '23',
     title: 'Gestión de Apuestas Deportivas - PERSONAL',
     context: 'PROYECTO PERSONAL · 2025',
     desc: 'Sistema de gestión y centralización de apuestas deportivas.',
@@ -527,6 +615,7 @@ export const PROJECTS: Project[] = [
   },
 
   {
+    id: '24',
     title: 'Detección de Mascarilla (Expotec 2021) - UA',
     context: 'Universidad Autónoma del Perú · 2021',
     desc: 'Sistema de visión computacional para detección de mascarillas.',

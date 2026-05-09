@@ -25,7 +25,7 @@ export class HeroProjectCardComponent {
   }
 
   openProject(): void {
-    this._route.navigate(['/projects', this.project.slug]).then();
+    this._route.navigate(['/projects', this.project.id]).then();
   }
 
 }

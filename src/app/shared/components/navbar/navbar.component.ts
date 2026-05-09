@@ -1,30 +1,19 @@
-import {Component} from '@angular/core';
-import {Router, RouterLink} from '@angular/router';
+import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
+  imports: [RouterLink],
   templateUrl: './navbar.component.html',
-  imports: [
-    RouterLink
-  ],
-  styleUrls: ['./navbar.component.scss']
+  styleUrl: './navbar.component.scss'
 })
 export class NavbarComponent {
 
   menuOpen = false;
 
-  closeMenu() {
+  closeMenu(): void {
     this.menuOpen = false;
-  }
-
-  constructor(
-    private readonly _router: Router,
-  ) {
-  }
-
-  gotoRoute(path: string) {
-    this._router.navigate(['/', path]).then();
   }
 
 }

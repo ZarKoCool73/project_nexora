@@ -1,1 +1,263 @@
-<p>project-details-page works!</p>
+<div class="project-page">
+
+  <app-navbar></app-navbar>
+
+  <!-- ===================================== -->
+  <!-- HERO                                  -->
+  <!-- ===================================== -->
+
+  <section class="project-hero">
+
+    <!-- FX -->
+    <div class="hero-noise"></div>
+
+    <div class="hero-glow hero-glow-1"></div>
+    <div class="hero-glow hero-glow-2"></div>
+
+    <div class="project-container">
+
+      <!-- BACK -->
+      <button
+        class="back-button"
+        (click)="goBack()">
+
+        <span>←</span>
+
+        Volver a proyectos
+
+      </button>
+
+      <!-- TOP -->
+      <div class="project-top">
+
+        <div class="project-badge">
+          {{ project.tier }}
+        </div>
+
+        <div class="project-year">
+          {{ project.year }}
+        </div>
+
+      </div>
+
+      <!-- TITLE -->
+      <h1 class="project-title">
+        {{ project.title }}
+      </h1>
+
+      <!-- CONTEXT -->
+      <div class="project-context">
+        {{ project.context }}
+      </div>
+
+      <!-- DESC -->
+      <p class="project-description">
+        {{ project.desc }}
+      </p>
+
+      <!-- LOGOS -->
+      <div class="project-logos">
+
+        <!-- COMPANY -->
+        <div class="logo-tooltip-wrapper">
+
+          <div class="project-logo-card">
+
+            <img
+              [src]="project.companyLogo"
+              [alt]="project.companyName">
+
+          </div>
+
+          <div class="logo-tooltip">
+
+      <span class="tooltip-label">
+        Empresa
+      </span>
+
+            <span class="tooltip-name">
+        {{ project.companyName }}
+      </span>
+
+          </div>
+
+        </div>
+
+        <div class="project-connector"></div>
+
+        <!-- CLIENT -->
+        <div class="logo-tooltip-wrapper">
+
+          <div class="project-logo-card">
+
+            <img
+              [src]="project.clientLogo"
+              [alt]="project.clientName">
+
+          </div>
+
+          <div class="logo-tooltip">
+
+      <span class="tooltip-label">
+        Cliente
+      </span>
+
+            <span class="tooltip-name">
+        {{ project.clientName }}
+      </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- METRICS -->
+      <div class="metrics-grid">
+
+        @for (metric of project.highlightMetrics;
+          track metric) {
+
+          <div class="metric-card">
+
+            <div class="metric-pulse"></div>
+
+            <span>
+              {{ metric }}
+            </span>
+
+          </div>
+
+        }
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ===================================== -->
+  <!-- DASHBOARD                             -->
+  <!-- ===================================== -->
+
+  <section class="dashboard-section">
+
+    <div class="project-container">
+
+      <!-- GRID -->
+      <div class="dashboard-grid">
+
+        <!-- IMPACT -->
+        <div class="dashboard-card impact-card">
+
+          <div class="card-label">
+            BUSINESS IMPACT
+          </div>
+
+          <h3>
+            Arquitectura de Alto Rendimiento
+          </h3>
+
+          <p>
+            {{ project.impact }}
+          </p>
+
+        </div>
+
+        <!-- STACK -->
+        <div class="dashboard-card stack-card">
+
+          <div class="card-label">
+            TECH STACK
+          </div>
+
+          <h3>
+            {{ project.stack }}
+          </h3>
+
+          <div class="stack-tags">
+
+            @for (tag of project.tags;
+              track tag) {
+
+              <div class="tooltip-wrapper">
+
+                <span class="stack-tag">
+                  {{ tag }}
+                </span>
+
+                <div class="tooltip">
+                  Tecnología estratégica enterprise
+                </div>
+
+              </div>
+
+            }
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- ENGINEERING -->
+      <div class="engineering-card">
+
+        <div class="engineering-header">
+
+          <div>
+
+            <div class="card-label">
+              ENGINEERING FLOW
+            </div>
+
+            <h2>
+              Arquitectura Distribuida
+            </h2>
+
+          </div>
+
+          <div class="complexity-badge">
+            {{ project.complexity }}
+          </div>
+
+        </div>
+
+        <!-- FLOW -->
+        <div class="architecture-grid">
+
+          @for (
+            node of project.architectureFlow;
+            track node.title;
+            let last = $last
+            ) {
+
+            <div
+              class="architecture-node"
+              [ngClass]="node.type">
+
+      <span>
+        {{ node.title }}
+      </span>
+
+            </div>
+
+            @if (!last) {
+
+              <div class="architecture-line"></div>
+
+            }
+
+          }
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <app-footer></app-footer>
+
+</div>
