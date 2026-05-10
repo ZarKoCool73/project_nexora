@@ -27,13 +27,13 @@ export class HeroProjectsComponent {
   @Input({ required: true })
   projects: Project[] = [];
 
-  @ViewChild('slider', { static: true })
+  @ViewChild('slider')
   slider!: ElementRef<HTMLDivElement>;
 
   scrollLeft(): void {
 
     this.slider.nativeElement.scrollBy({
-      left: -500,
+      left: -1000,
       behavior: 'smooth'
     });
 
@@ -42,7 +42,7 @@ export class HeroProjectsComponent {
   scrollRight(): void {
 
     this.slider.nativeElement.scrollBy({
-      left: 500,
+      left: 1000,
       behavior: 'smooth'
     });
 

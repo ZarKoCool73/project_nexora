@@ -1,5 +1,12 @@
 import {Component, AfterViewInit, ElementRef} from '@angular/core';
 import {RevealDirective} from '../../shared/directives/reveal/reveal.directive';
+import {Router} from '@angular/router';
+
+export interface Stats {
+  value: number;
+  label: string;
+  url: string;
+}
 
 @Component({
   selector: 'app-stats',
@@ -12,14 +19,17 @@ import {RevealDirective} from '../../shared/directives/reveal/reveal.directive';
 })
 export class StatsComponent implements AfterViewInit {
 
-  stats = [
-    {value: 5, label: 'Años de experiencia'},
-    {value: 17, label: 'Proyectos entregados'},
-    {value: 36, label: 'Tecnologías dominadas'},
-    {value: 3, label: 'Empresas colaboradas'},
+  stats: Stats[] = [
+    {value: 5, label: 'Años de experiencia', url: '/experience'},
+    {value: 17, label: 'Proyectos entregados', url: '/projects'},
+    {value: 36, label: 'Tecnologías dominadas', url: '/skills'},
+    {value: 3, label: 'Empresas colaboradas', url: '/contacts'},
   ];
 
-  constructor(private readonly el: ElementRef) {
+  constructor(
+    private readonly el: ElementRef,
+    private readonly _route: Router
+  ) {
   }
 
   ngAfterViewInit() {
@@ -41,4 +51,9 @@ export class StatsComponent implements AfterViewInit {
       }, 30);
     });
   }
+
+  goToRoute(stag: string) {
+    this._route.navigate([stag]).then();
+  }
+
 }
