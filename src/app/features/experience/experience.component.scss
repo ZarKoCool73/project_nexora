@@ -77,6 +77,10 @@
   border-bottom: 1px solid var(--border);
 }
 
+.timeline-content:hover {
+  background: var(--accent-dim);
+}
+
 .timeline-item:last-child .timeline-content {
   border-bottom: none;
 }

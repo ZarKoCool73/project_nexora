@@ -28,6 +28,7 @@ export interface Project {
   clientName?: string;
   url?: string;
   architectureFlow?: ArchitectureNode[];
+  experienceId: string;
 }
 
 export interface ArchitectureNode {
@@ -84,6 +85,7 @@ export const PROJECTS: Project[] = [
     companyName: 'IDM Technology',
     clientLogo: '/imagen/LOGO_SB.svg',
     clientName: 'Scotiabank',
+    experienceId:'idm-technology'
   },
 
   {
@@ -113,6 +115,7 @@ export const PROJECTS: Project[] = [
     companyName: 'IDM Technology',
     clientLogo: '/imagen/LOGO_SB.svg',
     clientName: 'Scotiabank',
+    experienceId:'idm-technology'
   },
 
   {
@@ -142,6 +145,7 @@ export const PROJECTS: Project[] = [
     companyName: 'CloudComputing Perú S.A.C.',
     clientLogo: '/imagen/LOGO_RENIEC.svg',
     clientName: 'RENIEC',
+    experienceId:'cloudComputing'
   },
 
   {
@@ -171,6 +175,7 @@ export const PROJECTS: Project[] = [
     companyName: 'INDRA PERÚ',
     clientLogo: '/imagen/LOGO_CLARO.svg',
     clientName: 'CLARO',
+    experienceId:'indra'
   },
 
   {
@@ -200,6 +205,7 @@ export const PROJECTS: Project[] = [
     companyName: 'Universidad Autónoma del Perú',
     clientLogo: '/imagen/FOTO.svg',
     clientName: 'Diego Gonzalez',
+    experienceId:'TESIS'
   },
 
   {
@@ -228,6 +234,7 @@ export const PROJECTS: Project[] = [
     companyName: 'IDM Technology',
     clientLogo: '/imagen/LOGO_SB.svg',
     clientName: 'Scotiabank',
+    experienceId:'idm-technology'
   },
 
   {
@@ -256,6 +263,7 @@ export const PROJECTS: Project[] = [
     companyName: 'IDM Technology',
     clientLogo: '/imagen/LOGO_SB.svg',
     clientName: 'Scotiabank',
+    experienceId:'idm-technology'
   },
 
   {
@@ -284,6 +292,7 @@ export const PROJECTS: Project[] = [
     companyName: 'IDM Technology',
     clientLogo: '/imagen/LOGO_SB.svg',
     clientName: 'Scotiabank',
+    experienceId:'idm-technology'
   },
 
   {
@@ -306,6 +315,7 @@ export const PROJECTS: Project[] = [
     companyName: 'INDRA PERÚ',
     clientLogo: '/imagen/LOGO_INTEGRATEL.svg',
     clientName: 'INTEGRATEL',
+    experienceId:'minsait'
   },
 
   {
@@ -328,6 +338,7 @@ export const PROJECTS: Project[] = [
     companyName: 'INDRA PERÚ',
     clientLogo: '/imagen/LOGO_INTEGRATEL.svg',
     clientName: 'INTEGRATEL',
+    experienceId:'minsait'
   },
 
   {
@@ -350,6 +361,7 @@ export const PROJECTS: Project[] = [
     companyName: 'INDRA PERÚ',
     clientLogo: '/imagen/LOGO_INTEGRATEL.svg',
     clientName: 'INTEGRATEL',
+    experienceId:'minsait'
   },
 
   {
@@ -372,6 +384,7 @@ export const PROJECTS: Project[] = [
     companyName: 'INDRA PERÚ',
     clientLogo: '/imagen/LOGO_CLARO.svg',
     clientName: 'CLARO',
+    experienceId:'indra'
   },
 
   {
@@ -394,6 +407,7 @@ export const PROJECTS: Project[] = [
     companyName: 'INDRA PERÚ',
     clientLogo: '/imagen/LOGO_INTEGRATEL.svg',
     clientName: 'INTEGRATEL',
+    experienceId:'minsait'
   },
 
   {
@@ -416,6 +430,7 @@ export const PROJECTS: Project[] = [
     companyName: 'INDRA PERÚ',
     clientLogo: '/imagen/LOGO_INTEGRATEL.svg',
     clientName: 'INTEGRATEL',
+    experienceId:'minsait'
   },
 
   {
@@ -438,6 +453,7 @@ export const PROJECTS: Project[] = [
     companyName: 'INDRA PERÚ',
     clientLogo: '/imagen/LOGO_INTEGRATEL.svg',
     clientName: 'INTEGRATEL',
+    experienceId:'minsait'
   },
 
   {
@@ -460,6 +476,7 @@ export const PROJECTS: Project[] = [
     companyName: 'INDRA PERÚ',
     clientLogo: '/imagen/LOGO_CLARO.svg',
     clientName: 'CLARO',
+    experienceId:'indra'
   },
 
   {
@@ -482,6 +499,7 @@ export const PROJECTS: Project[] = [
     companyName: 'CloudComputing Perú S.A.C.',
     clientLogo: '/imagen/LOGO_RENIEC.svg',
     clientName: 'RENIEC',
+    experienceId:'cloudComputing'
   },
 
   {
@@ -504,6 +522,7 @@ export const PROJECTS: Project[] = [
     companyName: 'CloudComputing Perú S.A.C.',
     clientLogo: '/imagen/LOGO_RENIEC.svg',
     clientName: 'RENIEC',
+    experienceId:'cloudComputing'
   },
 
   {
@@ -526,6 +545,7 @@ export const PROJECTS: Project[] = [
     companyName: 'CloudComputing Perú S.A.C.',
     clientLogo: '/imagen/LOGO_RENIEC.svg',
     clientName: 'RENIEC',
+    experienceId:'cloudComputing'
   },
 
   {
@@ -548,6 +568,7 @@ export const PROJECTS: Project[] = [
     companyName: 'IDM Technology',
     clientLogo: '/imagen/LOGO_SB.svg',
     clientName: 'Scotiabank',
+    experienceId:'idm-technology'
   },
 
   {
@@ -570,6 +591,7 @@ export const PROJECTS: Project[] = [
     companyName: 'INDRA PERÚ',
     clientLogo: '/imagen/LOGO_CLARO.svg',
     clientName: 'CLARO',
+    experienceId:'indra'
   },
 
   {
@@ -592,6 +614,7 @@ export const PROJECTS: Project[] = [
     companyName: 'INDRA PERÚ',
     clientLogo: '/imagen/LOGO_CLARO.svg',
     clientName: 'CLARO',
+    experienceId:'indra'
   },
 
   {
@@ -612,6 +635,7 @@ export const PROJECTS: Project[] = [
     highlightMetrics: ['MongoDB', 'Node.js'],
     companyLogo: '/imagen/FOTO.svg',
     companyName: 'Diego Gonzalez',
+    experienceId:'personal'
   },
 
   {
@@ -634,6 +658,7 @@ export const PROJECTS: Project[] = [
     companyName: 'Universidad Autónoma del Perú',
     clientLogo: '/imagen/FOTO.svg',
     clientName: 'Diego Gonzalez',
+    experienceId:'personal'
   }
 
 ];

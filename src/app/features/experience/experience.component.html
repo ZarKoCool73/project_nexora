@@ -15,7 +15,7 @@
           {{ exp.period }}
         </div>
 
-        <div class="timeline-content">
+        <div class="timeline-content" (click)="goToExp(exp.idExperience)">
           <div class="timeline-role">{{ exp.role }}</div>
           <div class="timeline-company">{{ exp.company }}</div>
           <div class="timeline-desc">{{ exp.description }}</div>

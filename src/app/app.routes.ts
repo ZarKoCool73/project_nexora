@@ -38,6 +38,13 @@ export const routes: Routes = [
   },
 
   {
+    path: 'experience/:idExperience',
+    loadComponent: () =>
+      import('./features/experience/pages/experience-details-page/experience-details-page.component')
+        .then(m => m.ExperienceDetailsPageComponent),
+  },
+
+  {
     path: 'credentials',
     loadComponent: () =>
       import('./features/credentials/pages/home-credentials/home-credentials.component')
