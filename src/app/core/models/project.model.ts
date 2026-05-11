@@ -3185,6 +3185,218 @@ export const PROJECTS: Project[] = [
     clientLogo: '/imagen/FOTO.svg',
     clientName: 'Diego Gonzalez',
     experienceId: 'personal'
+  },
+  {
+    id: '25',
+    title: 'Detección Inteligente de Mascarillas mediante IA',
+    desc: 'Sistema de visión computacional capaz de detectar el uso correcto de mascarillas en tiempo real mediante inteligencia artificial y procesamiento de video.',
+    impact: 'Proyecto ganador en Expotec 2021 por innovación tecnológica aplicada a Computer Vision e Inteligencia Artificial.',
+    context: 'Universidad Autónoma del Perú · 2021',
+    stack: 'Python · Flask · Angular · TensorFlow',
+    tags: ['TensorFlow', 'OpenCV', 'Keras', 'Computer Vision', 'Deep Learning', 'Artificial Intelligence'],
+    tier: 'minor',
+    category: 'ai',
+    complexity: 'medium',
+    role: 'fullstack',
+    size: 'half',
+    year: 2021,
+    duration: '4 Meses',
+    methodology: 'agile',
+    status: 'completed',
+    teamSize: 1,
+    highlightMetrics: ['Real-Time Detection', 'Computer Vision', 'TensorFlow', 'AI Recognition'],
+    responsibilities: ['Desarrollo de frontend interactivo utilizando Angular', 'Implementación de backend API con Flask', 'Procesamiento y análisis de video en tiempo real',
+      'Integración de modelos de inteligencia artificial', 'Entrenamiento y validación de modelos de detección'
+    ],
+    achievements: ['Ganador de Expotec 2021', 'Implementación de inferencia en tiempo real', 'Integración Full Stack entre IA y aplicación web',
+      'Detección automática mediante visión computacional'
+    ],
+    features: ['Detección facial en tiempo real', 'Clasificación automática de uso de mascarilla', 'Captura de video mediante webcam',
+      'Procesamiento de imágenes con OpenCV', 'Frontend responsivo e interactivo'
+    ],
+    techHighlights: ['Computer Vision', 'Deep Learning', 'TensorFlow', 'Image Processing', 'Realtime AI Detection'],
+    metrics: [
+      {
+        label: 'Arquitectura',
+        value: 'Full Stack + IA'
+      },
+      {
+        label: 'Procesamiento',
+        value: 'Tiempo Real'
+      },
+      {
+        label: 'Modelo IA',
+        value: 'TensorFlow/Keras'
+      }
+    ],
+
+    architectureFlow: [
+      {
+        id: 'frontend-angular',
+        title: 'Angular Frontend',
+        type: 'frontend',
+        description: 'Interfaz web para visualización y captura de video.',
+        connections: ['backend-flask']
+      },
+
+      {
+        id: 'backend-flask',
+        title: 'Flask API',
+        type: 'backend',
+        description: 'Backend encargado del procesamiento y comunicación con el modelo IA.',
+        connections: ['ai-model']
+      },
+
+      {
+        id: 'ai-model',
+        title: 'TensorFlow Model',
+        type: 'ai',
+        description: 'Modelo de detección y clasificación de mascarillas.',
+        connections: ['opencv-processing']
+      },
+
+      {
+        id: 'opencv-processing',
+        title: 'OpenCV Processing',
+        type: 'integration',
+        description: 'Procesamiento de imágenes y frames en tiempo real.'
+      }
+    ],
+    companyLogo: '/imagen/LOGO_UA.svg',
+    companyName: 'Universidad Autónoma del Perú',
+    clientLogo: '/imagen/FOTO.svg',
+    clientName: 'Diego Gonzalez',
+    experienceId: 'personal'
+  },
+
+  {
+    id: '26',
+
+    title: 'Sistema Empresarial de Operaciones Logísticas',
+
+    desc: 'Plataforma corporativa orientada a la gestión operativa, atención de incidencias y optimización de procesos logísticos internos mediante soporte técnico y mejoras funcionales.',
+
+    impact: 'Optimización de rendimiento y estabilidad operativa mediante refactorización de código y mejora de consultas SQL en procesos críticos.',
+
+    context: 'DINET Operador Logístico · 2024',
+
+    stack: '.Net · SQL Server · JavaScript · Soporte TI',
+
+    tags: [
+      '.Net',
+      'SQL Server',
+      'Enterprise Systems',
+      'Optimization',
+      'Support',
+      'Logistics'
+    ],
+
+    tier: 'minor',
+    category: 'enterprise',
+    complexity: 'medium',
+    role: 'frontend',
+    size: 'half',
+    year: 2024,
+    duration: '3 Meses',
+    methodology: 'scrum',
+    status: 'completed',
+    teamSize: 4,
+    highlightMetrics: [
+      'SQL Optimization',
+      'Incident Resolution',
+      'Enterprise Support',
+      'Operational Stability'
+    ],
+    responsibilities: [
+      'Atención y resolución de incidencias mediante sistema de tickets.',
+      'Optimización de consultas SQL para mejorar tiempos de respuesta.',
+      'Refactorización de módulos internos para mejorar mantenibilidad.',
+      'Análisis de flujos logísticos y operativos.',
+      'Capacitación funcional a usuarios finales.'
+    ],
+
+    achievements: [
+      'Mejora del rendimiento de procesos internos.',
+      'Optimización de estabilidad operativa en plataforma empresarial.',
+      'Reducción de incidencias recurrentes mediante mejoras técnicas.',
+      'Soporte continuo a usuarios y operaciones críticas.'
+    ],
+
+    features: [
+      'Gestión de incidencias operativas.',
+      'Optimización de consultas y procesos SQL.',
+      'Monitoreo y soporte de operaciones internas.',
+      'Mantenimiento y mejora de módulos empresariales.',
+      'Capacitación y soporte funcional a usuarios.'
+    ],
+
+    techHighlights: [
+      'SQL Optimization',
+      'Enterprise Support',
+      'Operational Flows',
+      'Performance Improvement',
+      'Logistics Systems'
+    ],
+
+    metrics: [
+      {
+        label: 'Arquitectura',
+        value: 'Enterprise Support'
+      },
+
+      {
+        label: 'Base de Datos',
+        value: 'SQL Server'
+      },
+
+      {
+        label: 'Enfoque',
+        value: 'Optimización'
+      }
+    ],
+
+    architectureFlow: [
+      {
+        id: 'frontend-modules',
+        title: 'Angular Modules',
+        type: 'frontend',
+        description: 'Módulos frontend orientados a soporte y operaciones internas.',
+        connections: ['backend-services']
+      },
+
+      {
+        id: 'backend-services',
+        title: 'Enterprise Services',
+        type: 'backend',
+        description: 'Servicios empresariales encargados de la lógica operativa.',
+        connections: ['sql-server']
+      },
+
+      {
+        id: 'sql-server',
+        title: 'SQL Server',
+        type: 'database',
+        description: 'Base de datos utilizada para procesos logísticos y operativos.',
+        connections: ['support-monitoring']
+      },
+
+      {
+        id: 'support-monitoring',
+        title: 'Operational Support',
+        type: 'integration',
+        description: 'Gestión de incidencias y monitoreo operativo empresarial.'
+      }
+    ],
+
+    companyLogo: '/imagen/LOGO_DINET.svg',
+
+    companyName: 'DINET Operador Logístico',
+
+    clientLogo: '/imagen/FOTO.svg',
+
+    clientName: 'Diego Gonzalez',
+
+    experienceId: 'dinet'
   }
 
 ];
