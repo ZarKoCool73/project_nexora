@@ -2,6 +2,7 @@
 
   <div class="section-header">
     <h2 class="section-title">Experiencia</h2>
+    <span class="experience-badge">{{ totalExperience }}</span>
     <div class="section-line"></div>
   </div>
 
@@ -15,10 +16,16 @@
           {{ exp.period }}
         </div>
 
-        <div class="timeline-content">
+        <div class="timeline-content" (click)="goToExp(exp.idExperience)">
           <div class="timeline-role">{{ exp.role }}</div>
           <div class="timeline-company">{{ exp.company }}</div>
-          <div class="timeline-desc">{{ exp.description }}</div>
+          <div class="timeline-desc">
+            {{
+              exp.description.length > 250
+                ? (exp.description | slice:0:(exp.description | slice:0:250).lastIndexOf(' ')) + '...'
+                : exp.description
+            }}
+          </div>
         </div>
 
       </div>

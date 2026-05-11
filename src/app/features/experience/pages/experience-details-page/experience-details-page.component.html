@@ -1,0 +1,348 @@
+<div class="experience-detail-page">
+
+  <app-navbar></app-navbar>
+
+  @if (experience) {
+
+    <!-- HERO -->
+    <section class="experience-hero">
+
+      <div class="hero-background"></div>
+      <div class="hero-gradient"></div>
+
+      <div class="hero-content">
+
+        <!-- BACK -->
+        <button
+          class="back-button"
+          (click)="goBack()"
+        >
+
+          <span>←</span>
+
+          Volver a experiencia
+
+        </button>
+
+        <!-- COMPANY -->
+        <div class="company-header">
+
+          <div class="company-logo">
+
+            <img [src]="projects[0].companyLogo"
+                 [alt]="experience.company"
+            >
+
+          </div>
+
+          <div class="company-info">
+
+            <div class="hero-label">
+              ENTERPRISE EXPERIENCE
+            </div>
+
+            <h1 class="company-name">
+              {{ experience.company }}
+            </h1>
+
+            <div class="company-role">
+              {{ experience.role }}
+            </div>
+
+            <div class="company-period">
+              {{ experience.period }}
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- DESCRIPTION -->
+        <p class="hero-description">
+          {{ experience.description }}
+        </p>
+
+        <!-- QUICK STATS -->
+        <div class="hero-stats">
+
+          <div class="stat-card">
+
+            <div class="stat-number">
+              {{ projects.length }}
+            </div>
+
+            <div class="stat-label">
+              Projects Delivered
+            </div>
+
+          </div>
+
+          <div class="stat-card">
+
+            <div class="stat-number">
+              {{ clients.length }}
+            </div>
+
+            <div class="stat-label">
+              Enterprise Clients
+            </div>
+
+          </div>
+
+          <div class="stat-card">
+
+            <div class="stat-number">
+              {{ technologies.length }}
+            </div>
+
+            <div class="stat-label">
+              Technologies
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- MAIN -->
+    <section class="experience-main">
+
+      <!-- DOMAIN -->
+      <div class="info-block">
+
+        <div class="block-header">
+
+          <div class="block-label">
+            DOMAIN
+          </div>
+
+          <div class="block-line"></div>
+
+        </div>
+
+        <div class="domain-grid">
+
+          @for (client of clients; track client) {
+
+            <div class="domain-card">
+              {{ client }}
+            </div>
+
+          }
+
+        </div>
+
+      </div>
+
+      <!-- PROJECTS -->
+      <div class="info-block">
+
+        <div class="block-header">
+
+          <div class="block-label">
+            PROJECTS
+          </div>
+
+          <div class="block-line"></div>
+
+        </div>
+
+        <div class="projects-grid">
+
+          @for (project of projects; track project.id) {
+
+            <article class="project-card">
+
+              <!-- TOP -->
+              <div class="project-top">
+
+                <div class="project-client">
+
+                  <img
+                    [src]="project.clientLogo"
+                    [alt]="project.clientName"
+                  >
+
+                  <span>
+                    {{ project.clientName }}
+                  </span>
+
+                </div>
+
+                <div class="project-year">
+                  {{ project.year }}
+                </div>
+
+              </div>
+
+              <!-- TITLE -->
+              <h3 class="project-title">
+                {{ project.title }}
+              </h3>
+
+              <!-- DESCRIPTION -->
+              <p class="project-description">
+                {{ project.desc }}
+              </p>
+
+              <!-- IMPACT -->
+              <div class="impact-container">
+
+                <div class="impact-title">
+                  Technical Impact
+                </div>
+
+                <p>
+                  {{ project.impact }}
+                </p>
+
+              </div>
+
+              <!-- ARCHITECTURE -->
+              @if (project.architectureFlow) {
+
+                <div class="architecture-flow">
+
+                  @for (node of project.architectureFlow;
+                    track node.title;
+                    let last = $last) {
+
+                    <div class="flow-node">
+                      {{ node.title }}
+                    </div>
+
+                    @if (!last) {
+                      <div class="flow-line"></div>
+                    }
+
+                  }
+
+                </div>
+
+              }
+
+              <!-- TAGS -->
+              <div class="project-tags">
+
+                @for (tag of project.tags; track tag) {
+
+                  <span class="project-tag">
+                    {{ tag }}
+                  </span>
+
+                }
+
+              </div>
+
+              <!-- FOOTER -->
+              <div class="project-footer">
+
+                <div class="footer-role">
+                  {{ project.role | uppercase }}
+                </div>
+
+                <div class="footer-complexity">
+                  {{ project.complexity | uppercase }} COMPLEXITY
+                </div>
+
+              </div>
+
+            </article>
+
+          }
+
+        </div>
+
+      </div>
+
+      <!-- ARCHITECTURE -->
+      <div class="info-block">
+
+        <div class="block-header">
+
+          <div class="block-label">
+            ARCHITECTURE
+          </div>
+
+          <div class="block-line"></div>
+
+        </div>
+
+        <div class="architecture-grid">
+
+          @for (arch of architectures; track arch) {
+
+            <div class="architecture-card">
+              {{ arch }}
+            </div>
+
+          }
+
+        </div>
+
+      </div>
+
+      <!-- STACK -->
+      <div class="info-block">
+
+        <div class="block-header">
+
+          <div class="block-label">
+            STACK
+          </div>
+
+          <div class="block-line"></div>
+
+        </div>
+
+        <div class="stack-grid">
+
+          @for (tech of technologies; track tech) {
+
+            <div class="stack-card">
+              {{ tech }}
+            </div>
+
+          }
+
+        </div>
+
+      </div>
+
+      <!-- TOOLS -->
+      <div class="info-block">
+
+        <div class="block-header">
+
+          <div class="block-label">
+            TOOLS & ECOSYSTEM
+          </div>
+
+          <div class="block-line"></div>
+
+        </div>
+
+        <div class="tools-grid">
+
+          @for (tag of tags; track tag) {
+
+            <div class="tool-card">
+              {{ tag }}
+            </div>
+
+          }
+
+        </div>
+
+      </div>
+
+    </section>
+
+  }
+
+  <app-footer></app-footer>
+
+</div>

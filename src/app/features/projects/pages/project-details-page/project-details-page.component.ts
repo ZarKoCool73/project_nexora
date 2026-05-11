@@ -8,12 +8,22 @@ import {
   Router
 } from '@angular/router';
 
-import {CommonModule} from '@angular/common';
+import {
+  CommonModule
+} from '@angular/common';
 
-import {NavbarComponent} from '../../../../shared/components/navbar/navbar.component';
-import {FooterComponent} from '../../../../shared/components/footer/footer.component';
+import {
+  NavbarComponent
+} from '../../../../shared/components/navbar/navbar.component';
 
-import {Project, PROJECTS} from '../../../../core/models/project.model';
+import {
+  FooterComponent
+} from '../../../../shared/components/footer/footer.component';
+
+import {
+  Project,
+  PROJECTS
+} from '../../../../core/models/project.model';
 
 
 @Component({
@@ -22,7 +32,7 @@ import {Project, PROJECTS} from '../../../../core/models/project.model';
   imports: [
     CommonModule,
     NavbarComponent,
-    FooterComponent,
+    FooterComponent
   ],
   templateUrl: './project-details-page.component.html',
   styleUrls: ['./project-details-page.component.scss']
@@ -39,18 +49,27 @@ export class ProjectDetailsPageComponent implements OnInit {
 
   ngOnInit(): void {
 
-    const id = this.route.snapshot.paramMap.get('id');
+    const id =
+      this.route.snapshot.paramMap.get('id');
 
     if (!id) {
+
       this.router.navigate(['/projects']);
+
       return;
+
     }
 
-    const project = PROJECTS.find(p => this.slugify(p.id) === id);
+    const project = PROJECTS.find(
+      p => this.slugify(p.id) === id
+    );
 
     if (!project) {
+
       this.router.navigate(['/projects']);
+
       return;
+
     }
 
     this.project = project;
@@ -68,8 +87,10 @@ export class ProjectDetailsPageComponent implements OnInit {
 
   }
 
-  goBack() {
-    this.router.navigate(['/projects']).then();
+  goBack(): void {
+
+    this.router.navigate(['/projects']);
+
   }
 
 }

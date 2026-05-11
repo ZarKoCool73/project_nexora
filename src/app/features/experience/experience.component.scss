@@ -11,17 +11,23 @@
   margin-bottom: 4rem;
 }
 
-.section-num {
-  font-family: var(--mono);
-  font-size: 0.65rem;
-  color: var(--accent);
-  letter-spacing: 0.12em;
-}
-
 .section-title {
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 800;
   letter-spacing: -0.03em;
+}
+
+.experience-badge {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 2px;
+  padding: 0.2rem 0.6rem;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+  align-self: center;
+  opacity: 0.85;
 }
 
 .section-line {
@@ -77,6 +83,10 @@
   border-bottom: 1px solid var(--border);
 }
 
+.timeline-content:hover {
+  background: var(--accent-dim);
+}
+
 .timeline-item:last-child .timeline-content {
   border-bottom: none;
 }
@@ -104,49 +114,7 @@
 /* ========================= */
 /* 📱 RESPONSIVE */
 /* ========================= */
-@media (max-width: 600px) {
-
-  .section-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.75rem;
-  }
-
-  .section-line {
-    width: 100%;
-    flex: none;
-  }
-
-}
-@media (max-width: 900px) {
-
-  #experience {
-    padding: 4rem 1.5rem;
-  }
-
-  .timeline {
-    grid-template-columns: 1fr;
-  }
-
-  .timeline-period {
-    text-align: left;
-    border-right: none;
-    border-top: 1px solid var(--border);
-    padding: 1.5rem 0 0;
-  }
-
-  .timeline-period::after {
-    display: none;
-  }
-
-  .timeline-content {
-    padding: 0.75rem 0 1.5rem;
-  }
-}
-
-
 @media (max-width: 1024px) {
-
   #experience {
     padding: 5rem 2rem;
   }
@@ -165,9 +133,7 @@
   }
 }
 
-
 @media (max-width: 900px) {
-
   #experience {
     padding: 4rem 1.25rem;
   }
@@ -183,7 +149,6 @@
     margin-bottom: 1.5rem;
   }
 
-  /* reemplaza la línea vertical */
   .timeline-item::before {
     content: '';
     position: absolute;
@@ -220,8 +185,21 @@
   }
 }
 
-
 @media (max-width: 600px) {
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .section-line {
+    width: 100%;
+    flex: none;
+  }
+
+  .experience-badge {
+    align-self: flex-start;
+  }
 
   .timeline-role {
     font-size: 0.95rem;

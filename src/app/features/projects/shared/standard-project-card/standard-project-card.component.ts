@@ -1,9 +1,8 @@
-import { Component, Input } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {Component, Input} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { Project } from '../../../../core/models/project.model';
-
-import { ModalService } from '../../../../core/services/local/modal/modal.service';
+import {Project} from '../../../../core/models/project.model';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-standard-project-card',
@@ -14,15 +13,16 @@ import { ModalService } from '../../../../core/services/local/modal/modal.servic
 })
 export class StandardProjectCardComponent {
 
-  @Input({ required: true })
+  @Input({required: true})
   project!: Project;
 
   constructor(
-    private readonly modalService: ModalService
-  ) {}
+    private readonly _router: Router,
+  ) {
+  }
 
   openProject(): void {
-    this.modalService.openPM(this.project);
+    this._router.navigate(['/projects', this.project.id]).then();
   }
 
 }
