@@ -2,10 +2,9 @@
   display: block;
   min-height: 100vh;
 
-  background:
-    radial-gradient(circle at top left, rgba(93,95,239,.16), transparent 30%),
-    radial-gradient(circle at bottom right, rgba(0,212,255,.10), transparent 30%),
-    #050816;
+  background: radial-gradient(circle at top left, rgba(93, 95, 239, .16), transparent 30%),
+  radial-gradient(circle at bottom right, rgba(0, 212, 255, .10), transparent 30%),
+  #050816;
 
   color: white;
 }
@@ -22,24 +21,19 @@
   position: relative;
   overflow: hidden;
 
-  padding:
-    9rem
-    3rem
-    5rem;
+  padding: 9rem 3rem 5rem;
 }
 
 .hero-background {
   position: absolute;
   inset: 0;
 
-  background-image:
-    linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+  background-image: linear-gradient(rgba(255, 255, 255, .03) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255, 255, 255, .03) 1px, transparent 1px);
 
   background-size: 70px 70px;
 
-  mask-image:
-    radial-gradient(circle at center, black 45%, transparent 100%);
+  mask-image: radial-gradient(circle at center, black 45%, transparent 100%);
 }
 
 .hero-gradient {
@@ -53,8 +47,7 @@
 
   border-radius: 50%;
 
-  background:
-    radial-gradient(circle, rgba(93,95,239,.25), transparent 70%);
+  background: radial-gradient(circle, rgba(93, 95, 239, .25), transparent 70%);
 
   filter: blur(60px);
 }
@@ -78,15 +71,13 @@
 
   margin-bottom: 4rem;
 
-  padding:
-    .9rem
-    1.2rem;
+  padding: .9rem 1.2rem;
 
   border-radius: 999px;
 
-  background: rgba(255,255,255,.04);
+  background: rgba(255, 255, 255, .04);
 
-  border: 1px solid rgba(255,255,255,.08);
+  border: 1px solid rgba(255, 255, 255, .08);
 
   backdrop-filter: blur(20px);
 
@@ -94,10 +85,9 @@
 
   font-family: var(--mono);
 
-  transition:
-    transform .3s ease,
-    border-color .3s ease,
-    background .3s ease;
+  transition: transform .3s ease,
+  border-color .3s ease,
+  background .3s ease;
 
   cursor: pointer;
 }
@@ -105,12 +95,11 @@
 .back-button:hover {
   transform: translateY(-4px);
 
-  border-color: rgba(93,95,239,.35);
+  border-color: rgba(93, 95, 239, .35);
 
-  background: rgba(93,95,239,.10);
+  background: rgba(93, 95, 239, .10);
 
-  box-shadow:
-    0 10px 35px rgba(93,95,239,.15);
+  box-shadow: 0 10px 35px rgba(93, 95, 239, .15);
 }
 
 .back-button span {
@@ -137,16 +126,15 @@
 
   border-radius: 32px;
 
-  background: rgba(255,255,255,.05);
+  background: rgba(255, 255, 255, .05);
 
-  border: 1px solid rgba(255,255,255,.08);
+  border: 1px solid rgba(255, 255, 255, .08);
 
   backdrop-filter: blur(12px);
 
   overflow: hidden;
 
-  box-shadow:
-    0 0 50px rgba(93,95,239,.18);
+  box-shadow: 0 0 50px rgba(93, 95, 239, .18);
 }
 
 .company-logo img {
@@ -182,7 +170,7 @@
   font-size: 1.3rem;
   font-weight: 600;
 
-  color: rgba(255,255,255,.82);
+  color: rgba(255, 255, 255, .82);
 
   margin-bottom: .5rem;
 }
@@ -190,18 +178,16 @@
 .company-period {
   font-family: var(--mono);
 
-  color: rgba(255,255,255,.55);
+  color: rgba(255, 255, 255, .55);
 }
 
 .hero-description {
-  max-width: 950px;
-
+  width: 100%;
   font-size: 1.05rem;
   line-height: 2;
-
-  color: rgba(255,255,255,.7);
-
+  color: rgba(255, 255, 255, .7);
   margin-bottom: 4rem;
+  text-align: justify;
 }
 
 /* ===================================================== */
@@ -219,21 +205,20 @@
 
   border-radius: 24px;
 
-  background: rgba(255,255,255,.04);
+  background: rgba(255, 255, 255, .04);
 
-  border: 1px solid rgba(255,255,255,.07);
+  border: 1px solid rgba(255, 255, 255, .07);
 
   backdrop-filter: blur(14px);
 
-  transition:
-    transform .4s ease,
-    border-color .4s ease;
+  transition: transform .4s ease,
+  border-color .4s ease;
 }
 
 .stat-card:hover {
   transform: translateY(-6px);
 
-  border-color: rgba(93,95,239,.35);
+  border-color: rgba(93, 95, 239, .35);
 }
 
 .stat-number {
@@ -246,7 +231,7 @@
 }
 
 .stat-label {
-  color: rgba(255,255,255,.6);
+  color: rgba(255, 255, 255, .6);
 
   font-size: .85rem;
 }
@@ -259,10 +244,7 @@
   max-width: 1450px;
   margin: auto;
 
-  padding:
-    2rem
-    3rem
-    6rem;
+  padding: 2rem 3rem 6rem;
 }
 
 /* ===================================================== */
@@ -296,7 +278,7 @@
   flex: 1;
   height: 1px;
 
-  background: rgba(255,255,255,.08);
+  background: rgba(255, 255, 255, .08);
 }
 
 /* ===================================================== */
@@ -310,15 +292,13 @@
 }
 
 .domain-card {
-  padding:
-    1rem
-    1.2rem;
+  padding: 1rem 1.2rem;
 
   border-radius: 18px;
 
-  background: rgba(255,255,255,.04);
+  background: rgba(255, 255, 255, .04);
 
-  border: 1px solid rgba(255,255,255,.06);
+  border: 1px solid rgba(255, 255, 255, .06);
 
   font-family: var(--mono);
 
@@ -328,10 +308,9 @@
 .domain-card:hover {
   transform: translateY(-4px);
 
-  border-color: rgba(93,95,239,.35);
+  border-color: rgba(93, 95, 239, .35);
 
-  box-shadow:
-    0 0 25px rgba(93,95,239,.15);
+  box-shadow: 0 0 25px rgba(93, 95, 239, .15);
 }
 
 /* ===================================================== */
@@ -352,21 +331,19 @@
 
   border-radius: 32px;
 
-  background:
-    linear-gradient(
-      180deg,
-      rgba(255,255,255,.05),
-      rgba(255,255,255,.02)
-    );
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, .05),
+    rgba(255, 255, 255, .02)
+  );
 
-  border: 1px solid rgba(255,255,255,.06);
+  border: 1px solid rgba(255, 255, 255, .06);
 
   backdrop-filter: blur(18px);
 
-  transition:
-    transform .4s ease,
-    border-color .4s ease,
-    box-shadow .4s ease;
+  transition: transform .4s ease,
+  border-color .4s ease,
+  box-shadow .4s ease;
 }
 
 .project-card::before {
@@ -375,8 +352,7 @@
   position: absolute;
   inset: 0;
 
-  background:
-    radial-gradient(circle at top right, rgba(93,95,239,.18), transparent 40%);
+  background: radial-gradient(circle at top right, rgba(93, 95, 239, .18), transparent 40%);
 
   opacity: 0;
 
@@ -386,11 +362,10 @@
 .project-card:hover {
   transform: translateY(-10px);
 
-  border-color: rgba(93,95,239,.35);
+  border-color: rgba(93, 95, 239, .35);
 
-  box-shadow:
-    0 20px 60px rgba(0,0,0,.35),
-    0 0 50px rgba(93,95,239,.12);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, .35),
+  0 0 50px rgba(93, 95, 239, .12);
 }
 
 .project-card:hover::before {
@@ -423,13 +398,13 @@
 
   border-radius: 12px;
 
-  background: rgba(255,255,255,.04);
+  background: rgba(255, 255, 255, .04);
 
   padding: .4rem;
 }
 
 .project-client span {
-  color: rgba(255,255,255,.7);
+  color: rgba(255, 255, 255, .7);
 
   font-size: .9rem;
 }
@@ -437,7 +412,7 @@
 .project-year {
   font-family: var(--mono);
 
-  color: rgba(255,255,255,.45);
+  color: rgba(255, 255, 255, .45);
 }
 
 /* ===================================================== */
@@ -454,7 +429,7 @@
 }
 
 .project-description {
-  color: rgba(255,255,255,.65);
+  color: rgba(255, 255, 255, .65);
 
   line-height: 1.8;
 
@@ -470,9 +445,9 @@
 
   border-radius: 20px;
 
-  background: rgba(93,95,239,.08);
+  background: rgba(93, 95, 239, .08);
 
-  border: 1px solid rgba(93,95,239,.14);
+  border: 1px solid rgba(93, 95, 239, .14);
 
   margin-bottom: 2rem;
 }
@@ -489,7 +464,7 @@
 }
 
 .impact-container p {
-  color: rgba(255,255,255,.8);
+  color: rgba(255, 255, 255, .8);
 
   line-height: 1.7;
 }
@@ -508,15 +483,13 @@
 }
 
 .flow-node {
-  padding:
-    .7rem
-    1rem;
+  padding: .7rem 1rem;
 
   border-radius: 999px;
 
-  background: rgba(255,255,255,.05);
+  background: rgba(255, 255, 255, .05);
 
-  border: 1px solid rgba(255,255,255,.06);
+  border: 1px solid rgba(255, 255, 255, .06);
 
   font-size: .72rem;
 
@@ -527,7 +500,7 @@
   width: 20px;
   height: 1px;
 
-  background: rgba(255,255,255,.15);
+  background: rgba(255, 255, 255, .15);
 }
 
 /* ===================================================== */
@@ -543,15 +516,13 @@
 }
 
 .project-tag {
-  padding:
-    .65rem
-    .9rem;
+  padding: .65rem .9rem;
 
   border-radius: 999px;
 
-  background: rgba(255,255,255,.04);
+  background: rgba(255, 255, 255, .04);
 
-  border: 1px solid rgba(255,255,255,.05);
+  border: 1px solid rgba(255, 255, 255, .05);
 
   font-size: .72rem;
 
@@ -569,7 +540,7 @@
 
   padding-top: 1.5rem;
 
-  border-top: 1px solid rgba(255,255,255,.06);
+  border-top: 1px solid rgba(255, 255, 255, .06);
 }
 
 .footer-role,
@@ -578,7 +549,7 @@
 
   letter-spacing: .15em;
 
-  color: rgba(255,255,255,.5);
+  color: rgba(255, 255, 255, .5);
 }
 
 /* ===================================================== */
@@ -596,15 +567,13 @@
 .stack-card,
 .tool-card,
 .architecture-card {
-  padding:
-    1rem
-    1.2rem;
+  padding: 1rem 1.2rem;
 
   border-radius: 18px;
 
-  background: rgba(255,255,255,.04);
+  background: rgba(255, 255, 255, .04);
 
-  border: 1px solid rgba(255,255,255,.06);
+  border: 1px solid rgba(255, 255, 255, .06);
 
   font-family: var(--mono);
 
@@ -616,10 +585,9 @@
 .architecture-card:hover {
   transform: translateY(-4px);
 
-  border-color: rgba(93,95,239,.35);
+  border-color: rgba(93, 95, 239, .35);
 
-  box-shadow:
-    0 0 25px rgba(93,95,239,.15);
+  box-shadow: 0 0 25px rgba(93, 95, 239, .15);
 }
 
 /* ===================================================== */
@@ -637,17 +605,11 @@
 @media (max-width: 900px) {
 
   .experience-hero {
-    padding:
-      8rem
-      1.25rem
-      4rem;
+    padding: 8rem 1.25rem 4rem;
   }
 
   .experience-main {
-    padding:
-      2rem
-      1.25rem
-      5rem;
+    padding: 2rem 1.25rem 5rem;
   }
 
   .company-header {

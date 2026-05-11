@@ -1,6 +1,6 @@
 import {Component, inject} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {UpperCasePipe} from '@angular/common';
+import {SlicePipe, UpperCasePipe} from '@angular/common';
 
 import {NavbarComponent} from '../../../../shared/components/navbar/navbar.component';
 import {FooterComponent} from '../../../../shared/components/footer/footer.component';
@@ -14,7 +14,8 @@ import {PROJECTS} from '../../../../core/models/project.model';
   imports: [
     NavbarComponent,
     FooterComponent,
-    UpperCasePipe
+    UpperCasePipe,
+    SlicePipe
   ],
   templateUrl: './experience-details-page.component.html',
   styleUrls: ['./experience-details-page.component.scss']

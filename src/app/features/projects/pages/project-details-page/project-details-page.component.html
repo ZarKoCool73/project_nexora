@@ -2,10 +2,6 @@
 
   <app-navbar></app-navbar>
 
-  <!-- ===================================== -->
-  <!-- HERO                                  -->
-  <!-- ===================================== -->
-
   <section class="project-hero">
 
     <!-- FX -->
@@ -71,13 +67,13 @@
 
           <div class="logo-tooltip">
 
-      <span class="tooltip-label">
-        Empresa
-      </span>
+            <span class="tooltip-label">
+              Empresa
+            </span>
 
             <span class="tooltip-name">
-        {{ project.companyName }}
-      </span>
+              {{ project.companyName }}
+            </span>
 
           </div>
 
@@ -98,13 +94,13 @@
 
           <div class="logo-tooltip">
 
-      <span class="tooltip-label">
-        Cliente
-      </span>
+            <span class="tooltip-label">
+              Cliente
+            </span>
 
             <span class="tooltip-name">
-        {{ project.clientName }}
-      </span>
+              {{ project.clientName }}
+            </span>
 
           </div>
 
@@ -113,24 +109,30 @@
       </div>
 
       <!-- METRICS -->
-      <div class="metrics-grid">
+      @if (project.highlightMetrics?.length) {
 
-        @for (metric of project.highlightMetrics;
-          track metric) {
+        <div class="metrics-grid">
 
-          <div class="metric-card">
+          @for (
+            metric of project.highlightMetrics;
+            track metric
+            ) {
 
-            <div class="metric-pulse"></div>
+            <div class="metric-card">
 
-            <span>
-              {{ metric }}
-            </span>
+              <div class="metric-pulse"></div>
 
-          </div>
+              <span>
+                {{ metric }}
+              </span>
 
-        }
+            </div>
 
-      </div>
+          }
+
+        </div>
+
+      }
 
     </div>
 
@@ -144,7 +146,78 @@
 
     <div class="project-container">
 
-      <!-- GRID -->
+      <!-- ===================================== -->
+      <!-- META GRID                              -->
+      <!-- ===================================== -->
+
+      <div class="meta-grid">
+
+        @if (project.status) {
+
+          <div class="meta-card">
+
+            <span class="meta-label">
+              STATUS
+            </span>
+
+            <h3>
+              {{ project.status }}
+            </h3>
+
+          </div>
+
+        }
+
+        @if (project.methodology) {
+
+          <div class="meta-card">
+
+            <span class="meta-label">
+              METHODOLOGY
+            </span>
+
+            <h3>
+              {{ project.methodology }}
+            </h3>
+
+          </div>
+
+        }
+
+        @if (project.teamSize) {
+
+          <div class="meta-card">
+
+            <span class="meta-label">
+              TEAM SIZE
+            </span>
+
+            <h3>
+              {{ project.teamSize }} Devs
+            </h3>
+
+          </div>
+
+        }
+
+        <div class="meta-card">
+
+          <span class="meta-label">
+            DURATION
+          </span>
+
+          <h3>
+            {{ project.duration }}
+          </h3>
+
+        </div>
+
+      </div>
+
+      <!-- ===================================== -->
+      <!-- DASHBOARD GRID                         -->
+      <!-- ===================================== -->
+
       <div class="dashboard-grid">
 
         <!-- IMPACT -->
@@ -155,7 +228,7 @@
           </div>
 
           <h3>
-            Arquitectura de Alto Rendimiento
+            Arquitectura Empresarial
           </h3>
 
           <p>
@@ -177,8 +250,10 @@
 
           <div class="stack-tags">
 
-            @for (tag of project.tags;
-              track tag) {
+            @for (
+              tag of project.tags;
+              track tag
+              ) {
 
               <div class="tooltip-wrapper">
 
@@ -200,59 +275,249 @@
 
       </div>
 
-      <!-- ENGINEERING -->
-      <div class="engineering-card">
+      <!-- ===================================== -->
+      <!-- RESPONSIBILITIES                       -->
+      <!-- ===================================== -->
 
-        <div class="engineering-header">
+      @if (project.responsibilities?.length) {
 
-          <div>
+        <div class="detail-card">
 
-            <div class="card-label">
-              ENGINEERING FLOW
-            </div>
-
-            <h2>
-              Arquitectura Distribuida
-            </h2>
-
+          <div class="card-label">
+            RESPONSIBILITIES
           </div>
 
-          <div class="complexity-badge">
-            {{ project.complexity }}
-          </div>
+          <div class="detail-list">
 
-        </div>
+            @for (
+              item of project.responsibilities;
+              track item
+              ) {
 
-        <!-- FLOW -->
-        <div class="architecture-grid">
+              <div class="detail-item">
 
-          @for (
-            node of project.architectureFlow;
-            track node.title;
-            let last = $last
-            ) {
+                <div class="detail-dot"></div>
 
-            <div
-              class="architecture-node"
-              [ngClass]="node.type">
+                <span>
+                  {{ item }}
+                </span>
 
-      <span>
-        {{ node.title }}
-      </span>
-
-            </div>
-
-            @if (!last) {
-
-              <div class="architecture-line"></div>
+              </div>
 
             }
 
-          }
+          </div>
 
         </div>
 
-      </div>
+      }
+
+      <!-- ===================================== -->
+      <!-- ACHIEVEMENTS                           -->
+      <!-- ===================================== -->
+
+      @if (project.achievements?.length) {
+
+        <div class="detail-card">
+
+          <div class="card-label">
+            ACHIEVEMENTS
+          </div>
+
+          <div class="achievement-grid">
+
+            @for (
+              item of project.achievements;
+              track item
+              ) {
+
+              <div class="achievement-item">
+
+                {{ item }}
+
+              </div>
+
+            }
+
+          </div>
+
+        </div>
+
+      }
+
+      <!-- ===================================== -->
+      <!-- FEATURES                               -->
+      <!-- ===================================== -->
+
+      @if (project.features?.length) {
+
+        <div class="detail-card">
+
+          <div class="card-label">
+            CORE FEATURES
+          </div>
+
+          <div class="feature-tags">
+
+            @for (
+              feature of project.features;
+              track feature
+              ) {
+
+              <span class="feature-tag">
+
+                {{ feature }}
+
+              </span>
+
+            }
+
+          </div>
+
+        </div>
+
+      }
+
+      <!-- ===================================== -->
+      <!-- TECH HIGHLIGHTS                        -->
+      <!-- ===================================== -->
+
+      @if (project.techHighlights?.length) {
+
+        <div class="detail-card">
+
+          <div class="card-label">
+            TECH HIGHLIGHTS
+          </div>
+
+          <div class="tech-grid">
+
+            @for (
+              item of project.techHighlights;
+              track item
+              ) {
+
+              <div class="tech-item">
+
+                {{ item }}
+
+              </div>
+
+            }
+
+          </div>
+
+        </div>
+
+      }
+
+      <!-- ===================================== -->
+      <!-- ENGINEERING METRICS                    -->
+      <!-- ===================================== -->
+
+      @if (project.metrics?.length) {
+
+        <div class="detail-card">
+
+          <div class="card-label">
+            ENGINEERING METRICS
+          </div>
+
+          <div class="metrics-dashboard">
+
+            @for (
+              metric of project.metrics;
+              track metric.label
+              ) {
+
+              <div class="metric-dashboard-card">
+
+                <span>
+                  {{ metric.label }}
+                </span>
+
+                <h3>
+                  {{ metric.value }}
+                </h3>
+
+              </div>
+
+            }
+
+          </div>
+
+        </div>
+
+      }
+
+      <!-- ===================================== -->
+      <!-- ENGINEERING FLOW                       -->
+      <!-- ===================================== -->
+
+      @if (project.architectureFlow?.length) {
+
+        <div class="engineering-card">
+
+          <div class="engineering-header">
+
+            <div>
+
+              <div class="card-label">
+                ENGINEERING FLOW
+              </div>
+
+              <h2>
+                Arquitectura Distribuida
+              </h2>
+
+            </div>
+
+            <div class="complexity-badge">
+              {{ project.complexity }}
+            </div>
+
+          </div>
+
+          <!-- FLOW -->
+          <div class="architecture-grid">
+
+            @for (
+              node of project.architectureFlow;
+              track node.title;
+              let last = $last
+              ) {
+
+              <div
+                class="architecture-node"
+                [ngClass]="node.type">
+
+                <span>
+                  {{ node.title }}
+                </span>
+
+                @if (node.description) {
+
+                  <small>
+                    {{ node.description }}
+                  </small>
+
+                }
+
+              </div>
+
+              @if (!last) {
+
+                <div class="architecture-line"></div>
+
+              }
+
+            }
+
+          </div>
+
+        </div>
+
+      }
 
     </div>
 
