@@ -15,7 +15,7 @@
 }
 
 .project-container {
-  width: min(1400px, 92%);
+  width: min(1400px, 100%);
   margin: 0 auto;
 
   position: relative;
@@ -474,7 +474,7 @@
 /* ===================================== */
 
 .dashboard-section {
-  padding-bottom: 8rem;
+  padding-bottom: 5rem;
 }
 
 .dashboard-grid {
@@ -621,10 +621,6 @@
 /* ===================================== */
 /* RESPONSIBILITIES                      */
 /* ===================================== */
-
-.detail-card {
-  margin-top: 1.5rem;
-}
 
 .detail-list {
   display: flex;

@@ -157,13 +157,11 @@
 
 .company-name {
   font-size: clamp(3rem, 8vw, 6rem);
-
   line-height: .92;
   letter-spacing: -.07em;
-
   font-weight: 900;
-
   margin-bottom: 1rem;
+  word-break: break-word;
 }
 
 .company-role {

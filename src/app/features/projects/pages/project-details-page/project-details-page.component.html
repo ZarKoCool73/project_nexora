@@ -157,7 +157,7 @@
           <div class="meta-card">
 
             <span class="meta-label">
-              STATUS
+              ESTADO
             </span>
 
             <h3>
@@ -173,7 +173,7 @@
           <div class="meta-card">
 
             <span class="meta-label">
-              METHODOLOGY
+              METODOLOGÍA
             </span>
 
             <h3>
@@ -189,7 +189,7 @@
           <div class="meta-card">
 
             <span class="meta-label">
-              TEAM SIZE
+              EQUIPO
             </span>
 
             <h3>
@@ -203,7 +203,7 @@
         <div class="meta-card">
 
           <span class="meta-label">
-            DURATION
+            DURACIÓN
           </span>
 
           <h3>
@@ -224,7 +224,7 @@
         <div class="dashboard-card impact-card">
 
           <div class="card-label">
-            BUSINESS IMPACT
+            IMPACTO EMPRESARIAL
           </div>
 
           <h3>
@@ -241,7 +241,7 @@
         <div class="dashboard-card stack-card">
 
           <div class="card-label">
-            TECH STACK
+            STACK TECNOLÓGICO
           </div>
 
           <h3>
@@ -275,249 +275,84 @@
 
       </div>
 
-      <!-- ===================================== -->
-      <!-- RESPONSIBILITIES                       -->
-      <!-- ===================================== -->
+      <div class="dashboard-grid">
 
-      @if (project.responsibilities?.length) {
+        <!-- ===================================== -->
+        <!-- RESPONSIBILITIES                       -->
+        <!-- ===================================== -->
 
-        <div class="detail-card">
+        @if (project.responsibilities?.length) {
 
-          <div class="card-label">
-            RESPONSIBILITIES
-          </div>
+          <div class="detail-card">
 
-          <div class="detail-list">
+            <div class="card-label">
+              RESPONSABILIDADES
+            </div>
 
-            @for (
-              item of project.responsibilities;
-              track item
-              ) {
+            <div class="detail-list">
 
-              <div class="detail-item">
+              @for (
+                item of project.responsibilities;
+                track item
+                ) {
 
-                <div class="detail-dot"></div>
+                <div class="detail-item">
 
-                <span>
+                  <div class="detail-dot"></div>
+
+                  <span>
                   {{ item }}
                 </span>
 
-              </div>
-
-            }
-
-          </div>
-
-        </div>
-
-      }
-
-      <!-- ===================================== -->
-      <!-- ACHIEVEMENTS                           -->
-      <!-- ===================================== -->
-
-      @if (project.achievements?.length) {
-
-        <div class="detail-card">
-
-          <div class="card-label">
-            ACHIEVEMENTS
-          </div>
-
-          <div class="achievement-grid">
-
-            @for (
-              item of project.achievements;
-              track item
-              ) {
-
-              <div class="achievement-item">
-
-                {{ item }}
-
-              </div>
-
-            }
-
-          </div>
-
-        </div>
-
-      }
-
-      <!-- ===================================== -->
-      <!-- FEATURES                               -->
-      <!-- ===================================== -->
-
-      @if (project.features?.length) {
-
-        <div class="detail-card">
-
-          <div class="card-label">
-            CORE FEATURES
-          </div>
-
-          <div class="feature-tags">
-
-            @for (
-              feature of project.features;
-              track feature
-              ) {
-
-              <span class="feature-tag">
-
-                {{ feature }}
-
-              </span>
-
-            }
-
-          </div>
-
-        </div>
-
-      }
-
-      <!-- ===================================== -->
-      <!-- TECH HIGHLIGHTS                        -->
-      <!-- ===================================== -->
-
-      @if (project.techHighlights?.length) {
-
-        <div class="detail-card">
-
-          <div class="card-label">
-            TECH HIGHLIGHTS
-          </div>
-
-          <div class="tech-grid">
-
-            @for (
-              item of project.techHighlights;
-              track item
-              ) {
-
-              <div class="tech-item">
-
-                {{ item }}
-
-              </div>
-
-            }
-
-          </div>
-
-        </div>
-
-      }
-
-      <!-- ===================================== -->
-      <!-- ENGINEERING METRICS                    -->
-      <!-- ===================================== -->
-
-      @if (project.metrics?.length) {
-
-        <div class="detail-card">
-
-          <div class="card-label">
-            ENGINEERING METRICS
-          </div>
-
-          <div class="metrics-dashboard">
-
-            @for (
-              metric of project.metrics;
-              track metric.label
-              ) {
-
-              <div class="metric-dashboard-card">
-
-                <span>
-                  {{ metric.label }}
-                </span>
-
-                <h3>
-                  {{ metric.value }}
-                </h3>
-
-              </div>
-
-            }
-
-          </div>
-
-        </div>
-
-      }
-
-      <!-- ===================================== -->
-      <!-- ENGINEERING FLOW                       -->
-      <!-- ===================================== -->
-
-      @if (project.architectureFlow?.length) {
-
-        <div class="engineering-card">
-
-          <div class="engineering-header">
-
-            <div>
-
-              <div class="card-label">
-                ENGINEERING FLOW
-              </div>
-
-              <h2>
-                Arquitectura Distribuida
-              </h2>
-
-            </div>
-
-            <div class="complexity-badge">
-              {{ project.complexity }}
-            </div>
-
-          </div>
-
-          <!-- FLOW -->
-          <div class="architecture-grid">
-
-            @for (
-              node of project.architectureFlow;
-              track node.title;
-              let last = $last
-              ) {
-
-              <div
-                class="architecture-node"
-                [ngClass]="node.type">
-
-                <span>
-                  {{ node.title }}
-                </span>
-
-                @if (node.description) {
-
-                  <small>
-                    {{ node.description }}
-                  </small>
-
-                }
-
-              </div>
-
-              @if (!last) {
-
-                <div class="architecture-line"></div>
+                </div>
 
               }
 
-            }
+            </div>
 
           </div>
 
-        </div>
+        }
 
-      }
+        <!-- ===================================== -->
+        <!-- ACHIEVEMENTS                           -->
+        <!-- ===================================== -->
+
+        @if (project.achievements?.length) {
+
+          <div class="detail-card">
+
+            <div class="card-label">
+              LOGROS
+            </div>
+
+            <div class="detail-list">
+
+              @for (
+                item of project.achievements;
+                track item
+                ) {
+
+                <div class="detail-item">
+
+                  <div class="detail-dot"></div>
+
+                  <span>
+                  {{ item }}
+                </span>
+
+                </div>
+
+              }
+
+            </div>
+
+          </div>
+
+        }
+
+      </div>
+
 
     </div>
 

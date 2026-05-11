@@ -3,28 +3,10 @@ export type ProjectCategory = | 'banking' | 'telecom' | 'government' | 'ai' | 'e
 export type ProjectComplexity = | 'high' | 'medium' | 'low';
 export type ProjectRole = | 'frontend' | 'backend' | 'fullstack' | 'architecture';
 export type ProjectSize = | 'featured' | 'regular' | 'half';
-export type ProjectMethodology =
-  | 'scrum'
-  | 'kanban'
-  | 'agile';
-
-export type ProjectStatus =
-  | 'production'
-  | 'completed'
-  | 'maintenance'
-  | 'archived';
-
-export type ArchitectureNodeType =
-  | 'frontend'
-  | 'backend'
-  | 'database'
-  | 'queue'
-  | 'security'
-  | 'ai'
-  | 'cloud'
-  | 'integration'
-  | 'gateway'
-  | 'testing';
+export type ProjectMethodology = | 'scrum' | 'kanban' | 'agile';
+export type ProjectStatus = | 'En producción' | 'Completado' | 'En mantenimiento' | 'Archivado';
+export type ArchitectureNodeType = | 'frontend' | 'backend' | 'database' | 'queue' | 'security' | 'ai' | 'cloud'
+  | 'integration' | 'gateway' | 'testing';
 
 export interface ProjectMetric {
   label: string;
@@ -32,152 +14,56 @@ export interface ProjectMetric {
 }
 
 export interface ArchitectureNode {
-
   id: string;
-
   title: string;
-
   type: ArchitectureNodeType;
-
-  /**
-   * IDs de los nodos conectados
-   * para representar flujos de arquitectura.
-   */
   connections?: string[];
-
-  /**
-   * Información opcional
-   * para mostrar detalles técnicos.
-   */
   description?: string;
 }
 
 export interface Project {
-
   id: string;
-
   title: string;
-
   desc: string;
-
   impact?: string;
-
   context?: string;
-
   stack: string;
-
   tags: string[];
-
   tier: ProjectTier;
-
   category: ProjectCategory;
-
   complexity: ProjectComplexity;
-
   role: ProjectRole;
-
   size: ProjectSize;
-
   featuredOrder?: number;
-
   year: number;
-
   duration: string;
-
-  /**
-   * Métricas rápidas destacadas
-   * para cards o badges.
-   */
   highlightMetrics?: string[];
-
-  /**
-   * Responsabilidades principales.
-   */
   responsibilities?: string[];
-
-  /**
-   * Logros o resultados obtenidos.
-   */
   achievements?: string[];
-
-  /**
-   * Funcionalidades importantes.
-   */
   features?: string[];
-
-  /**
-   * KPIs o métricas técnicas.
-   */
   metrics?: ProjectMetric[];
-
-  /**
-   * Tecnologías o conceptos destacados.
-   */
   techHighlights?: string[];
-
-  /**
-   * Metodología usada en el proyecto.
-   */
-  methodology?: ProjectMethodology;
-
-  /**
-   * Estado actual del proyecto.
-   */
-  status?: ProjectStatus;
-
-  /**
-   * Cantidad de integrantes del equipo.
-   */
+  methodology?: string;
+  status?: string;
   teamSize?: number;
-
-  /**
-   * Galería de imágenes/screenshots.
-   */
   gallery?: string[];
-
-  /**
-   * Logos e información corporativa.
-   */
   companyLogo?: string;
-
   companyName?: string;
-
   clientLogo?: string;
-
   clientName?: string;
-
-  /**
-   * URL del proyecto/demo/repositorio.
-   */
   url?: string;
-
-  /**
-   * Arquitectura técnica del proyecto.
-   */
   architectureFlow?: ArchitectureNode[];
-
-  /**
-   * Relación con experiencia laboral.
-   */
   experienceId: string;
 }
 
 export interface ProjectFilterState {
-
   search: string;
-
   tags: string[];
-
   stacks: string[];
-
   years: number[];
-
   categories?: ProjectCategory[];
-
   complexities?: ProjectComplexity[];
-
   roles?: ProjectRole[];
-
   status?: ProjectStatus[];
 }
 
@@ -185,71 +71,29 @@ export const PROJECTS: Project[] = [
 
   {
     id: '1',
-
     title: 'SMS-CONSUMER – Scotiabank',
-
-    desc: 'Servicio batch backend orientado al consumo paralelo de colas AS400 e integración distribuida mediante Kafka y Redis para procesamiento financiero empresarial.',
-
+    desc: 'Servicio batch backend orientado al consumo paralelo de colas AS400 e integración distribuida mediante Kafka procesamiento financiero empresarial.',
     impact: 'Optimización de procesamiento batch mediante paralelización de consumo AS400 y modernización backend sobre Java 25.',
-
     context: 'IDM Technology · Scotiabank · 2026',
-
-    stack: 'Spring Boot · Java 25 · Kafka · Redis',
-
-    tags: [
-      'AS400',
-      'Kafka',
-      'Redis',
-      'Java 25',
-      'SonarQube',
-      'CI/CD',
-      'Jenkins',
-      'ArgoCD',
-      'Hexagonal Architecture',
-      'Batch Processing'
-    ],
-
+    stack: 'Spring Boot · Java 25 · Kafka',
+    tags: ['AS400', 'Kafka', 'Java 25', 'SonarQube', 'CI/CD', 'Jenkins', 'ArgoCD', 'Hexagonal Architecture', 'Batch Processing','BlackDuck', 'Checkmarxs'],
     tier: 'hero',
-
     category: 'banking',
-
     complexity: 'high',
-
     role: 'backend',
-
     featuredOrder: 1,
-
     size: 'featured',
-
     year: 2026,
-
     duration: '4 Meses',
-
-    methodology: 'agile',
-
-    status: 'production',
-
-    teamSize: 6,
-
-    highlightMetrics: [
-      'Kafka',
-      'AS400',
-      'Java 25',
-      'Hexagonal Architecture'
-    ],
-
+    methodology: 'SCRUM',
+    status: 'En producción',
+    teamSize: 2,
+    highlightMetrics: ['Kafka', 'AS400', 'Java 25', 'Hexagonal Architecture'],
     responsibilities: [
-      'Optimización de procesamiento batch backend',
-      'Integración y consumo paralelo de colas AS400',
-      'Implementación de mensajería distribuida con Kafka',
-      'Uso de Redis para optimización y cache distribuido',
-      'Participación en despliegues automatizados CI/CD'
+      'Optimización de procesamiento batch backend', 'Integración y consumo paralelo de colas AS400', 'Implementación de mensajería distribuida con Kafka',
+      'Participación en despliegues automatizados CI/CD', 'Generar reportes SAST - DAST del proyecto',
     ],
-
-    achievements: [
-      'Reducción de tiempos de procesamiento batch',
-      'Modernización tecnológica hacia Java 25',
-      'Optimización de integración con sistemas legacy AS400',
+    achievements: ['Reducción de tiempos de procesamiento batch', 'Modernización tecnológica hacia Java 25', 'Optimización de integración con sistemas legacy AS400',
       'Implementación de arquitectura backend escalable'
     ],
 
@@ -257,14 +101,12 @@ export const PROJECTS: Project[] = [
       'Procesamiento batch paralelo',
       'Integración AS400',
       'Mensajería distribuida con Kafka',
-      'Cache distribuido con Redis',
       'Arquitectura Hexagonal'
     ],
 
     techHighlights: [
       'Java 25',
       'Kafka Messaging',
-      'Redis Distributed Cache',
       'Hexagonal Architecture',
       'Spring Boot'
     ],
@@ -273,10 +115,6 @@ export const PROJECTS: Project[] = [
       {
         label: 'Mensajería',
         value: 'Kafka'
-      },
-      {
-        label: 'Cache',
-        value: 'Redis'
       },
       {
         label: 'Arquitectura',
@@ -307,13 +145,6 @@ export const PROJECTS: Project[] = [
         type: 'backend',
         description: 'Motor backend para procesamiento batch empresarial.',
         connections: ['redis-layer']
-      },
-
-      {
-        id: 'redis-layer',
-        title: 'Redis',
-        type: 'database',
-        description: 'Cache distribuido para optimización de rendimiento.'
       }
     ],
 
