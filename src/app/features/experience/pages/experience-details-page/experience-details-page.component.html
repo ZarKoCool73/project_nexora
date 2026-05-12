@@ -20,7 +20,7 @@
 
           <span>←</span>
 
-          Volver a experiencia
+          Volver
 
         </button>
 
@@ -129,6 +129,87 @@
 
             <div class="domain-card">
               {{ client }}
+            </div>
+
+          }
+
+        </div>
+
+      </div>
+
+      <!-- ARCHITECTURE -->
+      <div class="info-block">
+
+        <div class="block-header">
+
+          <div class="block-label">
+            ARCHITECTURE
+          </div>
+
+          <div class="block-line"></div>
+
+        </div>
+
+        <div class="architecture-grid">
+
+          @for (arch of architectures; track arch) {
+
+            <div class="architecture-card">
+              {{ arch }}
+            </div>
+
+          }
+
+        </div>
+
+      </div>
+
+      <!-- STACK -->
+      <div class="info-block">
+
+        <div class="block-header">
+
+          <div class="block-label">
+            STACK
+          </div>
+
+          <div class="block-line"></div>
+
+        </div>
+
+        <div class="stack-grid">
+
+          @for (tech of technologies; track tech) {
+
+            <div class="stack-card">
+              {{ tech }}
+            </div>
+
+          }
+
+        </div>
+
+      </div>
+
+      <!-- TOOLS -->
+      <div class="info-block">
+
+        <div class="block-header">
+
+          <div class="block-label">
+            TOOLS & ECOSYSTEM
+          </div>
+
+          <div class="block-line"></div>
+
+        </div>
+
+        <div class="tools-grid">
+
+          @for (tag of tags; track tag) {
+
+            <div class="tool-card">
+              {{ tag }}
             </div>
 
           }
@@ -251,87 +332,6 @@
               </div>
 
             </article>
-
-          }
-
-        </div>
-
-      </div>
-
-      <!-- ARCHITECTURE -->
-      <div class="info-block">
-
-        <div class="block-header">
-
-          <div class="block-label">
-            ARCHITECTURE
-          </div>
-
-          <div class="block-line"></div>
-
-        </div>
-
-        <div class="architecture-grid">
-
-          @for (arch of architectures; track arch) {
-
-            <div class="architecture-card">
-              {{ arch }}
-            </div>
-
-          }
-
-        </div>
-
-      </div>
-
-      <!-- STACK -->
-      <div class="info-block">
-
-        <div class="block-header">
-
-          <div class="block-label">
-            STACK
-          </div>
-
-          <div class="block-line"></div>
-
-        </div>
-
-        <div class="stack-grid">
-
-          @for (tech of technologies; track tech) {
-
-            <div class="stack-card">
-              {{ tech }}
-            </div>
-
-          }
-
-        </div>
-
-      </div>
-
-      <!-- TOOLS -->
-      <div class="info-block">
-
-        <div class="block-header">
-
-          <div class="block-label">
-            TOOLS & ECOSYSTEM
-          </div>
-
-          <div class="block-line"></div>
-
-        </div>
-
-        <div class="tools-grid">
-
-          @for (tag of tags; track tag) {
-
-            <div class="tool-card">
-              {{ tag }}
-            </div>
 
           }
 

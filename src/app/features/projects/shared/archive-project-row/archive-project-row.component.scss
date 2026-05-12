@@ -1,11 +1,7 @@
 .archive-row {
   display: grid;
 
-  grid-template-columns:
-    100px
-    1fr
-    220px
-    40px;
+  grid-template-columns:4rem 1fr 19rem 3rem;
 
   align-items: center;
 
@@ -13,19 +9,16 @@
 
   padding: 1.25rem 0;
 
-  border-bottom:
-    1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 
-  transition:
-    background 0.25s ease,
-    padding-left 0.25s ease;
+  transition: background 0.25s ease,
+  padding-left 0.25s ease;
 
   cursor: none;
 
   &:hover {
 
-    background:
-      rgba(255,255,255,0.02);
+    background: rgba(255, 255, 255, 0.02);
 
     padding-left: 1rem;
 
@@ -63,9 +56,8 @@
 }
 
 .archive-arrow {
-  transition:
-    transform 0.25s ease,
-    opacity 0.25s ease;
+  transition: transform 0.25s ease,
+  opacity 0.25s ease;
 
   opacity: 0.5;
 
