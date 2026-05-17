@@ -34,6 +34,7 @@ export const skills: Skill[] = [
       {name: 'Vue', icon: '🧩', level: 85, years: 2},
       {name: 'Flutter', icon: '📱', level: 85, years: 2},
       {name: 'TypeScript', icon: 'TS', level: 95, years: 5},
+      {name: 'CSS', icon: '🎨', level: 90, years: 3},
       {name: 'SCSS', icon: '🎨', level: 90, years: 3},
       {name: 'RxJS', icon: '🔄', level: 90, years: 3}
     ]
@@ -42,7 +43,7 @@ export const skills: Skill[] = [
   {
     icon: '◈',
     name: 'Backend',
-    description: 'Spring Boot · Node.js · APIs · Microservicios',
+    description: 'Spring Boot · Python · Node.js · APIs · Microservicios',
     level: 90,
     techs: [
       {name: 'Spring Boot', icon: '🌱', level: 92, years: 3},
@@ -63,7 +64,7 @@ export const skills: Skill[] = [
       {name: 'Kafka', icon: '📡', level: 75, years: 1},
       {name: 'Redis', icon: '⚡', level: 80, years: 2},
       {name: 'AS400', icon: '💻', level: 75, years: 1},
-      {name: 'Microservicios', icon: '⚙️', level: 90, years: 2},
+      {name: 'Microservicios', icon: '⚙️', level: 90, years: 3},
       {name: 'API Gateway', icon: '🚪', level: 85, years: 2},
       {name: 'Orquestación de servicios', icon: '🔄', level: 90, years: 2},
       {name: 'Arquitectura Hexagonal', icon: '⬢', level: 85, years: 2}
@@ -90,8 +91,8 @@ export const skills: Skill[] = [
     level: 88,
     techs: [
       {name: 'Docker', icon: '🐳', level: 85, years: 2},
-      {name: 'AWS', icon: '☁️', level: 80, years: 2},
-      {name: 'Azure', icon: '🔷', level: 80, years: 2},
+      {name: 'AWS', icon: '☁️', level: 80, years: 1},
+      {name: 'Azure', icon: '🔷', level: 80, years: 1},
       {name: 'Jenkins', icon: '🤖', level: 85, years: 3},
       {name: 'ArgoCD', icon: '🚀', level: 80, years: 1},
       {name: 'GitHub Actions', icon: '⚡', level: 78, years: 1},
@@ -103,14 +104,14 @@ export const skills: Skill[] = [
   {
     icon: '🛡️',
     name: 'Seguridad & DevSecOps',
-    description: 'SAST · SCA · Autenticación · OWASP',
+    description: 'SAST · DAST · SCA · Autenticación · OWASP ZAP',
     level: 85,
     techs: [
       {name: 'Black Duck (SCA)', icon: '🧩', level: 78, years: 1},
       {name: 'Checkmarx (SAST)', icon: '🔍', level: 78, years: 1},
       {name: 'JWT', icon: '🔑', level: 85, years: 3},
       {name: 'OAuth2', icon: '🔐', level: 80, years: 2},
-      {name: 'OWASP', icon: '🛡️', level: 78, years: 2},
+      {name: 'OWASP ZAP', icon: '🛡️', level: 78, years: 2},
       {name: 'Azure AD B2C', icon: '🔷', level: 75, years: 1}
     ]
   },

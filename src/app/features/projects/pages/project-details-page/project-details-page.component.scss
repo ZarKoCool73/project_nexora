@@ -8,19 +8,16 @@
 
 .project-hero {
   position: relative;
-
   overflow: hidden;
-
-  padding: 10rem 0 3rem;
+  padding: 10rem 0 0;
 }
 
 .project-container {
   width: min(1400px, 100%);
   margin: 0 auto;
-
+  padding: 1rem;
   position: relative;
   z-index: 2;
-
   overflow: visible;
 }
 
@@ -474,7 +471,7 @@
 /* ===================================== */
 
 .dashboard-section {
-  padding-bottom: 5rem;
+  padding-bottom: 2rem;
 }
 
 .dashboard-grid {
@@ -554,7 +551,7 @@
   display: grid;
 
   grid-template-columns:
-    repeat(auto-fit, minmax(220px, 1fr));
+    repeat(auto-fit, minmax(16.6rem, 1fr));
 
   gap: 1rem;
 

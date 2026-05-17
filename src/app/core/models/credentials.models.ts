@@ -273,5 +273,15 @@ export const credentials: Credential[] = [
     description: 'Domina Microsoft Teams - 4 horas',
     fileUrl: '/imagen/CERT_MT.jpg',
     fileType: 'image'
+  },
+  {
+    title: 'Universidad Desarrollo Web - FrontEnd Web Developer!',
+    issuer: 'Udemy',
+    type: 'Certificación',
+    date: 2026,
+    status: 'Activo',
+    description: 'Duración 30.5 horas en total, fecha de emisión 17 de mayo de 2026',
+    fileUrl: '/imagen/FRONTEND-DEV.jpg',
+    fileType: 'image'
   }
 ];
