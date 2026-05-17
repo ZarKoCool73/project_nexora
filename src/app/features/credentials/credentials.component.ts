@@ -25,7 +25,7 @@ export class CredentialsComponent implements OnInit {
   ngOnInit() {
     this.titulos = this.sortAndFilter(['Título', 'Colegiatura']);
     this.diplomas = this.sortAndFilter(['Diploma']);
-    this.certificaciones = this.sortAndFilter(['Certificación']);
+    this.certificaciones = this.sortAndFilter(['Certificado']);
   }
 
   openCert(cert: Credential) {

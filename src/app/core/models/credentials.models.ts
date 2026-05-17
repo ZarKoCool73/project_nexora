@@ -1,7 +1,7 @@
 export interface Credential {
   title: string;
   issuer: string;
-  type: 'Título' | 'Colegiatura' | 'Certificación' | 'Diploma';
+  type: 'Título' | 'Colegiatura' | 'Certificado' | 'Diploma';
   date: number;
   status: 'Completo' | 'Vigente' | 'Activo';
   description: string;
@@ -26,10 +26,11 @@ export const credentials: Credential[] = [
     title: 'Colegiado en Ingeniería de Sistemas',
     issuer: 'Colegio de Ingenieros del Perú',
     type: 'Colegiatura',
-    date: 2025,
+    date: 2026,
     status: 'Vigente',
     description: 'Habilitación profesional para ejercicio de la ingeniería en Perú.',
-    fileUrl: '/assets/certs/colegiatura.pdf'
+    fileUrl: '/imagen/COLEGIATURA_DIEGO.jpeg',
+    fileType: 'image'
   },
 
   {
@@ -79,7 +80,7 @@ export const credentials: Credential[] = [
   {
     title: 'Statistical Package for the Social Sciences (SPSS)',
     issuer: 'Universidad Autónoma del Perú',
-    type: 'Certificación',
+    type: 'Certificado',
     date: 2022,
     status: 'Completo',
     description: 'Curso de SPSS con duración de 48 horas académicas.',
@@ -90,7 +91,7 @@ export const credentials: Credential[] = [
   {
     title: 'Microsoft Excel 2019',
     issuer: 'Universidad Autónoma del Perú',
-    type: 'Certificación',
+    type: 'Certificado',
     date: 2022,
     status: 'Completo',
     description: 'Curso de Microsoft Excel 2019 con duración de 48 horas académicas.',
@@ -101,7 +102,7 @@ export const credentials: Credential[] = [
   {
     title: 'Inglés I - Nivel A1',
     issuer: 'Centro de Idiomas - Universidad Autónoma del Perú',
-    type: 'Certificación',
+    type: 'Certificado',
     date: 2022,
     status: 'Completo',
     description: 'Aprobación del curso de Inglés Básico Nivel A1 (96 horas académicas).',
@@ -112,7 +113,7 @@ export const credentials: Credential[] = [
   {
     title: 'Inglés II - Nivel A2',
     issuer: 'Centro de Idiomas - Universidad Autónoma del Perú',
-    type: 'Certificación',
+    type: 'Certificado',
     date: 2022,
     status: 'Completo',
     description: 'Aprobación del curso de Inglés Básico Nivel A2 (96 horas académicas).',
@@ -123,10 +124,10 @@ export const credentials: Credential[] = [
   {
     title: 'Scrum Fundamentals Certified (SFC)',
     issuer: 'SCRUM study',
-    type: 'Certificación',
+    type: 'Certificado',
     date: 2022,
     status: 'Activo',
-    description: 'Certificación internacional Scrum Fundamentals. Aprobado el 30 de julio de 2022.',
+    description: 'Certificado internacional Scrum Fundamentals. Aprobado el 30 de julio de 2022.',
     fileUrl: '/certs/CERT_SCRUM.pdf',
     fileType: 'pdf'
   },
@@ -134,7 +135,7 @@ export const credentials: Credential[] = [
   {
     title: 'Segundo Puesto - Ciclo 9',
     issuer: 'Universidad Autónoma del Perú',
-    type: 'Certificación',
+    type: 'Certificado',
     date: 2023,
     status: 'Completo',
     description: 'Reconocimiento académico por ocupar el 2do puesto en el ciclo 9 de Ingeniería de Sistemas (2023-I).',
@@ -157,7 +158,7 @@ export const credentials: Credential[] = [
   {
     title: 'Innovation Master Class',
     issuer: 'Udemy',
-    type: 'Certificación',
+    type: 'Certificado',
     date: 2024,
     status: 'Activo',
     description: 'Innovation Master Class - 3.5 horas (4 de mayo de 2024)',
@@ -167,7 +168,7 @@ export const credentials: Credential[] = [
   {
     title: 'Universidad CSS - Aprende CSS desde Cero hasta Experto!',
     issuer: 'Udemy',
-    type: 'Certificación',
+    type: 'Certificado',
     date: 2026,
     status: 'Activo',
     description: 'Universidad CSS - Aprende CSS desde Cero hasta Experto! - 7.5 horas en total (2 de mayo de 2026)',
@@ -177,7 +178,7 @@ export const credentials: Credential[] = [
   {
     title: 'Angular y Spring Boot: Crea tu primera App Full Stack',
     issuer: 'Udemy',
-    type: 'Certificación',
+    type: 'Certificado',
     date: 2026,
     status: 'Activo',
     description: 'Angular y Spring Boot: Crea tu primera App Full Stack - 3.5 horas en total (2 de mayo de 2026)',
@@ -187,7 +188,7 @@ export const credentials: Credential[] = [
   {
     title: 'Universidad HTML - Aprende HTML desde Cero hasta Experto',
     issuer: 'Udemy',
-    type: 'Certificación',
+    type: 'Certificado',
     date: 2023,
     status: 'Activo',
     description: 'Universidad HTML - Aprende HTML desde Cero hasta Experto - 6.5 horas en total (6 de Marzo de 2023)',
@@ -197,7 +198,7 @@ export const credentials: Credential[] = [
   {
     title: 'Curso de Desarrollo Web con Angular 11+. ¡La biblia!',
     issuer: 'Udemy',
-    type: 'Certificación',
+    type: 'Certificado',
     date: 2022,
     status: 'Activo',
     description: 'Curso de Desarrollo Web con Angular 11+. ¡La biblia! - 19 horas en total (9 de agosto de 2022)',
@@ -207,7 +208,7 @@ export const credentials: Credential[] = [
   {
     title: 'JavaFX, Swing, y Spring Boot - Crea tu primera GUI con Java',
     issuer: 'Udemy',
-    type: 'Certificación',
+    type: 'Certificado',
     date: 2026,
     status: 'Activo',
     description: 'JavaFX, Swing, y Spring Boot - Crea tu primera GUI con Java - 3.5 horas en total (2 de mayo de 2026)',
@@ -217,7 +218,7 @@ export const credentials: Credential[] = [
   {
     title: 'Design Thinking | De Cero a Maestro',
     issuer: 'Udemy',
-    type: 'Certificación',
+    type: 'Certificado',
     date: 2024,
     status: 'Activo',
     description: 'Design Thinking - 2 horas (2 de mayo de 2024)',
@@ -227,7 +228,7 @@ export const credentials: Credential[] = [
   {
     title: 'Project Management - De 0 a 100',
     issuer: 'Udemy',
-    type: 'Certificación',
+    type: 'Certificado',
     date: 2024,
     status: 'Activo',
     description: 'Project Management (PMI, Scrum, Waterfall) - 3 horas',
@@ -237,7 +238,7 @@ export const credentials: Credential[] = [
   {
     title: 'Six Sigma White Belt',
     issuer: 'Udemy',
-    type: 'Certificación',
+    type: 'Certificado',
     date: 2024,
     status: 'Activo',
     description: 'Certified Lean Six Sigma White Belt (Accredited)',
@@ -247,7 +248,7 @@ export const credentials: Credential[] = [
   {
     title: 'Comunicación - Fundamentos de Liderazgo 1',
     issuer: 'Udemy',
-    type: 'Certificación',
+    type: 'Certificado',
     date: 2024,
     status: 'Activo',
     description: 'Fundamentos de Liderazgo - 1.5 horas',
@@ -257,7 +258,7 @@ export const credentials: Credential[] = [
   {
     title: 'Productivity and Time Management',
     issuer: 'Udemy',
-    type: 'Certificación',
+    type: 'Certificado',
     date: 2024,
     status: 'Activo',
     description: 'Productivity and Time Management for the Overwhelmed - 2 horas',
@@ -267,7 +268,7 @@ export const credentials: Credential[] = [
   {
     title: 'Domina Microsoft Teams',
     issuer: 'Udemy',
-    type: 'Certificación',
+    type: 'Certificado',
     date: 2024,
     status: 'Activo',
     description: 'Domina Microsoft Teams - 4 horas',
@@ -277,11 +278,21 @@ export const credentials: Credential[] = [
   {
     title: 'Universidad Desarrollo Web - FrontEnd Web Developer!',
     issuer: 'Udemy',
-    type: 'Certificación',
+    type: 'Certificado',
     date: 2026,
     status: 'Activo',
     description: 'Duración 30.5 horas en total, fecha de emisión 17 de mayo de 2026',
-    fileUrl: '/imagen/FRONTEND-DEV.jpg',
+    fileUrl: '/imagen/CERT_FRONTEND_DEV.jpg',
     fileType: 'image'
+  },
+  {
+    title: "Universidad Spring - Spring Framework y Spring Boot!",
+    issuer: "Udemy",
+    type: "Certificado",
+    date: 2026,
+    status: "Activo",
+    description: "Fecha de emisión 17 de mayo de 2026, duración 74 horas en total",
+    fileUrl: "/imagen/CERT_SPRING_SPRINGBOOT.jpg",
+    fileType: "image"
   }
 ];
