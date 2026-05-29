@@ -5,7 +5,7 @@ import { Profile } from '../../../models/profile.model';
 export class ProfileService {
 
   profile = signal<Profile>({
-    name: 'Diego Gonzalez',
+    name: 'Diego Gonzalez Bardales',
     role: 'Full Stack Engineer',
     title: '// ANGULAR · SPRING BOOT · ENTERPRISE SYSTEMS',
 

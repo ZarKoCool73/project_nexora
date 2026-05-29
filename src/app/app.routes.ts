@@ -52,6 +52,13 @@ export const routes: Routes = [
   },
 
   {
+    path: 'credentials/:idCredential',
+    loadComponent: () =>
+      import('./features/credentials/pages/credentials-details-page/credentials-details-page.component')
+        .then(m => m.CredentialsDetailsPageComponent),
+  },
+
+  {
     path: 'contact',
     loadComponent: () =>
       import('./features/contact/pages/home-contact/home-contact.component')

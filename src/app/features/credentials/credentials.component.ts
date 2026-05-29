@@ -1,8 +1,9 @@
-import { Component, OnInit, ElementRef, ViewChildren, QueryList } from '@angular/core';
-import { RevealDirective } from '../../shared/directives/reveal/reveal.directive';
-import { Credential, credentials } from '../../core/models/credentials.models';
-import { ModalService } from '../../core/services/local/modal/modal.service';
-import { SlicePipe } from '@angular/common';
+import {Component, OnInit, ElementRef, ViewChildren, QueryList, Inject} from '@angular/core';
+import {RevealDirective} from '../../shared/directives/reveal/reveal.directive';
+import {Credential, credentials} from '../../core/models/credentials.models';
+import {ModalService} from '../../core/services/local/modal/modal.service';
+import {SlicePipe} from '@angular/common';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-credentials',
@@ -20,7 +21,11 @@ export class CredentialsComponent implements OnInit {
 
   @ViewChildren('scrollContainer') scrollContainers!: QueryList<ElementRef>;
 
-  constructor(private readonly credentialModal: ModalService) {}
+  constructor(
+    private readonly credentialModal: ModalService,
+    private readonly _router: Router,
+  ) {
+  }
 
   ngOnInit() {
     this.titulos = this.sortAndFilter(['Título', 'Colegiatura']);
@@ -29,7 +34,8 @@ export class CredentialsComponent implements OnInit {
   }
 
   openCert(cert: Credential) {
-    this.credentialModal.openCM(cert);
+    //this.credentialModal.openCM(cert);
+    this._router.navigate(['/credentials', cert.idCredential]).then();
   }
 
   scroll(containerIndex: number, direction: 'prev' | 'next') {

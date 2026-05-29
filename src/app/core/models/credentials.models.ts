@@ -1,4 +1,5 @@
 export interface Credential {
+  idCredential: string
   title: string;
   issuer: string;
   type: 'Título' | 'Colegiatura' | 'Certificado' | 'Diploma';
@@ -12,6 +13,7 @@ export interface Credential {
 
 export const credentials: Credential[] = [
   {
+    idCredential: '1',
     title: 'Ingeniero de Sistemas',
     issuer: 'Universidad Autónoma del Perú',
     type: 'Título',
@@ -23,6 +25,7 @@ export const credentials: Credential[] = [
   },
 
   {
+    idCredential: '2',
     title: 'Colegiado en Ingeniería de Sistemas',
     issuer: 'Colegio de Ingenieros del Perú',
     type: 'Colegiatura',
@@ -34,6 +37,7 @@ export const credentials: Credential[] = [
   },
 
   {
+    idCredential: '2',
     title: 'Administrador de Redes y Comunicaciones',
     issuer: 'Universidad Autónoma del Perú',
     type: 'Diploma',
@@ -45,6 +49,7 @@ export const credentials: Credential[] = [
   },
 
   {
+    idCredential: '3',
     title: 'Java Programming',
     issuer: 'Universidad Autónoma del Perú',
     type: 'Diploma',
@@ -56,6 +61,7 @@ export const credentials: Credential[] = [
   },
 
   {
+    idCredential: '4',
     title: 'Database Design and Programming with SQL',
     issuer: 'Universidad Autónoma del Perú',
     type: 'Diploma',
@@ -67,6 +73,7 @@ export const credentials: Credential[] = [
   },
 
   {
+    idCredential: '5',
     title: 'Desarrollador de Software y Programación Segura',
     issuer: 'Universidad Autónoma del Perú',
     type: 'Diploma',
@@ -78,6 +85,7 @@ export const credentials: Credential[] = [
   },
 
   {
+    idCredential: '6',
     title: 'Statistical Package for the Social Sciences (SPSS)',
     issuer: 'Universidad Autónoma del Perú',
     type: 'Certificado',
@@ -89,6 +97,7 @@ export const credentials: Credential[] = [
   },
 
   {
+    idCredential: '7',
     title: 'Microsoft Excel 2019',
     issuer: 'Universidad Autónoma del Perú',
     type: 'Certificado',
@@ -100,6 +109,7 @@ export const credentials: Credential[] = [
   },
 
   {
+    idCredential: '8',
     title: 'Inglés I - Nivel A1',
     issuer: 'Centro de Idiomas - Universidad Autónoma del Perú',
     type: 'Certificado',
@@ -111,6 +121,7 @@ export const credentials: Credential[] = [
   },
 
   {
+    idCredential: '9',
     title: 'Inglés II - Nivel A2',
     issuer: 'Centro de Idiomas - Universidad Autónoma del Perú',
     type: 'Certificado',
@@ -122,6 +133,7 @@ export const credentials: Credential[] = [
   },
 
   {
+    idCredential: '10',
     title: 'Scrum Fundamentals Certified (SFC)',
     issuer: 'SCRUM study',
     type: 'Certificado',
@@ -133,6 +145,7 @@ export const credentials: Credential[] = [
   },
 
   {
+    idCredential: '11',
     title: 'Segundo Puesto - Ciclo 9',
     issuer: 'Universidad Autónoma del Perú',
     type: 'Certificado',
@@ -144,6 +157,7 @@ export const credentials: Credential[] = [
   },
 
   {
+    idCredential: '12',
     title: 'Primer Puesto - Expotec 2021',
     issuer: 'Universidad Autónoma del Perú',
     type: 'Diploma',
@@ -156,6 +170,7 @@ export const credentials: Credential[] = [
 
   // Certificados Udemy
   {
+    idCredential: '13',
     title: 'Innovation Master Class',
     issuer: 'Udemy',
     type: 'Certificado',
@@ -166,6 +181,7 @@ export const credentials: Credential[] = [
     fileType: 'image'
   },
   {
+    idCredential: '14',
     title: 'Universidad CSS - Aprende CSS desde Cero hasta Experto!',
     issuer: 'Udemy',
     type: 'Certificado',
@@ -176,6 +192,7 @@ export const credentials: Credential[] = [
     fileType: 'image'
   },
   {
+    idCredential: '15',
     title: 'Angular y Spring Boot: Crea tu primera App Full Stack',
     issuer: 'Udemy',
     type: 'Certificado',
@@ -186,6 +203,7 @@ export const credentials: Credential[] = [
     fileType: 'image'
   },
   {
+    idCredential: '16',
     title: 'Universidad HTML - Aprende HTML desde Cero hasta Experto',
     issuer: 'Udemy',
     type: 'Certificado',
@@ -196,6 +214,7 @@ export const credentials: Credential[] = [
     fileType: 'image'
   },
   {
+    idCredential: '17',
     title: 'Curso de Desarrollo Web con Angular 11+. ¡La biblia!',
     issuer: 'Udemy',
     type: 'Certificado',
@@ -206,6 +225,7 @@ export const credentials: Credential[] = [
     fileType: 'image'
   },
   {
+    idCredential: '18',
     title: 'JavaFX, Swing, y Spring Boot - Crea tu primera GUI con Java',
     issuer: 'Udemy',
     type: 'Certificado',
@@ -216,6 +236,7 @@ export const credentials: Credential[] = [
     fileType: 'image'
   },
   {
+    idCredential: '19',
     title: 'Design Thinking | De Cero a Maestro',
     issuer: 'Udemy',
     type: 'Certificado',
@@ -226,6 +247,7 @@ export const credentials: Credential[] = [
     fileType: 'image'
   },
   {
+    idCredential: '20',
     title: 'Project Management - De 0 a 100',
     issuer: 'Udemy',
     type: 'Certificado',
@@ -236,6 +258,7 @@ export const credentials: Credential[] = [
     fileType: 'image'
   },
   {
+    idCredential: '21',
     title: 'Six Sigma White Belt',
     issuer: 'Udemy',
     type: 'Certificado',
@@ -246,6 +269,7 @@ export const credentials: Credential[] = [
     fileType: 'image'
   },
   {
+    idCredential: '22',
     title: 'Comunicación - Fundamentos de Liderazgo 1',
     issuer: 'Udemy',
     type: 'Certificado',
@@ -256,6 +280,7 @@ export const credentials: Credential[] = [
     fileType: 'image'
   },
   {
+    idCredential: '23',
     title: 'Productivity and Time Management',
     issuer: 'Udemy',
     type: 'Certificado',
@@ -266,6 +291,7 @@ export const credentials: Credential[] = [
     fileType: 'image'
   },
   {
+    idCredential: '24',
     title: 'Domina Microsoft Teams',
     issuer: 'Udemy',
     type: 'Certificado',
@@ -276,6 +302,7 @@ export const credentials: Credential[] = [
     fileType: 'image'
   },
   {
+    idCredential: '25',
     title: 'Universidad Desarrollo Web - FrontEnd Web Developer!',
     issuer: 'Udemy',
     type: 'Certificado',
@@ -286,6 +313,7 @@ export const credentials: Credential[] = [
     fileType: 'image'
   },
   {
+    idCredential: '26',
     title: "Universidad Spring - Spring Framework y Spring Boot!",
     issuer: "Udemy",
     type: "Certificado",
