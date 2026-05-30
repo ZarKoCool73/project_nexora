@@ -3,7 +3,6 @@ export type ProjectCategory = | 'banking' | 'telecom' | 'government' | 'ai' | 'e
 export type ProjectComplexity = | 'high' | 'medium' | 'low';
 export type ProjectRole = | 'frontend' | 'backend' | 'fullstack' | 'architecture';
 export type ProjectSize = | 'featured' | 'regular' | 'half';
-export type ProjectMethodology = | 'scrum' | 'kanban' | 'agile';
 export type ProjectStatus = | 'En producción' | 'Completado' | 'En mantenimiento' | 'Archivado';
 export type ArchitectureNodeType = | 'frontend' | 'backend' | 'database' | 'queue' | 'security' | 'ai' | 'cloud'
   | 'integration' | 'gateway' | 'testing';
@@ -87,7 +86,7 @@ export const PROJECTS: Project[] = [
     duration: '4 Meses',
     methodology: 'SCRUM',
     status: 'En producción',
-    teamSize: 2,
+    teamSize: 1,
     highlightMetrics: ['Kafka', 'AS400', 'Java 25', 'Hexagonal Architecture'],
     responsibilities: [
       'Optimización de procesamiento batch backend',
@@ -112,10 +111,10 @@ export const PROJECTS: Project[] = [
   {
     id: '2',
     title: 'Validation - Listener  Scotiabank',
-    desc: 'Listener backend distribuido orientado al procesamiento eficiente de colas AS400 e integración de eventos mediante Kafka y Redis.',
+    desc: 'Listener backend distribuido orientado al procesamiento eficiente de colas AS400 e integración de eventos.',
     impact: 'Reducción de tiempos de respuesta y optimización de integración backend mediante procesamiento distribuido.',
     context: 'IDM Technology · Scotiabank · 2026',
-    stack: 'Spring Boot',
+    stack: 'Spring Boot · Java 25',
     tags: ['SonarQube', 'BitBucket', 'Jenkins', 'ArgoCD', 'BlackDuck', 'Checkmarx', 'CI/CD'],
     tier: 'hero',
     category: 'banking',
@@ -127,8 +126,8 @@ export const PROJECTS: Project[] = [
     duration: '4 Meses',
     methodology: 'SCRUM',
     status: 'En producción',
-    teamSize: 3,
-    highlightMetrics: ['AS400', 'Apache Camel', 'Java 25', 'Distributed Systems'],
+    teamSize: 1,
+    highlightMetrics: ['AS400', 'Java 25', 'Distributed Systems', 'Hexagonal Architecture'],
     responsibilities: [
       'Desarrollo de listener backend distribuido',
       'Consumo e integración de colas AS400',
@@ -147,9 +146,81 @@ export const PROJECTS: Project[] = [
   },
 
   {
+    id: '28',
+    title: 'Configuration-Api  Scotiabank',
+    desc: 'Servicio backend orientado a la configuración y flujo de negocio',
+    impact: 'Limpieza de code smells y levantamiento de vulnerabilidades.',
+    context: 'IDM Technology · Scotiabank · 2026',
+    stack: 'Spring Boot · Java 25',
+    tags: ['SonarQube', 'BitBucket', 'Jenkins', 'ArgoCD', 'BlackDuck', 'Checkmarx', 'CI/CD'],
+    tier: 'minor',
+    category: 'banking',
+    complexity: 'medium',
+    role: 'backend',
+    featuredOrder: 2,
+    size: 'featured',
+    year: 2026,
+    duration: '4 Meses',
+    methodology: 'SCRUM',
+    status: 'En producción',
+    teamSize: 1,
+    highlightMetrics: ['Java 25', 'Distributed Systems', 'Hexagonal Architecture'],
+    responsibilities: [
+      'Levantamiento de vulnerabilidades',
+      'Limpieza de code smells',
+      'Actualización de pruebas unitarias'
+    ],
+    achievements: [
+      'Optimización de tiempos de respuesta backend',
+      'Fortalecimiento de arquitectura backend escalable'
+    ],
+    companyLogo: '/imagen/LOGO_IDM.svg',
+    companyName: 'IDM Technology',
+    clientLogo: '/imagen/LOGO_SB.svg',
+    clientName: 'Scotiabank',
+    experienceId: 'idm-technology'
+  },
+
+  {
+    id: '29',
+    title: 'Evaluation-Api  Scotiabank',
+    desc: 'Servicio backend orientado a la evaluación y flujo de negocio',
+    impact: 'Limpieza de code smells y levantamiento de vulnerabilidades.',
+    context: 'IDM Technology · Scotiabank · 2026',
+    stack: 'Spring Boot · Java 25',
+    tags: ['SonarQube', 'BitBucket', 'Jenkins', 'ArgoCD', 'BlackDuck', 'Checkmarx', 'CI/CD'],
+    tier: 'minor',
+    category: 'banking',
+    complexity: 'medium',
+    role: 'backend',
+    featuredOrder: 2,
+    size: 'featured',
+    year: 2026,
+    duration: '4 Meses',
+    methodology: 'SCRUM',
+    status: 'En producción',
+    teamSize: 1,
+    highlightMetrics: ['Java 25', 'Distributed Systems', 'Hexagonal Architecture'],
+    responsibilities: [
+      'Levantamiento de vulnerabilidades',
+      'Limpieza de code smells',
+      'Actualización de pruebas unitarias'
+    ],
+    achievements: [
+      'Optimización de tiempos de respuesta backend',
+      'Fortalecimiento de arquitectura backend escalable'
+    ],
+    companyLogo: '/imagen/LOGO_IDM.svg',
+    companyName: 'IDM Technology',
+    clientLogo: '/imagen/LOGO_SB.svg',
+    clientName: 'Scotiabank',
+    experienceId: 'idm-technology'
+  },
+
+  {
     id: '6',
-    title: 'GESINTEL – Scotiabank',
-    desc: 'Sistema financiero orientado a la validación de personas PEP y entidades financieras mediante servicios empresariales backend y frontend React.',
+    title: 'Configuration WEB – Scotiabank',
+    desc: 'Microfrontent orientado a la configuration de personas PEP en servicios financieros.',
     impact: 'Fortalecimiento de validaciones financieras y modernización tecnológica del sistema.',
     context: 'IDM Technology · Scotiabank · 2026',
     stack: 'React',
@@ -163,8 +234,8 @@ export const PROJECTS: Project[] = [
     duration: '4 Meses',
     methodology: 'SCRUM',
     status: 'En producción',
-    teamSize: 3,
-    highlightMetrics: ['PEP Validation', 'React', 'Financial Security'],
+    teamSize: 2,
+    highlightMetrics: ['PEP Validation', 'React', 'Financial Security', 'Micro-frontends'],
     responsibilities: [
       'Desarrollo de componentes frontend empresariales con React',
       'Integración de validaciones financieras PEP',
@@ -174,6 +245,72 @@ export const PROJECTS: Project[] = [
     achievements: [
       'Reducción de tiempos de validación financiera',
       'Modernización tecnológica del sistema legacy'
+    ],
+    companyLogo: '/imagen/LOGO_IDM.svg',
+    companyName: 'IDM Technology',
+    clientLogo: '/imagen/LOGO_SB.svg',
+    clientName: 'Scotiabank',
+    experienceId: 'idm-technology'
+  },
+
+  {
+    id: '27',
+    title: 'Evaluation WEB – Scotiabank',
+    desc: 'Microfrontent orientado a la evaluación de personas PEP en servicios financieros.',
+    impact: 'Fortalecimiento de validaciones financieras, modernización tecnológica del sistema y limpieza de redundancias',
+    context: 'IDM Technology · Scotiabank · 2026',
+    stack: 'React',
+    tags: ['SonarQube', 'BitBucket', 'Jenkins', 'ArgoCD', 'BlackDuck', 'Checkmarx', 'CI/CD'],
+    tier: 'featured',
+    category: 'banking',
+    complexity: 'medium',
+    role: 'fullstack',
+    size: 'half',
+    year: 2026,
+    duration: '4 Meses',
+    methodology: 'SCRUM',
+    status: 'En producción',
+    teamSize: 2,
+    highlightMetrics: ['PEP Validation', 'React', 'Financial Security', 'Micro-frontends'],
+    responsibilities: [
+      'Desarrollo de componentes frontend empresariales con React',
+      'Integración de validaciones financieras PEP',
+      'Optimización de flujos de validación y consumo de APIs',
+      'Participación en pipelines CI/CD y aseguramiento de calidad'
+    ],
+    achievements: [
+      'Reducción de tiempos de validación financiera',
+      'Modernización tecnológica del sistema legacy'
+    ],
+    companyLogo: '/imagen/LOGO_IDM.svg',
+    companyName: 'IDM Technology',
+    clientLogo: '/imagen/LOGO_SB.svg',
+    clientName: 'Scotiabank',
+    experienceId: 'idm-technology'
+  },
+
+  {
+    id: '26',
+    title: 'Container WEB – Scotiabank',
+    desc: 'Contenedor de microfrontends',
+    impact: 'Actualización en limpieza de code smells, y levantamiento de vulnerabilidades.',
+    context: 'IDM Technology · Scotiabank · 2026',
+    stack: 'React',
+    tags: ['SonarQube', 'BitBucket', 'Jenkins', 'ArgoCD', 'BlackDuck', 'Checkmarx', 'CI/CD'],
+    tier: 'minor',
+    category: 'banking',
+    complexity: 'low',
+    role: 'fullstack',
+    size: 'half',
+    year: 2026,
+    duration: '4 Meses',
+    methodology: 'SCRUM',
+    status: 'En producción',
+    teamSize: 2,
+    highlightMetrics: ['PEP Validation', 'React', 'Financial Security'],
+    responsibilities: [
+      'Desarrollo de contenedor frontend con React',
+      'Levantamiento de vulnerabilidades',
     ],
     companyLogo: '/imagen/LOGO_IDM.svg',
     companyName: 'IDM Technology',
@@ -269,14 +406,14 @@ export const PROJECTS: Project[] = [
     tags: ['SonarQube', 'BitBucket', 'Jenkins', 'ArgoCD', 'BlackDuck', 'Checkmarx', 'CI/CD'],
     tier: 'hero',
     category: 'banking',
-    complexity: 'medium',
+    complexity: 'high',
     role: 'backend',
     size: 'half',
     year: 2026,
     duration: '4 Meses',
     methodology: 'SCRUM',
     status: 'En producción',
-    teamSize: 4,
+    teamSize: 1,
     highlightMetrics: ['Kafka', 'AS400', 'Java 25', 'Hexagonal Architecture'],
     responsibilities: [
       'Desarrollo de servicios batch backend',

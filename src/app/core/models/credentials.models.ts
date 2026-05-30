@@ -37,7 +37,7 @@ export const credentials: Credential[] = [
   },
 
   {
-    idCredential: '2',
+    idCredential: '27',
     title: 'Administrador de Redes y Comunicaciones',
     issuer: 'Universidad Autónoma del Perú',
     type: 'Diploma',

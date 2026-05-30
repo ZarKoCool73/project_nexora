@@ -58,12 +58,12 @@ export const routes: Routes = [
         .then(m => m.CredentialsDetailsPageComponent),
   },
 
-  {
-    path: 'contact',
+  /*{
+    path: 'dashboard',
     loadComponent: () =>
-      import('./features/contact/pages/home-contact/home-contact.component')
-        .then(m => m.HomeContactComponent),
-  },
+      import('./features/dashboard/pages/home-dashboard/home-dashboard.component')
+        .then(m => m.HomeDashboardComponent),
+  },*/
 
   {
     path: '**',

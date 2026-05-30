@@ -29,14 +29,14 @@ export const skills: Skill[] = [
     description: 'Angular · React · Vue · Flutter · TypeScript · UI/UX',
     level: 95,
     techs: [
-      {name: 'Angular', icon: '🅰️', level: 98, years: 5},
-      {name: 'React', icon: '⚛️', level: 89, years: 3},
-      {name: 'Vue', icon: '🧩', level: 85, years: 2},
-      {name: 'Flutter', icon: '📱', level: 85, years: 2},
-      {name: 'TypeScript', icon: 'TS', level: 95, years: 5},
-      {name: 'CSS', icon: '🎨', level: 90, years: 3},
-      {name: 'SCSS', icon: '🎨', level: 90, years: 3},
-      {name: 'RxJS', icon: '🔄', level: 90, years: 3}
+      { name: 'Angular', icon: '🅰️', level: 95, years: 5 },
+      { name: 'TypeScript', icon: 'TS', level: 93, years: 5 },
+      { name: 'RxJS', icon: '🔄', level: 90, years: 4 },
+      { name: 'CSS', icon: '🎨', level: 88, years: 4 },
+      { name: 'SCSS', icon: '🎨', level: 88, years: 4 },
+      { name: 'React', icon: '⚛️', level: 75, years: 3 },
+      { name: 'Vue', icon: '🧩', level: 70, years: 2 },
+      { name: 'Flutter', icon: '📱', level: 65, years: 2 }
     ]
   },
 
@@ -80,7 +80,9 @@ export const skills: Skill[] = [
       {name: 'PostgreSQL', icon: '🐘', level: 88, years: 3},
       {name: 'MongoDB Atlas', icon: '🍃', level: 90, years: 3},
       {name: 'MySQL', icon: '🐬', level: 85, years: 3},
-      {name: 'Oracle', icon: '🟥', level: 78, years: 2}
+      {name: 'Oracle', icon: '🟥', level: 78, years: 2},
+      {name: 'Firebase Realtime Database', icon: '🗄️', level: 83, years: 2},
+      {name: 'Firebase Authentication', icon: '🔐', level: 83, years: 2}
     ]
   },
 
@@ -124,9 +126,9 @@ export const skills: Skill[] = [
     techs: [
       {name: 'SonarQube', icon: '📊', level: 90, years: 3},
       {name: 'Postman', icon: '📮', level: 90, years: 3},
-      {name: 'Jasmine', icon: '🧪', level: 89, years: 4},
-      {name: 'Karma', icon: '⚙️', level: 89, years: 4},
-      {name: 'Jest', icon: '🃏', level: 80, years: 3}
+      {name: 'Jasmine - Karma', icon: '🧪', level: 89, years: 4},
+      {name: 'Jest', icon: '🃏', level: 80, years: 3},
+      {name: 'Patron AAA', icon: '🃏', level: 80, years: 3},
     ]
   },
 
@@ -136,7 +138,7 @@ export const skills: Skill[] = [
     description: 'Clean Architecture · SOLID · Diseño de sistemas',
     level: 85,
     techs: [
-      {name: 'Clean Architecture', icon: '🏗️', level: 85, years: 2},
+      {name: 'Clean Architecture', icon: '🏗️', level: 85, years: 3},
       {name: 'Arquitectura Hexagonal', icon: '⬢', level: 85, years: 2},
       {name: 'SOLID', icon: '📐', level: 88, years: 3},
       {name: 'DDD', icon: '🧠', level: 75, years: 1},
