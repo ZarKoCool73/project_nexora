@@ -46,12 +46,12 @@ export const skills: Skill[] = [
     description: 'Spring Boot · Python · Node.js · APIs · Microservicios',
     level: 90,
     techs: [
-      {name: 'Spring Boot', icon: '🌱', level: 92, years: 3},
+      {name: 'Spring Boot', icon: '🌱', level: 92, years: 4},
       {name: 'Node.js', icon: '🟢', level: 94, years: 4},
       {name: 'Flask', icon: '🐍', level: 88, years: 3},
       {name: 'Express', icon: '🚂', level: 85, years: 3},
       {name: 'REST APIs', icon: '🔗', level: 92, years: 3},
-      {name: 'Java', icon: '☕', level: 90, years: 3}
+      {name: 'Java', icon: '☕', level: 90, years: 4}
     ]
   },
 

@@ -11,7 +11,7 @@ export interface Experience {
 export const EXPERIENCE: Experience[] = [
   {
     period: 'Feb 2026 — Actualidad',
-    role: 'Full Stack Engineer Intermedio',
+    role: 'FullStack',
     company: 'IDM Technology',
     idExperience: 'idm-technology',
     startDate: '2026-02',
@@ -22,7 +22,7 @@ export const EXPERIENCE: Experience[] = [
 
   {
     period: 'Sep 2025 — Ene 2026',
-    role: 'Analista Programador Full Stack Semi Senior',
+    role: 'Analista Programador FullStack',
     company: 'INDRA',
     idExperience: 'indra',
     months: 5,
@@ -34,7 +34,7 @@ export const EXPERIENCE: Experience[] = [
 
   {
     period: 'May 2024 — May 2025',
-    role: 'Analista Programador Full Stack Junior',
+    role: 'Analista Programador FullStack',
     company: 'Minsait',
     idExperience: 'minsait',
     months: 13,
