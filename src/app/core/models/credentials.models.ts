@@ -9,6 +9,9 @@ export interface Credential {
   fileUrl?: string;
   previewImage?: string;
   fileType?: 'pdf' | 'image'; // 👈 NUEVO
+  featured?: boolean
+  priority?: boolean
+  badge?: string;
 }
 
 export const credentials: Credential[] = [
@@ -40,6 +43,8 @@ export const credentials: Credential[] = [
     idCredential: '27',
     title: 'Administrador de Redes y Comunicaciones',
     issuer: 'Universidad Autónoma del Perú',
+    featured: true,
+    badge: '🌐 Networking',
     type: 'Diploma',
     date: 2022,
     status: 'Completo',
@@ -52,6 +57,8 @@ export const credentials: Credential[] = [
     idCredential: '3',
     title: 'Java Programming',
     issuer: 'Universidad Autónoma del Perú',
+    featured: true,
+    badge: '☕ Java',
     type: 'Diploma',
     date: 2022,
     status: 'Completo',
@@ -64,6 +71,8 @@ export const credentials: Credential[] = [
     idCredential: '4',
     title: 'Database Design and Programming with SQL',
     issuer: 'Universidad Autónoma del Perú',
+    featured: true,
+    badge: '🗄️ SQL',
     type: 'Diploma',
     date: 2022,
     status: 'Completo',
@@ -76,6 +85,8 @@ export const credentials: Credential[] = [
     idCredential: '5',
     title: 'Desarrollador de Software y Programación Segura',
     issuer: 'Universidad Autónoma del Perú',
+    featured: true,
+    badge: '🛡️ Secure Dev',
     type: 'Diploma',
     date: 2024,
     status: 'Completo',
@@ -136,6 +147,9 @@ export const credentials: Credential[] = [
     idCredential: '10',
     title: 'Scrum Fundamentals Certified (SFC)',
     issuer: 'SCRUM study',
+    featured: true,
+    priority: true,
+    badge: '📋 Agile',
     type: 'Certificado',
     date: 2022,
     status: 'Activo',
@@ -184,6 +198,8 @@ export const credentials: Credential[] = [
     idCredential: '14',
     title: 'Universidad CSS - Aprende CSS desde Cero hasta Experto!',
     issuer: 'Udemy',
+    featured: true,
+    badge: '🎨 CSS',
     type: 'Certificado',
     date: 2026,
     status: 'Activo',
@@ -194,6 +210,8 @@ export const credentials: Credential[] = [
   {
     idCredential: '15',
     title: 'Angular y Spring Boot: Crea tu primera App Full Stack',
+    featured: true,
+    badge: '🚀 Full Stack',
     issuer: 'Udemy',
     type: 'Certificado',
     date: 2026,
@@ -217,6 +235,8 @@ export const credentials: Credential[] = [
     idCredential: '17',
     title: 'Curso de Desarrollo Web con Angular 11+. ¡La biblia!',
     issuer: 'Udemy',
+    featured: true,
+    badge: '⚡ Frontend',
     type: 'Certificado',
     date: 2022,
     status: 'Activo',
@@ -228,6 +248,8 @@ export const credentials: Credential[] = [
     idCredential: '18',
     title: 'JavaFX, Swing, y Spring Boot - Crea tu primera GUI con Java',
     issuer: 'Udemy',
+    featured: true,
+    badge: '☕ Backend',
     type: 'Certificado',
     date: 2026,
     status: 'Activo',
@@ -305,6 +327,9 @@ export const credentials: Credential[] = [
     idCredential: '25',
     title: 'Universidad Desarrollo Web - FrontEnd Web Developer!',
     issuer: 'Udemy',
+    featured: true,
+    priority: true,
+    badge: '⚡ Frontend',
     type: 'Certificado',
     date: 2026,
     status: 'Activo',
@@ -316,11 +341,28 @@ export const credentials: Credential[] = [
     idCredential: '26',
     title: "Universidad Spring - Spring Framework y Spring Boot!",
     issuer: "Udemy",
+    featured: true,
+    priority: true,
+    badge: '☕ Backend',
     type: "Certificado",
     date: 2026,
     status: "Activo",
     description: "Fecha de emisión 17 de mayo de 2026, duración 74 horas en total",
     fileUrl: "/imagen/CERT_SPRING_SPRINGBOOT.jpg",
     fileType: "image"
-  }
+  },
+  {
+    idCredential: '28',
+    title: 'AWS Lambda Foundations',
+    issuer: 'Amazon Web Services (AWS)',
+    priority: true,
+    featured: true,
+    badge: '☁️ Cloud',
+    type: 'Certificado',
+    date: 2026,
+    status: 'Completo',
+    description: 'Capacitación en arquitecturas serverless con AWS Lambda, procesamiento de eventos, escalabilidad automática e integración con servicios de AWS para el desarrollo de aplicaciones en la nube.',
+    fileUrl: '/imagen/CERT_AWS_LAMBDA.jpg',
+    fileType: 'image'
+  },
 ];

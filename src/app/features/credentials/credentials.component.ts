@@ -34,7 +34,6 @@ export class CredentialsComponent implements OnInit {
   }
 
   openCert(cert: Credential) {
-    //this.credentialModal.openCM(cert);
     this._router.navigate(['/credentials', cert.idCredential]).then();
   }
 
@@ -56,6 +55,15 @@ export class CredentialsComponent implements OnInit {
   private sortAndFilter(types: Credential['type'][]) {
     return this.credentials
       .filter(c => types.includes(c.type))
-      .sort((a, b) => b.date - a.date);
+      .sort((a, b) => {
+
+        // Primero prioridad
+        if ((a.priority ?? false) !== (b.priority ?? false)) {
+          return (b.priority ? 1 : 0) - (a.priority ? 1 : 0);
+        }
+
+        // Luego fecha
+        return b.date - a.date;
+      });
   }
 }
