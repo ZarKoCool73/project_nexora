@@ -25,14 +25,14 @@ export const categoryOrder: CredentialCategory[] = [
 // ── Iconos por categoría ───────────────────────────────────────────────────
 export const categoryIcons: Record<CredentialCategory, string> = {
   'Cloud & DevOps': '☁️',
-  'Frontend':       '⚡',
-  'Backend':        '☕',
-  'Full Stack':     '🚀',
-  'Metodologías':   '📋',
-  'Herramientas':   '🔧',
-  'Soft Skills':    '🧠',
-  'Idiomas':        '🌐',
-  'Reconocimientos':'🏆',
+  'Frontend': '⚡',
+  'Backend': '☕',
+  'Full Stack': '🚀',
+  'Metodologías': '📋',
+  'Herramientas': '🔧',
+  'Soft Skills': '🧠',
+  'Idiomas': '🌐',
+  'Reconocimientos': '🏆',
 };
 
 export interface CertGroup {
@@ -175,6 +175,38 @@ export const credentials: Credential[] = [
       'Capacitación en arquitecturas serverless con AWS Lambda, procesamiento de eventos, escalabilidad automática e integración con servicios de AWS para el desarrollo de aplicaciones en la nube.',
     fileUrl: '/imagen/CERT_AWS_LAMBDA.jpg',
     fileType: 'image',
+    category: 'Cloud & DevOps',
+  },
+
+  {
+    idCredential: '29',
+    title: 'Getting into the Serverless Mindset',
+    issuer: 'Amazon Web Services (AWS)',
+    priority: true,
+    featured: true,
+    badge: '☁️ Cloud',
+    type: 'Certificado',
+    date: 2026,
+    status: 'Completo',
+    description: 'Capacitación en conceptos clave de computación serverless, arquitecturas basadas en eventos, paralelización de tareas y utilización de AWS Lambda, Amazon DynamoDB y Amazon S3 para el desarrollo de aplicaciones escalables.',
+    fileUrl: '/imagen/CERT_AWS_INTRO.jpg',
+    fileType: 'image',
+    category: 'Cloud & DevOps',
+  },
+
+  {
+    idCredential: '30',
+    title: 'Amazon API Gateway for Serverless Applications',
+    issuer: 'Amazon Web Services (AWS)',
+    priority: true,
+    featured: true,
+    badge: '☁️ Cloud',
+    type: 'Certificado',
+    date: 2026,
+    status: 'Completo',
+    description: 'Capacitación en Amazon API Gateway para aplicaciones serverless: creación e implementación de APIs, integración con AWS Lambda, gestión de acceso con AWS IAM, monitoreo con Amazon CloudWatch, APIs WebSocket para mensajería en tiempo real y configuración de planes de uso, caché y etapas de despliegue.',
+    fileUrl: '/imagen/CERT_AWS_API_GATEWAY.jpg',
+    fileType: 'image', //
     category: 'Cloud & DevOps',
   },
 
