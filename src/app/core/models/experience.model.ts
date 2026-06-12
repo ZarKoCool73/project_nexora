@@ -6,11 +6,13 @@ export interface Experience {
   description: string;
   months?: number;
   startDate?: string;
+  logo:string;
 }
 
 export const EXPERIENCE: Experience[] = [
   {
     period: 'Feb 2026 — Actualidad',
+    logo:'/imagen/LOGO_IDM.svg',
     role: 'FullStack',
     company: 'IDM Technology',
     idExperience: 'idm-technology',
@@ -22,6 +24,7 @@ export const EXPERIENCE: Experience[] = [
 
   {
     period: 'Sep 2025 — Ene 2026',
+    logo:'/imagen/LOGO_INDRA.svg',
     role: 'Analista Programador FullStack',
     company: 'INDRA',
     idExperience: 'indra',
@@ -34,6 +37,7 @@ export const EXPERIENCE: Experience[] = [
 
   {
     period: 'May 2024 — May 2025',
+    logo:'/imagen/LOGO_MINSAIT.svg',
     role: 'Analista Programador FullStack',
     company: 'Minsait',
     idExperience: 'minsait',
@@ -47,6 +51,7 @@ export const EXPERIENCE: Experience[] = [
   {
     period: 'Ene 2024 — Mar 2024',
     role: 'Programador / Soporte de Sistemas',
+    logo:'/imagen/LOGO_DINET.svg',
     company: 'DINET Operador Logístico',
     idExperience: 'dinet',
     months: 3,
@@ -59,6 +64,7 @@ export const EXPERIENCE: Experience[] = [
 
   {
     period: 'Mar 2022 — Jun 2023',
+    logo:'/imagen/LOGO_CC.svg',
     role: 'Analista Programador',
     company: 'CloudComputing Perú S.A.C.',
     idExperience: 'cloudComputing',

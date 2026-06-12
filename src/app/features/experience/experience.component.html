@@ -18,7 +18,19 @@
 
         <div class="timeline-content" (click)="goToExp(exp.idExperience)">
           <div class="timeline-role">{{ exp.role }}</div>
-          <div class="timeline-company">{{ exp.company }}</div>
+          <div class="timeline-company">
+
+            @if (exp.logo) {
+              <img
+                [src]="exp.logo"
+                [alt]="exp.company"
+                class="company-logo"
+              />
+            }
+
+            <span>{{ exp.company }}</span>
+
+          </div>
           <div class="timeline-desc">
             {{
               exp.description.length > 250
