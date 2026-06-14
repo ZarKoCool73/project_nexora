@@ -210,6 +210,21 @@ export const credentials: Credential[] = [
     category: 'Cloud & DevOps',
   },
 
+  {
+    idCredential: '31',
+    title: 'Amazon Q Developer Getting Started (Español LATAM)',
+    issuer: 'Amazon Web Services (AWS)',
+    priority: true,
+    featured: true,
+    badge: '☁️ Cloud',
+    type: 'Certificado',
+    date: 2026,
+    status: 'Completo',
+    description: 'Capacitación introductoria en Amazon Q Developer para el desarrollo asistido por inteligencia artificial. Incluye generación de código, asistencia en tareas de programación, análisis y explicación de código fuente, optimización de productividad del desarrollador e integración de capacidades de IA generativa dentro del ecosistema AWS.',
+    fileUrl: '/imagen/CERT_AWS_Q_DEVELOPER.jpg',
+    fileType: 'image',
+    category: 'Cloud & DevOps',
+  },
   // ═══════════════════════════════════════
   // CERTIFICADOS — Frontend
   // ═══════════════════════════════════════
