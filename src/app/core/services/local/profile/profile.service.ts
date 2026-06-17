@@ -7,12 +7,12 @@ export class ProfileService {
   profile = signal<Profile>({
     name: 'Diego Gonzalez Bardales',
     role: 'Full Stack Engineer',
-    title: '// ANGULAR · SPRING BOOT · ENTERPRISE SYSTEMS',
+    title: '// FULL STACK · MICROSERVICES · CLOUD',
 
     description: `
-      Ingeniero de Sistemas con experiencia en desarrollo Full Stack en entornos enterprise.
-      Especializado en Angular, Spring Boot y microservicios en proyectos del sector bancario y gobierno.
-      Enfoque en calidad de software, escalabilidad y entrega continua.
+      Ingeniero de Sistemas colegiado con experiencia en el desarrollo de soluciones Full Stack para entornos enterprise.
+      Especializado en Angular, Spring Boot, microservicios y tecnologías Cloud (AWS).
+      Enfoque en arquitectura de software, escalabilidad, calidad de código y entrega continua.
     `,
 
     experience: 5,

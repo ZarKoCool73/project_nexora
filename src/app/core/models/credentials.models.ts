@@ -225,6 +225,23 @@ export const credentials: Credential[] = [
     fileType: 'image',
     category: 'Cloud & DevOps',
   },
+
+  {
+    idCredential: '32',
+    title: 'Designing Event-Driven Architectures (Español LATAM)',
+    issuer: 'Amazon Web Services (AWS)',
+    priority: true,
+    featured: true,
+    badge: '☁️ Cloud',
+    type: 'Certificado',
+    date: 2026,
+    status: 'Completo',
+    description:
+      'Capacitación en el diseño de arquitecturas orientadas a eventos (Event-Driven Architecture) sobre AWS. Incluye desacoplamiento de servicios mediante eventos, comunicación asíncrona, integración con Amazon SQS, AWS Lambda, Amazon API Gateway y AWS Step Functions, además de estrategias para la transformación de datos y construcción de soluciones escalables basadas en eventos.',
+    fileUrl: '/imagen/CERT_AWS_EDA.jpg',
+    fileType: 'image',
+    category: 'Cloud & DevOps',
+  },
   // ═══════════════════════════════════════
   // CERTIFICADOS — Frontend
   // ═══════════════════════════════════════
