@@ -25,7 +25,15 @@
 
     <div class="hero-ctas">
       <a class="btn-primary" (click)="goToRoute('/projects')">Ver Proyectos →</a>
-      <a class="btn-secondary" (click)="goToRoute('/contact')">Hablemos</a>
+      <a
+        [href]="whatsappUrl"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-whatsapp"
+      >
+        <img src="/assets/icons/whatsapp.svg" alt="WhatsApp" class="icon-svg" />
+        Contactar
+      </a>
     </div>
 
   </div>

@@ -19,6 +19,14 @@ export class HeroComponent {
   // 👇 signal expuesto al template
   profile = this.profileService.profile;
 
+  readonly WHATSAPP_NUMBER = '51946959109';
+  readonly WHATSAPP_MESSAGE =
+    'Hola Diego, vi tu portafolio y me gustaría conversar sobre una oportunidad profesional.';
+
+  get whatsappUrl(): string {
+    return `https://wa.me/${this.WHATSAPP_NUMBER}?text=${encodeURIComponent(this.WHATSAPP_MESSAGE)}`;
+  }
+
   constructor(
     private readonly _router: Router,
   ) {

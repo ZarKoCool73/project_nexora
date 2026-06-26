@@ -110,7 +110,7 @@
 .hero-slider {
 
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
 
   overflow-x: auto;
   overflow-y: hidden;
@@ -146,7 +146,6 @@
 /* ========================================= */
 
 .hero-slide {
-  flex: 0 0 680px;
   margin-top: 2rem;
   scroll-snap-align: start;
 }
