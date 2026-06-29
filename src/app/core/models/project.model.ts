@@ -70,7 +70,7 @@ export const PROJECTS: Project[] = [
 
   {
     id: '1',
-    title: 'SMS - CONSUMER  Scotiabank',
+    title: 'SMS - Consumer',
     desc: 'Servicio batch backend orientado al consumo paralelo de colas AS400 e integración distribuida mediante Kafka para procesamiento financiero empresarial.',
     impact: 'Optimización de procesamiento batch mediante paralelización de consumo AS400 y modernización backend sobre Java 25.',
     context: 'IDM Technology · Scotiabank · 2026',
@@ -110,7 +110,7 @@ export const PROJECTS: Project[] = [
 
   {
     id: '2',
-    title: 'Validation - Listener  Scotiabank',
+    title: 'Validation - Listener',
     desc: 'Listener backend distribuido orientado al procesamiento eficiente de colas AS400 e integración de eventos.',
     impact: 'Reducción de tiempos de respuesta y optimización de integración backend mediante procesamiento distribuido.',
     context: 'IDM Technology · Scotiabank · 2026',
@@ -147,13 +147,13 @@ export const PROJECTS: Project[] = [
 
   {
     id: '28',
-    title: 'Configuration-Api  Scotiabank',
+    title: 'Configuration - Api',
     desc: 'Servicio backend orientado a la configuración y flujo de negocio',
     impact: 'Limpieza de code smells y levantamiento de vulnerabilidades.',
     context: 'IDM Technology · Scotiabank · 2026',
     stack: 'Spring Boot · Java 25',
     tags: ['SonarQube', 'BitBucket', 'Jenkins', 'ArgoCD', 'BlackDuck', 'Checkmarx', 'CI/CD'],
-    tier: 'minor',
+    tier: 'featured',
     category: 'banking',
     complexity: 'medium',
     role: 'backend',
@@ -183,13 +183,13 @@ export const PROJECTS: Project[] = [
 
   {
     id: '29',
-    title: 'Evaluation-Api  Scotiabank',
+    title: 'Evaluation - Api',
     desc: 'Servicio backend orientado a la evaluación y flujo de negocio',
     impact: 'Limpieza de code smells y levantamiento de vulnerabilidades.',
     context: 'IDM Technology · Scotiabank · 2026',
     stack: 'Spring Boot · Java 25',
     tags: ['SonarQube', 'BitBucket', 'Jenkins', 'ArgoCD', 'BlackDuck', 'Checkmarx', 'CI/CD'],
-    tier: 'minor',
+    tier: 'featured',
     category: 'banking',
     complexity: 'medium',
     role: 'backend',
@@ -218,8 +218,80 @@ export const PROJECTS: Project[] = [
   },
 
   {
+    id: '30',
+    title: 'Inquiry',
+    desc: 'Sevicio de backend orientado a la obtención de información y guardado utilizando kafka',
+    impact: 'Limpieza de code smells y levantamiento de vulnerabilidades.',
+    context: 'IDM Technology · Scotiabank · 2026',
+    stack: 'Spring Boot · Java 25',
+    tags: ['SonarQube', 'BitBucket', 'Jenkins', 'ArgoCD', 'BlackDuck', 'Checkmarx', 'CI/CD'],
+    tier: 'standard',
+    category: 'banking',
+    complexity: 'medium',
+    role: 'backend',
+    featuredOrder: 1,
+    size: 'featured',
+    year: 2026,
+    duration: '4 Meses',
+    methodology: 'SCRUM',
+    status: 'En producción',
+    teamSize: 1,
+    highlightMetrics: ['Java 25', 'Distributed Systems', 'Hexagonal Architecture'],
+    responsibilities: [
+      'Levantamiento de vulnerabilidades',
+      'Limpieza de code smells',
+      'Actualización de pruebas unitarias'
+    ],
+    achievements: [
+      'Optimización de tiempos de respuesta backend',
+      'Fortalecimiento de arquitectura backend escalable'
+    ],
+    companyLogo: '/imagen/LOGO_IDM.svg',
+    companyName: 'IDM Technology',
+    clientLogo: '/imagen/LOGO_SB.svg',
+    clientName: 'Scotiabank',
+    experienceId: 'idm-technology'
+  },
+
+  {
+    id: '31',
+    title: 'Onebank',
+    desc: 'Servicio de seguridad en información del usuario',
+    impact: 'Limpieza de code smells y levantamiento de vulnerabilidades.',
+    context: 'IDM Technology · Scotiabank · 2026',
+    stack: 'Spring Boot · Java 25',
+    tags: ['SonarQube', 'BitBucket', 'Jenkins', 'ArgoCD', 'BlackDuck', 'Checkmarx', 'CI/CD'],
+    tier: 'standard',
+    category: 'banking',
+    complexity: 'medium',
+    role: 'backend',
+    featuredOrder: 1,
+    size: 'featured',
+    year: 2026,
+    duration: '4 Meses',
+    methodology: 'SCRUM',
+    status: 'En producción',
+    teamSize: 1,
+    highlightMetrics: ['Java 25', 'Distributed Systems', 'Hexagonal Architecture'],
+    responsibilities: [
+      'Levantamiento de vulnerabilidades',
+      'Limpieza de code smells',
+      'Actualización de pruebas unitarias'
+    ],
+    achievements: [
+      'Optimización de tiempos de respuesta backend',
+      'Fortalecimiento de arquitectura backend escalable'
+    ],
+    companyLogo: '/imagen/LOGO_IDM.svg',
+    companyName: 'IDM Technology',
+    clientLogo: '/imagen/LOGO_SB.svg',
+    clientName: 'Scotiabank',
+    experienceId: 'idm-technology'
+  },
+
+  {
     id: '6',
-    title: 'Configuration WEB – Scotiabank',
+    title: 'Configuration - Web',
     desc: 'Microfrontent orientado a la configuration de personas PEP en servicios financieros.',
     impact: 'Fortalecimiento de validaciones financieras y modernización tecnológica del sistema.',
     context: 'IDM Technology · Scotiabank · 2026',
@@ -255,7 +327,7 @@ export const PROJECTS: Project[] = [
 
   {
     id: '27',
-    title: 'Evaluation WEB – Scotiabank',
+    title: 'Evaluation - WEB',
     desc: 'Microfrontent orientado a la evaluación de personas PEP en servicios financieros.',
     impact: 'Fortalecimiento de validaciones financieras, modernización tecnológica del sistema y limpieza de redundancias',
     context: 'IDM Technology · Scotiabank · 2026',
@@ -291,7 +363,7 @@ export const PROJECTS: Project[] = [
 
   {
     id: '26',
-    title: 'Container WEB – Scotiabank',
+    title: 'Container - WEB',
     desc: 'Contenedor de microfrontends',
     impact: 'Actualización en limpieza de code smells, y levantamiento de vulnerabilidades.',
     context: 'IDM Technology · Scotiabank · 2026',
@@ -321,7 +393,7 @@ export const PROJECTS: Project[] = [
 
   {
     id: '7',
-    title: 'BFF – Scotiabank',
+    title: 'BFF',
     desc: 'Backend For Frontend orientado a la orquestación de servicios empresariales y desacoplamiento de arquitecturas backend bancarias.',
     impact: 'Optimización de consumo de APIs y mejora de mantenibilidad de servicios bancarios.',
     context: 'IDM Technology · Scotiabank · 2026',
@@ -359,7 +431,7 @@ export const PROJECTS: Project[] = [
 
   {
     id: '8',
-    title: 'Validation-API – Scotiabank',
+    title: 'Validation - API',
     desc: 'API empresarial REST orientada a validaciones financieras y procesamiento backend para entidades y personas PEP.',
     impact: 'Mejora de rendimiento y estabilidad mediante optimización de servicios backend financieros.',
     context: 'IDM Technology · Scotiabank · 2026',
@@ -398,7 +470,7 @@ export const PROJECTS: Project[] = [
 
   {
     id: '20',
-    title: 'MAIL-CONSUMER – Scotiabank',
+    title: 'MAIL - Consumer',
     desc: 'Servicio batch orientado al consumo y procesamiento de colas AS400 para integración de servicios bancarios backend mediante Kafka.',
     impact: 'Optimización de procesamiento batch y automatización de integración de servicios críticos bancarios.',
     context: 'IDM Technology · Scotiabank · 2026',
@@ -437,7 +509,7 @@ export const PROJECTS: Project[] = [
 
   {
     id: '4',
-    title: 'Botón de Pago – CLARO',
+    title: 'Botón de Pago',
     desc: 'Plataforma empresarial orientada a la integración y procesamiento seguro de pagos digitales mediante arquitectura Full Stack con patrón BFF y validaciones de seguridad OWASP.',
     impact: 'Incremento de confiabilidad, seguridad y estabilidad en flujos empresariales de pagos digitales.',
     context: 'INDRA PERÚ · CLARO · 2025',
@@ -478,7 +550,7 @@ export const PROJECTS: Project[] = [
 
   {
     id: '12',
-    title: 'WEB INCIDENTES – CLARO',
+    title: 'WEB INCIDENTES',
     desc: 'Sistema web orientado a la gestión y seguimiento de incidencias operativas, implementando arquitectura Full Stack con patrón BFF y validaciones de seguridad empresarial.',
     impact: 'Modernización tecnológica y optimización del flujo de atención de incidencias.',
     context: 'INDRA PERÚ · CLARO · 2025',
@@ -517,7 +589,7 @@ export const PROJECTS: Project[] = [
 
   {
     id: '16',
-    title: 'PCD – CLARO',
+    title: 'PCD',
     desc: 'Sistema empresarial orientado al control documental y trazabilidad de procesos operativos corporativos con patrón BFF.',
     impact: 'Mejora de trazabilidad documental y optimización de flujos empresariales.',
     context: 'INDRA PERÚ · CLARO · 2025',
@@ -555,13 +627,13 @@ export const PROJECTS: Project[] = [
 
   {
     id: '21',
-    title: 'Botón de Pago (BFF) – CLARO',
+    title: 'Botón de Pago (BFF)',
     desc: 'Backend For Frontend orientado a la orquestación de servicios de pagos empresariales y consumo seguro de APIs para plataformas de CLARO.',
     impact: 'Mejora de seguridad, integración y mantenibilidad en procesos de pagos mediante capa BFF en Node.js.',
     context: 'INDRA PERÚ · CLARO · 2026',
     stack: 'Node.js · REST APIs',
     tags: ['Jenkins', 'Bitbucket', 'SonarQube', 'Jest', 'CI/CD'],
-    tier: 'minor',
+    tier: 'standard',
     category: 'telecom',
     complexity: 'medium',
     role: 'backend',
@@ -594,13 +666,13 @@ export const PROJECTS: Project[] = [
 
   {
     id: '22',
-    title: 'WEB INCIDENTES (BFF) – CLARO',
+    title: 'WEB INCIDENTES (BFF)',
     desc: 'Backend For Frontend en Node.js orientado a la integración y orquestación de servicios empresariales para plataformas internas de CLARO.',
     impact: 'Mejora en la integración y centralización de servicios backend, reduciendo complejidad entre frontend y microservicios.',
     context: 'INDRA PERÚ · CLARO · 2026',
     stack: 'Node.js · REST APIs',
     tags: ['Jenkins', 'Bitbucket', 'SonarQube', 'Jest', 'CI/CD'],
-    tier: 'minor',
+    tier: 'standard',
     category: 'telecom',
     complexity: 'medium',
     role: 'backend',
@@ -633,7 +705,7 @@ export const PROJECTS: Project[] = [
 
   {
     id: '9',
-    title: 'Expediente Virtual – INTEGRATEL',
+    title: 'Expediente Virtual',
     desc: 'Desarrollo de módulos frontend en Angular para sistema de expedientes digitales con autenticación empresarial Azure AD B2C.',
     impact: 'Reducción de incidencias y mejora de estabilidad en entornos productivos.',
     context: 'INDRA PERÚ · INTEGRATEL · 2024',
@@ -672,7 +744,7 @@ export const PROJECTS: Project[] = [
 
   {
     id: '10',
-    title: 'PACIFYC – INTEGRATEL',
+    title: 'PACIFYC',
     desc: 'Plataforma empresarial Full Stack orientada a la gestión y optimización de procesos internos corporativos con mejoras evolutivas.',
     impact: 'Optimización y modernización de procesos internos mediante una arquitectura escalable y mantenible.',
     context: 'INDRA PERÚ · INTEGRATEL · 2024',
@@ -710,7 +782,7 @@ export const PROJECTS: Project[] = [
 
   {
     id: '11',
-    title: 'SISTEC – INTEGRATEL',
+    title: 'SISTEC',
     desc: 'Sistema empresarial Full Stack orientado a la optimización operativa y mantenimiento evolutivo de procesos corporativos con Oracle.',
     impact: 'Mejora de procesos internos y evolución tecnológica de plataforma empresarial.',
     context: 'INDRA PERÚ · INTEGRATEL · 2025',
@@ -750,7 +822,7 @@ export const PROJECTS: Project[] = [
 
   {
     id: '13',
-    title: 'Jerarquía de Ventas – INTEGRATEL',
+    title: 'Jerarquía de Ventas',
     desc: 'Sistema empresarial Full Stack orientado a la gestión jerárquica y administración de estructuras comerciales y operativas.',
     impact: 'Optimización de procesos comerciales y mejora de organización jerárquica empresarial.',
     context: 'INDRA PERÚ · INTEGRATEL · 2025',
@@ -826,7 +898,7 @@ export const PROJECTS: Project[] = [
 
   {
     id: '15',
-    title: 'SIVADAC – INTEGRATEL',
+    title: 'SIVADAC',
     desc: 'Sistema frontend orientado a la validación documental y optimización de procesos internos mediante interfaces empresariales modernas en Angular.',
     impact: 'Reducción de errores operativos y mejora del flujo de validación documental.',
     context: 'INDRA PERÚ · INTEGRATEL · 2024',
@@ -864,7 +936,7 @@ export const PROJECTS: Project[] = [
 
   {
     id: '3',
-    title: 'SIGED – RENIEC',
+    title: 'SIGED',
     desc: 'Sistema institucional de gestión documental orientado a la administración, seguimiento y digitalización de procesos internos de RENIEC mediante arquitectura Full Stack empresarial.',
     impact: 'Modernización tecnológica y optimización de procesos documentales institucionales de alta concurrencia.',
     context: 'CloudComputing Perú S.A.C. · RENIEC · 2023',
@@ -904,7 +976,7 @@ export const PROJECTS: Project[] = [
 
   {
     id: '17',
-    title: 'Mesa de Partes Virtual – RENIEC',
+    title: 'Mesa de Partes Virtual',
     desc: 'Sistema institucional Full Stack orientado a la recepción y gestión documental digital para procesos administrativos gubernamentales.',
     impact: 'Digitalización y optimización de procesos documentales institucionales.',
     context: 'CloudComputing Perú S.A.C. · RENIEC · 2023',
@@ -942,7 +1014,7 @@ export const PROJECTS: Project[] = [
 
   {
     id: '18',
-    title: 'Módulo Usuario Final – RENIEC',
+    title: 'Módulo Usuario Final',
     desc: 'Módulo Full Stack orientado a la gestión y experiencia de usuario para plataformas institucionales de RENIEC, con enfoque en accesibilidad, usabilidad y rendimiento.',
     impact: 'Mejora de experiencia de usuario y optimización de funcionalidades para plataformas gubernamentales de alta concurrencia.',
     context: 'CloudComputing Perú S.A.C. · RENIEC · 2023',
@@ -980,7 +1052,7 @@ export const PROJECTS: Project[] = [
 
   {
     id: '19',
-    title: 'Migración SIGED a JBoss – RENIEC',
+    title: 'Migración SIGED a JBoss',
     desc: 'Proyecto de migración tecnológica del sistema SIGED hacia infraestructura JBoss, participando en la adaptación de servicios, validaciones técnicas y despliegues controlados.',
     impact: 'Modernización de infraestructura tecnológica y mejora de estabilidad operativa para sistemas institucionales.',
     context: 'CloudComputing Perú S.A.C. · RENIEC · 2023',
@@ -1019,13 +1091,13 @@ export const PROJECTS: Project[] = [
 
   {
     id: '5',
-    title: 'Sistema Inteligente de Lenguaje de Señas – UA',
+    title: 'Sistema Inteligente de Lenguaje de Señas',
     desc: 'Sistema inteligente de reconocimiento de lenguaje de señas en tiempo real utilizando inteligencia artificial, visión computacional y procesamiento gestual.',
     impact: 'Implementación funcional de reconocimiento gestual mediante IA para apoyo a la comunicación inclusiva.',
     context: 'TESIS · Universidad Autónoma del Perú · 2025',
     stack: 'Angular · Flask · Node.js · TensorFlow',
     tags: ['Keras', 'MediaPipe', 'OpenCV', 'MongoDB Atlas', 'Python'],
-    tier: 'hero',
+    tier: 'minor',
     category: 'ai',
     complexity: 'high',
     role: 'fullstack',

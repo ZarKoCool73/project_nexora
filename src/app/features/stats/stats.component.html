@@ -1,7 +1,7 @@
 <div class="stats-bar" reveal>
 
   @for (stat of stats; track stat.label) {
-    <div class="stat-item" (click)="goToRoute(stat.url)">
+    <a class="stat-item" (click)="goToRoute(stat.url)">
 
       <div class="stat-number">
         {{ stat.value }}<span>+</span>
@@ -11,7 +11,7 @@
         {{ stat.label }}
       </div>
 
-    </div>
+    </a>
   }
 
 </div>

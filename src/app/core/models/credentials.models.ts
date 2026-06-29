@@ -1,5 +1,6 @@
 export type CredentialCategory =
   | 'Cloud & DevOps'
+  | 'Artificial Intelligence'
   | 'Frontend'
   | 'Backend'
   | 'Full Stack'
@@ -13,6 +14,7 @@ export type CredentialCategory =
 export const categoryOrder: CredentialCategory[] = [
   'Cloud & DevOps',
   'Frontend',
+  'Artificial Intelligence',
   'Backend',
   'Full Stack',
   'Metodologías',
@@ -25,6 +27,7 @@ export const categoryOrder: CredentialCategory[] = [
 // ── Iconos por categoría ───────────────────────────────────────────────────
 export const categoryIcons: Record<CredentialCategory, string> = {
   'Cloud & DevOps': '☁️',
+  'Artificial Intelligence': '🤖',
   'Frontend': '⚡',
   'Backend': '☕',
   'Full Stack': '🚀',
@@ -46,7 +49,7 @@ export interface Credential {
   idCredential: string;
   title: string;
   issuer: string;
-  type: 'Título' | 'Colegiatura' | 'Certificado' | 'Diploma';
+  type: 'Título' | 'Colegiatura' | 'Certificado' | 'Diploma' | 'Badge';
   date: number;
   status: 'Completo' | 'Vigente' | 'Activo';
   description: string;
@@ -228,20 +231,21 @@ export const credentials: Credential[] = [
 
   {
     idCredential: '32',
-    title: 'Designing Event-Driven Architectures (Español LATAM)',
-    issuer: 'Amazon Web Services (AWS)',
+    title: 'Introduction to Generative AI',
+    issuer: 'Google Cloud',
     priority: true,
     featured: true,
-    badge: '☁️ Cloud',
-    type: 'Certificado',
+    badge: '🤖 AI',
+    type: 'Badge',
     date: 2026,
     status: 'Completo',
     description:
-      'Capacitación en el diseño de arquitecturas orientadas a eventos (Event-Driven Architecture) sobre AWS. Incluye desacoplamiento de servicios mediante eventos, comunicación asíncrona, integración con Amazon SQS, AWS Lambda, Amazon API Gateway y AWS Step Functions, además de estrategias para la transformación de datos y construcción de soluciones escalables basadas en eventos.',
-    fileUrl: '/imagen/CERT_AWS_EDA.jpg',
+      'Capacitación introductoria en Inteligencia Artificial Generativa, modelos fundacionales, Large Language Models (LLMs), generación de contenido y aplicaciones empresariales utilizando tecnologías de Google Cloud.',
+    fileUrl: '/imagen/CERT_GOOGLE_GEN_AI.jpeg',
     fileType: 'image',
-    category: 'Cloud & DevOps',
+    category: 'Artificial Intelligence',
   },
+
   // ═══════════════════════════════════════
   // CERTIFICADOS — Frontend
   // ═══════════════════════════════════════

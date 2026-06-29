@@ -90,7 +90,7 @@ export class CredentialsComponent implements OnInit {
   }
 
   private buildCertGroups(): CertGroup[] {
-    const certs = this.sortAndFilter(['Certificado']);
+    const certs = this.sortAndFilter(['Certificado', 'Badge']);
 
     return this.categoryOrder
       .map(cat => ({
