@@ -1006,12 +1006,13 @@
 
   .metrics-grid,
   .project-logos {
-    flex-direction: column;
+    display: flex;
+    justify-content: center;
   }
 
   .project-connector {
-    width: 1px;
-    height: 50px;
+    width: 80px;
+    height: 1px;
   }
 
   .logo-tooltip,

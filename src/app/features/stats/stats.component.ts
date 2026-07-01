@@ -23,7 +23,7 @@ export class StatsComponent implements AfterViewInit {
     {value: 5, label: 'Años de experiencia', url: '/experience'},
     {value: 30, label: 'Proyectos entregados', url: '/projects'},
     {value: 36, label: 'Skills dominados', url: '/skills'},
-    {value: 3, label: 'Empresas colaboradas', url: '/contacts'},
+    {value: 8, label: 'Credenciales acreditadas', url: '/credentials'},
   ];
 
   constructor(
