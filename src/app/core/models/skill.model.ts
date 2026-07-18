@@ -29,14 +29,14 @@ export const skills: Skill[] = [
     description: 'Angular · React · Vue · Flutter · TypeScript · UI/UX',
     level: 95,
     techs: [
-      { name: 'Angular', icon: '🅰️', level: 95, years: 5 },
-      { name: 'TypeScript', icon: 'TS', level: 93, years: 5 },
-      { name: 'RxJS', icon: '🔄', level: 90, years: 4 },
-      { name: 'CSS', icon: '🎨', level: 88, years: 4 },
-      { name: 'SCSS', icon: '🎨', level: 88, years: 4 },
-      { name: 'React', icon: '⚛️', level: 75, years: 3 },
-      { name: 'Vue', icon: '🧩', level: 70, years: 2 },
-      { name: 'Flutter', icon: '📱', level: 65, years: 2 }
+      {name: 'Angular', icon: '🅰️', level: 95, years: 5},
+      {name: 'TypeScript', icon: 'TS', level: 93, years: 5},
+      {name: 'RxJS', icon: '🔄', level: 90, years: 4},
+      {name: 'CSS', icon: '🎨', level: 88, years: 4},
+      {name: 'SCSS', icon: '🎨', level: 88, years: 4},
+      {name: 'React', icon: '⚛️', level: 75, years: 3},
+      {name: 'Vue', icon: '🧩', level: 70, years: 2},
+      {name: 'Flutter', icon: '📱', level: 65, years: 2}
     ]
   },
 
@@ -97,6 +97,8 @@ export const skills: Skill[] = [
       {name: 'Azure', icon: '🔷', level: 80, years: 1},
       {name: 'Jenkins', icon: '🤖', level: 85, years: 3},
       {name: 'ArgoCD', icon: '🚀', level: 80, years: 1},
+      {name: 'Dynatrace', icon: '🔍', level: 80, years: 1},
+      {name: 'New Relic', icon: '📈', level: 80, years: 1},
       {name: 'GitHub Actions', icon: '⚡', level: 78, years: 1},
       {name: 'Bitbucket', icon: '🪣', level: 88, years: 3},
       {name: 'GitOps', icon: '🔁', level: 80, years: 1}

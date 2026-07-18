@@ -12,7 +12,7 @@
           Elige el <em class="accent-word">perfil</em> profesional
         </h2>
       </div>
-      <button class="close-btn" (click)="onClose()">✕</button>
+      <button class="close-btn" aria-label="Cerrar modal" (click)="onClose()">✕</button>
     </div>
 
     <!-- DESC -->
@@ -45,6 +45,9 @@
             <div class="badge">Recomendado</div>
           }
 
+          <!-- ICON -->
+          <div class="cv-icon" [innerHTML]="getIcon(cv.title)"></div>
+
           <!-- NÚMERO -->
           <div class="cv-num">{{ (i + 1).toString().padStart(2, '0') }} —</div>
 
@@ -75,7 +78,7 @@
     </div>
 
     <!-- FOOTER HINT -->
-    <p class="modal-hint">// Elige el que mejor se adapte al rol que buscas</p>
+    <p class="modal-hint">// Elige el que mejor se adapte al rol que buscas · ESC para cerrar</p>
 
   </div>
 </div>

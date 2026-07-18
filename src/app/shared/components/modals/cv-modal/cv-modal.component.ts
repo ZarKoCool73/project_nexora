@@ -1,5 +1,6 @@
-import {Component, EventEmitter, Output} from '@angular/core';
-import {CvOption, CVS} from '../../../../core/models/cv.model';
+import {Component, EventEmitter, HostListener, inject, Output} from '@angular/core';
+import {DomSanitizer, SafeHtml} from '@angular/platform-browser';
+import {CvOption, CVS, ICONS} from '../../../../core/models/cv.model';
 
 @Component({
   selector: 'app-cv-modal',
@@ -11,7 +12,13 @@ export class CvModalComponent {
 
   @Output() close = new EventEmitter<void>();
 
-  cvs: CvOption[] = CVS
+  cvs: CvOption[] = CVS;
+  private readonly sanitizer = inject(DomSanitizer)
+
+  @HostListener('document:keydown.escape')
+  onEscape() {
+    this.onClose();
+  }
 
   onClose() {
     this.close.emit();
@@ -22,5 +29,11 @@ export class CvModalComponent {
     a.href = file;
     a.download = file.split('/').pop() || 'cv.pdf';
     a.click();
+  }
+
+  getIcon(title: string): SafeHtml {
+    const key = title.toLowerCase().includes('fullstack') ? 'fullstack' : title.toLowerCase().includes('backend') ? 'backend'
+      : 'frontend';
+    return this.sanitizer.bypassSecurityTrustHtml(ICONS[key]);
   }
 }
