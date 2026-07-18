@@ -1,45 +1,32 @@
 <section id="projects" reveal>
 
-  <!-- HEADER -->
   <div class="section-header">
-
     <h2 class="section-title">
       Proyectos
-      <span class="projects-count">
-        ({{ filteredProjects.length }})
-      </span>
+      <span class="projects-count">({{ filteredProjects.length }})</span>
     </h2>
-
     <div class="section-line"></div>
-
   </div>
 
-  <!-- FILTERS -->
-  <app-project-filters
-    [tags]="availableTags"
-    [years]="availableYears"
-    [stacks]="availableStacks"
-    (filtersChange)="onFiltersChange($event)">
-  </app-project-filters>
+  <div class="projects-layout">
 
-  <!-- HERO -->
-  <app-hero-projects
-    [projects]="heroProjects">
-  </app-hero-projects>
+    <aside class="projects-sidebar">
+      <app-project-filters
+        [tags]="availableTags"
+        [years]="availableYears"
+        [stacks]="availableStacks"
+        (filtersChange)="onFiltersChange($event)">
+      </app-project-filters>
+    </aside>
 
-  <!-- FEATURED -->
-  <app-featured-projects
-    [projects]="featuredProjects">
-  </app-featured-projects>
+    <div class="projects-list">
+      @for (project of filteredProjects; track project.id) {
+        <app-project-list-item [project]="project"></app-project-list-item>
+      } @empty {
+        <p class="empty-state">No se encontraron proyectos con estos filtros.</p>
+      }
+    </div>
 
-  <!-- STANDARD -->
-  <app-standard-projects
-    [projects]="standardProjects">
-  </app-standard-projects>
-
-  <!-- ARCHIVE -->
-  <app-archive-projects
-    [projects]="minorProjects">
-  </app-archive-projects>
+  </div>
 
 </section>
