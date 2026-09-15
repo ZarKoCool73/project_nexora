@@ -11,12 +11,24 @@ export interface Experience {
 
 export const EXPERIENCE: Experience[] = [
   {
-    period: 'Feb 2026 — Actualidad',
+    period: 'Agosto 2026 — Actualidad',
+    logo:'/imagen/LOGO_ALFIN.svg',
+    role: 'FullStack',
+    company: 'Banco Alfin',
+    idExperience: 'banco-alfin',
+    startDate: '2026-08',
+    description:'Responsable del análisis, desarrollo y mantenimiento de aplicaciones web y servicios backend para el sector financiero, ' +
+      'participando en la implementación de nuevas funcionalidades, integración de APIs y microservicios, optimización de bases de datos, ' +
+      'resolución de incidencias y despliegues a producción. Trabajo en conjunto con equipos multidisciplinarios para garantizar soluciones ' +
+      'seguras, escalables y alineadas con los objetivos del negocio.'
+  },
+  {
+    period: 'Feb 2026 — Julio 2026',
     logo:'/imagen/LOGO_IDM.svg',
     role: 'FullStack',
     company: 'IDM Technology',
+    months: 6,
     idExperience: 'idm-technology',
-    startDate: '2026-02',
     description:
       'Desarrollo y mantenimiento de soluciones Full Stack para plataformas empresariales del cliente Scotiabank, implementando funcionalidades frontend y backend orientadas a rendimiento, escalabilidad y mantenibilidad. ' +
       'Participé en la integración de servicios y APIs, atención de incidencias productivas y mejora continua de sistemas críticos bajo metodologías ágiles y estándares corporativos de calidad.'
