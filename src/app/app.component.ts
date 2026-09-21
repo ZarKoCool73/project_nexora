@@ -31,5 +31,5 @@ import {RouterOutlet} from '@angular/router';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'portfolio';
+  title = 'portafolio';
 }
