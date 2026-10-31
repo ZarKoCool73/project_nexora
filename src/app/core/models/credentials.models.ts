@@ -3,6 +3,7 @@ export type CredentialCategory =
   | 'Artificial Intelligence'
   | 'Frontend'
   | 'Backend'
+  | 'Seguridad'
   | 'Full Stack'
   | 'Metodologías'
   | 'Herramientas'
@@ -16,6 +17,7 @@ export const categoryOrder: CredentialCategory[] = [
   'Frontend',
   'Artificial Intelligence',
   'Backend',
+  'Seguridad',
   'Full Stack',
   'Metodologías',
   'Herramientas',
@@ -30,6 +32,7 @@ export const categoryIcons: Record<CredentialCategory, string> = {
   'Artificial Intelligence': '🤖',
   'Frontend': '⚡',
   'Backend': '☕',
+  'Seguridad': '🛡️',
   'Full Stack': '🚀',
   'Metodologías': '📋',
   'Herramientas': '🔧',
@@ -209,7 +212,7 @@ export const credentials: Credential[] = [
     status: 'Completo',
     description: 'Capacitación en Amazon API Gateway para aplicaciones serverless: creación e implementación de APIs, integración con AWS Lambda, gestión de acceso con AWS IAM, monitoreo con Amazon CloudWatch, APIs WebSocket para mensajería en tiempo real y configuración de planes de uso, caché y etapas de despliegue.',
     fileUrl: '/imagen/CERT_AWS_API_GATEWAY.jpg',
-    fileType: 'image', //
+    fileType: 'image',
     category: 'Cloud & DevOps',
   },
 
@@ -340,6 +343,26 @@ export const credentials: Credential[] = [
     fileUrl: '/imagen/CERT_SPRING_SWING.jpg',
     fileType: 'image',
     category: 'Backend',
+  },
+
+  // ═══════════════════════════════════════
+  // CERTIFICADOS — Seguridad
+  // ═══════════════════════════════════════
+  {
+    idCredential: '33',
+    title: 'OWASP Top 10 2023 de Seguridad en APIs: Guía Completa',
+    issuer: 'Udemy',
+    featured: true,
+    priority: true,
+    badge: '🛡️ Seguridad',
+    type: 'Certificado',
+    date: 2026,
+    status: 'Activo',
+    description:
+      'OWASP Top 10 2023 de Seguridad en APIs: Guía Completa - 12.5 horas en total (23 de septiembre de 2026). Identificación y mitigación de las principales vulnerabilidades en APIs.',
+    fileUrl: '/imagen/CERT_OWASP.jpg',
+    fileType: 'image',
+    category: 'Seguridad',
   },
 
   // ═══════════════════════════════════════

@@ -1,34 +1,48 @@
+
 <section id="skills" reveal>
 
+  <!-- SECTION HEADER -->
   <div class="section-header">
     <h2 class="section-title">Stack técnico</h2>
     <div class="section-line"></div>
   </div>
 
+  <!-- CONTROLS -->
   <div class="skills-controls">
 
     <input
       type="text"
       placeholder="Buscar competencia..."
       [(ngModel)]="searchTerm"
+      (ngModelChange)="currentPage = 1"
       class="search-input"
     />
 
+    <!-- CATEGORY FILTERS -->
     <div class="filters">
+
       @for (cat of categories; track cat) {
+
         <button
-          (mouseenter)="setCategory(cat)"
+          type="button"
+          (click)="setCategory(cat)"
           [class.active]="selectedCategory === cat">
+
           {{ cat }}
+
         </button>
+
       }
+
     </div>
 
   </div>
 
+  <!-- SKILLS GRID -->
   <div class="skills-grid">
 
     @for (tech of paginatedTechs; track tech.name) {
+
       <div
         class="tech-card"
         (mouseenter)="hoverTech(tech)"
@@ -36,40 +50,113 @@
         [class.active]="hoveredTech?.name === tech.name"
       >
 
+        <!-- TECH HEADER -->
         <div class="tech-header">
-          <span class="tech-icon">{{ tech.icon }}</span>
+
+          <span class="tech-icon">
+            {{ tech.icon }}
+          </span>
 
           <div class="tech-info">
-            <div class="tech-name">{{ tech.name }}</div>
-            <div class="tech-meta">
-              {{ tech.category }} · {{ tech.years }} {{ tech.years > 1 ? 'años' : 'año' }}
+
+            <div class="tech-name">
+              {{ tech.name }}
             </div>
+
+            <div class="tech-meta">
+
+              {{ tech.category }}
+
+              <span class="meta-separator">·</span>
+
+              @if (tech.experienceMonths > 0) {
+
+                {{ tech.experienceLabel }}
+
+              } @else {
+
+                <span class="no-experience">
+                  Experiencia no asociada
+                </span>
+
+              }
+
+            </div>
+
           </div>
 
-          <span class="tech-level">{{ tech.level }}%</span>
+          <span class="tech-level">
+            {{ tech.level }}%
+          </span>
+
         </div>
 
+        <!-- TECH PROGRESS BAR -->
         <div class="tech-bar">
+
           <div
             class="tech-fill"
             [style.width.%]="tech.level">
           </div>
+
         </div>
 
-        <!-- 🔥 OVERLAY SOLO EN HOVER -->
+        <!-- HOVER PANEL -->
         @if (hoveredTech?.name === tech.name) {
+
           <div class="tech-hover-panel">
-            <span class="hover-label">Experiencia</span>
-            <span class="hover-years">{{ tech.years }} {{ tech.years > 1 ? 'años' : 'año' }}</span>
+
+            <span class="hover-label">
+              Experiencia profesional
+            </span>
+
+            <span class="hover-years">
+
+              @if (tech.experienceMonths > 0) {
+
+                {{ tech.experienceLabel }}
+
+              } @else {
+
+                No especificada
+
+              }
+
+            </span>
+
           </div>
+
         }
 
       </div>
+
+    } @empty {
+
+      <div class="skills-empty">
+
+        <span>🔍</span>
+
+        <p>No se encontraron tecnologías.</p>
+
+        <small>
+          Prueba con otro término o categoría.
+        </small>
+
+      </div>
+
     }
+
   </div>
+
+  <!-- PAGINATION -->
+  @if (totalPages > 1) {
+
+    <app-pagination
+      [currentPage]="currentPage"
+      [totalPages]="totalPages"
+      (pageChange)="onPageChange($event)">
+    </app-pagination>
+
+  }
+
 </section>
-<app-pagination
-  [currentPage]="currentPage"
-  [totalPages]="totalPages"
-  (pageChange)="onPageChange($event)">
-</app-pagination>

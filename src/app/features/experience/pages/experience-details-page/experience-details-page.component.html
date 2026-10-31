@@ -1,3 +1,4 @@
+
 <div class="experience-detail-page">
 
   <app-navbar></app-navbar>
@@ -17,28 +18,28 @@
           class="back-button"
           (click)="goBack()"
         >
-
           <span>←</span>
-
           Volver
-
         </button>
 
         <!-- COMPANY -->
         <div class="company-header">
 
           <div class="company-logo">
-
-            <img [src]="projects[0].companyLogo"
-                 [alt]="experience.company"
+            <img
+              [src]="experience.logo"
+              [alt]="experience.company"
             >
-
           </div>
 
           <div class="company-info">
 
             <div class="hero-label">
-              ENTERPRISE EXPERIENCE
+              @if (experience.type === 'DIRECT') {
+                DIRECT COMPANY EXPERIENCE
+              } @else {
+                CONSULTING EXPERIENCE
+              }
             </div>
 
             <h1 class="company-name">
@@ -51,6 +52,19 @@
 
             <div class="company-period">
               {{ experience.period }}
+            </div>
+
+            <!-- EXPERIENCE TYPE -->
+            <div class="experience-type">
+              @if (experience.type === 'DIRECT') {
+                <span class="direct-type">
+                  Desarrollo directo
+                </span>
+              } @else {
+                <span class="consulting-type">
+                  Servicios de consultoría
+                </span>
+              }
             </div>
 
           </div>
@@ -72,7 +86,7 @@
             </div>
 
             <div class="stat-label">
-              Projects Delivered
+              Projects
             </div>
 
           </div>
@@ -80,11 +94,13 @@
           <div class="stat-card">
 
             <div class="stat-number">
-              {{ clients.length }}
+              {{ isDirectExperience ? 1 : clients.length }}
             </div>
 
             <div class="stat-label">
-              Enterprise Clients
+              {{ isDirectExperience
+              ? 'Organization'
+              : 'Enterprise Clients' }}
             </div>
 
           </div>
@@ -110,113 +126,164 @@
     <!-- MAIN -->
     <section class="experience-main">
 
-      <!-- DOMAIN -->
-      <div class="info-block">
+      <!-- CLIENTS & ORGANIZATIONS -->
+      @if (!isDirectExperience && clients.length > 0) {
 
-        <div class="block-header">
+        <div class="info-block">
 
-          <div class="block-label">
-            DOMAIN
+          <div class="block-header">
+
+            <div class="block-label">
+              CLIENTS & ORGANIZATIONS
+            </div>
+
+            <div class="block-line"></div>
+
           </div>
 
-          <div class="block-line"></div>
+          <div class="domain-grid">
+
+            @for (client of clients; track client) {
+
+              <div class="domain-card">
+                {{ client }}
+              </div>
+
+            }
+
+          </div>
 
         </div>
 
-        <div class="domain-grid">
+      }
 
-          @for (client of clients; track client) {
+      <!-- ORGANIZATIONAL CONTEXT -->
+      @if (isDirectExperience) {
+
+        <div class="info-block">
+
+          <div class="block-header">
+
+            <div class="block-label">
+              ORGANIZATIONAL CONTEXT
+            </div>
+
+            <div class="block-line"></div>
+
+          </div>
+
+          <div class="domain-grid">
 
             <div class="domain-card">
-              {{ client }}
+              Direct Company Experience
             </div>
 
-          }
+            <div class="domain-card">
+              Internal Product Development
+            </div>
+
+            <div class="domain-card">
+              Business Solutions
+            </div>
+
+          </div>
 
         </div>
 
-      </div>
+      }
 
       <!-- ARCHITECTURE -->
-      <div class="info-block" *ngIf="architectures.length">
+      @if (architectures.length > 0) {
 
-        <div class="block-header">
+        <div class="info-block">
 
-          <div class="block-label">
-            ARCHITECTURE
-          </div>
+          <div class="block-header">
 
-          <div class="block-line"></div>
-
-        </div>
-
-        <div class="architecture-grid">
-
-          @for (arch of architectures; track arch) {
-
-            <div class="architecture-card">
-              {{ arch }}
+            <div class="block-label">
+              ARCHITECTURE
             </div>
 
-          }
+            <div class="block-line"></div>
+
+          </div>
+
+          <div class="architecture-grid">
+
+            @for (arch of architectures; track arch) {
+
+              <div class="architecture-card">
+                {{ arch }}
+              </div>
+
+            }
+
+          </div>
 
         </div>
 
-      </div>
+      }
 
       <!-- STACK -->
-      <div class="info-block">
+      @if (technologies.length > 0) {
 
-        <div class="block-header">
+        <div class="info-block">
 
-          <div class="block-label">
-            STACK
-          </div>
+          <div class="block-header">
 
-          <div class="block-line"></div>
-
-        </div>
-
-        <div class="stack-grid">
-
-          @for (tech of technologies; track tech) {
-
-            <div class="stack-card">
-              {{ tech }}
+            <div class="block-label">
+              TECHNOLOGY STACK
             </div>
 
-          }
+            <div class="block-line"></div>
+
+          </div>
+
+          <div class="stack-grid">
+
+            @for (tech of technologies; track tech) {
+
+              <div class="stack-card">
+                {{ tech }}
+              </div>
+
+            }
+
+          </div>
 
         </div>
 
-      </div>
+      }
 
       <!-- TOOLS -->
-      <div class="info-block">
+      @if (tags.length > 0) {
 
-        <div class="block-header">
+        <div class="info-block">
 
-          <div class="block-label">
-            TOOLS & ECOSYSTEM
-          </div>
+          <div class="block-header">
 
-          <div class="block-line"></div>
-
-        </div>
-
-        <div class="tools-grid">
-
-          @for (tag of tags; track tag) {
-
-            <div class="tool-card">
-              {{ tag }}
+            <div class="block-label">
+              TOOLS & ECOSYSTEM
             </div>
 
-          }
+            <div class="block-line"></div>
+
+          </div>
+
+          <div class="tools-grid">
+
+            @for (tag of tags; track tag) {
+
+              <div class="tool-card">
+                {{ tag }}
+              </div>
+
+            }
+
+          </div>
 
         </div>
 
-      </div>
+      }
 
       <!-- PROJECTS -->
       <div class="info-block">
@@ -224,118 +291,200 @@
         <div class="block-header">
 
           <div class="block-label">
-            PROJECTS
+            SELECTED PROJECTS
           </div>
 
           <div class="block-line"></div>
 
         </div>
 
-        <div class="projects-grid">
+        @if (projects.length > 0) {
 
-          @for (project of projects; track project.id) {
+          <div class="projects-grid">
 
-            <article class="project-card">
+            @for (project of projects; track project.id) {
 
-              <!-- TOP -->
-              <div class="project-top">
+              <article class="project-card">
 
-                <div class="project-client">
+                <!-- TOP -->
+                <div class="project-top">
 
-                  <img
-                    [src]="project.clientLogo"
-                    [alt]="project.clientName"
-                  >
+                  <!-- PROJECT CONTEXT -->
+                  <div class="project-client">
 
-                  <span>
-                    {{ project.clientName }}
-                  </span>
+                    @if (isDirectExperience) {
 
-                </div>
+                      <span class="project-context internal">
+                        <span class="context-dot"></span>
+                        INTERNAL PROJECT
+                      </span>
 
-                <div class="project-year">
-                  {{ project.year }}
-                </div>
+                    } @else {
 
-              </div>
+                      @if (project.clientName) {
 
-              <!-- TITLE -->
-              <h3 class="project-title">
-                {{ project.title }}
-              </h3>
+                        <div class="project-client-info">
 
-              <!-- DESCRIPTION -->
-              <p class="project-description">
-                {{ project.desc }}
-              </p>
+                          @if (project.clientLogo) {
 
-              <!-- IMPACT -->
-              <div class="impact-container">
+                            <img
+                              [src]="project.clientLogo"
+                              [alt]="project.clientName"
+                            >
 
-                <div class="impact-title">
-                  Technical Impact
-                </div>
+                          }
 
-                <p>
-                  {{ project.impact }}
-                </p>
+                          <span>
+                            {{ project.clientName }}
+                          </span>
 
-              </div>
+                        </div>
 
-              <!-- ARCHITECTURE -->
-              @if (project.architectureFlow) {
+                      } @else {
 
-                <div class="architecture-flow">
+                        <span class="project-context">
+                          {{ experience.company }}
+                        </span>
 
-                  @for (node of project.architectureFlow;
-                    track node.title;
-                    let last = $last) {
+                      }
 
-                    <div class="flow-node">
-                      {{ node.title }}
-                    </div>
-
-                    @if (!last) {
-                      <div class="flow-line"></div>
                     }
 
-                  }
+                  </div>
+
+                  <!-- YEAR -->
+                  <div class="project-year">
+                    {{ project.year }}
+                  </div>
 
                 </div>
 
-              }
+                <!-- TITLE -->
+                <h3 class="project-title">
+                  {{ project.title }}
+                </h3>
 
-              <!-- TAGS -->
-              <div class="project-tags">
+                <!-- DESCRIPTION -->
+                <p class="project-description">
+                  {{ project.desc }}
+                </p>
 
-                @for (tag of project.tags; track tag) {
+                <!-- IMPACT -->
+                @if (project.impact) {
 
-                  <span class="project-tag">
-                    {{ tag }}
-                  </span>
+                  <div class="impact-container">
+
+                    <div class="impact-title">
+                      Technical Impact
+                    </div>
+
+                    <p>
+                      {{ project.impact }}
+                    </p>
+
+                  </div>
 
                 }
 
-              </div>
+                <!-- ARCHITECTURE -->
+                @if (project.architectureFlow?.length) {
 
-              <!-- FOOTER -->
-              <div class="project-footer">
+                  <div class="architecture-flow">
 
-                <div class="footer-role">
-                  {{ project.role | uppercase }}
+                    @for (
+                      node of project.architectureFlow;
+                      track node.title;
+                      let last = $last
+                      ) {
+
+                      <div class="flow-node">
+                        {{ node.title }}
+                      </div>
+
+                      @if (!last) {
+                        <div class="flow-line"></div>
+                      }
+
+                    }
+
+                  </div>
+
+                }
+
+                <!-- TAGS -->
+                @if (project.tags.length > 0) {
+
+                  <div class="project-tags">
+
+                    @for (tag of project.tags; track tag) {
+
+                      <span class="project-tag">
+                        {{ tag }}
+                      </span>
+
+                    }
+
+                  </div>
+
+                }
+
+                <!-- FOOTER -->
+                <div class="project-footer">
+
+                  <div class="footer-role">
+                    {{ project.role | uppercase }}
+                  </div>
+
+                  <div class="footer-complexity">
+                    {{ project.complexity | uppercase }}
+                    COMPLEXITY
+                  </div>
+
                 </div>
 
-                <div class="footer-complexity">
-                  {{ project.complexity | uppercase }} COMPLEXITY
-                </div>
+              </article>
 
-              </div>
+            }
 
-            </article>
+          </div>
 
-          }
+        } @else {
 
-        </div>
+          <div class="empty-projects">
+            <p>
+              No projects registered for this experience yet.
+            </p>
+          </div>
+
+        }
+
+      </div>
+
+    </section>
+
+  } @else {
+
+    <!-- EXPERIENCE NOT FOUND -->
+    <section class="experience-main">
+
+      <div class="empty-projects">
+
+        <h2>
+          Experience not found
+        </h2>
+
+        <p>
+          The requested professional experience
+          could not be found.
+        </p>
+
+        <button
+          class="back-button"
+          (click)="goBack()"
+        >
+          <span>←</span>
+          Back to experience
+        </button>
 
       </div>
 

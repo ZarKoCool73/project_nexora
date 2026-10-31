@@ -1242,6 +1242,121 @@ export const PROJECTS: Project[] = [
     clientLogo: '/imagen/FOTO.svg',
     clientName: 'Diego Gonzalez',
     experienceId: 'dinet'
+  },
+
+  {
+    id: '32',
+    title: 'Gestión de Módulos y Menús - Rol Gestor',
+    desc: 'Plataforma bancaria orientada a la ampliación de funcionalidades y gestión de módulos y menús para el rol Gestor, mediante desarrollo Full Stack y modernización tecnológica.',
+    impact: 'Modernización del frontend mediante migración de Angular 13 a Angular 18, optimización de componentes y fortalecimiento de la mantenibilidad de los servicios backend.',
+    context: 'Banco Alfin · 2026',
+    stack: '.NET · Angular· SQL · Stored Procedures',
+    tags: ['Angular Signals','Angular','TypeScript','.NET','Microservices','Repository Pattern','REST APIs','Database Optimization','Clean Code'],
+    tier: 'hero',
+    category: 'banking',
+    complexity: 'high',
+    role: 'fullstack',
+    featuredOrder: 1,
+    size: 'featured',
+    year: 2026,
+    duration: 'En curso',
+    status: 'En desarrollo',
+    highlightMetrics: ['Angular 13 → Angular 18','Angular Signals','.NET Microservices','Database Optimization','Full Stack Development'],
+    responsibilities: [
+      'Análisis y revisión de estructuras de bases de datos para identificar las fuentes de información necesarias.',
+      'Desarrollo de Stored Procedures para la obtención, transformación y persistencia de información.',
+      'Implementación y mantenimiento de microservicios backend con .NET utilizando Repository Pattern, Interfaces, Entities y Controllers.',
+      'Migración y modernización de componentes frontend de Angular 13 a Angular 18.',
+      'Implementación de Angular Signals y optimización de la gestión del estado.',
+      'Identificación y corrección de memory leaks, reducción del acoplamiento y refactorización de componentes.',
+      'Aplicación de buenas prácticas para mejorar la escalabilidad, mantenibilidad y calidad del código.'
+    ],
+    companyLogo: '/imagen/LOGO_ALFIN.svg',
+    companyName: 'Banco Alfin',
+    experienceId: 'banco-alfin'
+  },
+
+  {
+    id: '33',
+    title: 'EVACRED - Actualización de Tasas',
+    desc: 'Evolución de plataforma financiera orientada a la revisión y actualización de tasas EVACRED mediante integración de microservicios backend y funcionalidades frontend.',
+    impact: 'Ampliación de las capacidades de procesamiento y consulta de información financiera mediante servicios backend y mejoras evolutivas en el frontend.',
+    context: 'Banco Alfin · 2026',
+    stack: '.NET · Angular · SQL · Stored Procedures',
+    tags: [
+      'Angular',
+      'TypeScript',
+      '.NET',
+      'Microservices',
+      'Repository Pattern',
+      'REST APIs',
+      'Database Integration',
+      'Clean Code'
+    ],
+    tier: 'featured',
+    category: 'banking',
+    complexity: 'high',
+    role: 'fullstack',
+    featuredOrder: 2,
+    size: 'featured',
+    year: 2026,
+    duration: 'En curso',
+    status: 'En desarrollo',
+    highlightMetrics: [
+      'Financial Systems',
+      'Angular',
+      '.NET Microservices',
+      'REST APIs',
+      'Database Integration'
+    ],
+    responsibilities: [
+      'Análisis de estructuras de base de datos y revisión de información relacionada con las tasas EVACRED.',
+      'Desarrollo de microservicios backend utilizando .NET.',
+      'Implementación de interfaces, entidades, repositorios y controladores para organizar la lógica de negocio.',
+      'Desarrollo y mantenimiento de funcionalidades frontend utilizando Angular 16.',
+      'Integración de servicios REST entre frontend y backend.',
+      'Aplicación de buenas prácticas de desarrollo para mejorar la mantenibilidad y escalabilidad de la solución.'
+    ],
+    companyLogo: '/imagen/LOGO_ALFIN.svg',
+    companyName: 'Banco Alfin',
+    experienceId: 'banco-alfin'
+  },
+  {
+    id: '34',
+    title: 'Integración de Notificaciones por Correo - Maximo',
+    desc: 'Iniciativa orientada a la revisión técnica del backend relacionado con el envío de correos electrónicos y su integración con la aplicación Maximo.',
+    impact: 'Evaluación del código existente y análisis de los componentes backend involucrados en el proceso de envío de notificaciones.',
+    context: 'Banco Alfin · 2026',
+    stack: '.NET',
+    tags: [
+      '.NET',
+      'Backend',
+      'Code Review',
+      'System Integration',
+      'Email Services'
+    ],
+    tier: 'standard',
+    category: 'banking',
+    complexity: 'medium',
+    role: 'backend',
+    size: 'half',
+    year: 2026,
+    duration: 'En análisis',
+    status: 'En análisis',
+    highlightMetrics: [
+      '.NET',
+      'Backend Development',
+      'Code Review',
+      'Email Integration'
+    ],
+    responsibilities: [
+      'Revisión y análisis del código fuente backend desarrollado en .NET.',
+      'Identificación de componentes y servicios involucrados en el proceso de envío de correos electrónicos.',
+      'Evaluación de la estructura y mantenibilidad del código existente.'
+    ],
+    companyLogo: '/imagen/LOGO_ALFIN.svg',
+    companyName: 'Banco Alfin',
+    experienceId: 'banco-alfin'
   }
 
 ];

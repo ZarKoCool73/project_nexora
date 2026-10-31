@@ -1,12 +1,12 @@
-import {Component, inject} from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
-import {NgIf, SlicePipe, UpperCasePipe} from '@angular/common';
+import { Component, inject } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { UpperCasePipe, NgIf } from '@angular/common';
 
-import {NavbarComponent} from '../../../../shared/components/navbar/navbar.component';
-import {FooterComponent} from '../../../../shared/components/footer/footer.component';
+import { NavbarComponent } from '../../../../shared/components/navbar/navbar.component';
+import { FooterComponent } from '../../../../shared/components/footer/footer.component';
 
-import {EXPERIENCE} from '../../../../core/models/experience.model';
-import {PROJECTS} from '../../../../core/models/project.model';
+import { EXPERIENCE } from '../../../../core/models/experience.model';
+import { PROJECTS } from '../../../../core/models/project.model';
 
 @Component({
   selector: 'app-experience-detail',
@@ -15,7 +15,6 @@ import {PROJECTS} from '../../../../core/models/project.model';
     NavbarComponent,
     FooterComponent,
     UpperCasePipe,
-    SlicePipe,
     NgIf
   ],
   templateUrl: './experience-details-page.component.html',
@@ -24,12 +23,21 @@ import {PROJECTS} from '../../../../core/models/project.model';
 export class ExperienceDetailsPageComponent {
 
   private readonly route = inject(ActivatedRoute);
+  private readonly router = inject(Router);
 
-  readonly experienceId = this.route.snapshot.paramMap.get('idExperience');
+  readonly experienceId =
+    this.route.snapshot.paramMap.get('idExperience');
 
-  readonly experience = EXPERIENCE.find(exp => exp.idExperience === this.experienceId);
+  readonly experience = EXPERIENCE.find(
+    exp => exp.idExperience === this.experienceId
+  );
 
-  readonly projects = PROJECTS.filter(project => project.experienceId === this.experienceId);
+  readonly projects = PROJECTS.filter(
+    project => project.experienceId === this.experienceId
+  );
+
+  readonly isDirectExperience =
+    this.experience?.type === 'DIRECT';
 
   readonly clients: string[] = [
     ...new Set(
@@ -47,6 +55,7 @@ export class ExperienceDetailsPageComponent {
         project.stack
           .split('·')
           .map(stack => stack.trim())
+          .filter(Boolean)
       )
     )
   ];
@@ -62,17 +71,13 @@ export class ExperienceDetailsPageComponent {
       this.projects.flatMap(project =>
         project.architectureFlow?.map(
           node => node.title
-        ) || []
+        ) ?? []
       )
     )
   ];
 
-  constructor(
-    private readonly _route: Router) {
-  }
-
   goBack(): void {
-    this._route.navigate(['/experience']).then();
+    void this.router.navigate(['/experience']);
   }
 
 }
